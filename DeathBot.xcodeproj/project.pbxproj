@@ -11,6 +11,7 @@
 		F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0041A94F1A7009A4743 /* maleBot.png */; };
 		F34BD0071A94F1F1009A4743 /* femaleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0061A94F1F1009A4743 /* femaleBot.png */; };
 		F34BD0091A94F45E009A4743 /* LocationSence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD0081A94F45E009A4743 /* LocationSence.swift */; };
+		F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */; };
 		F370C88A1A94C0A3007E4498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8891A94C0A3007E4498 /* AppDelegate.swift */; };
 		F370C88E1A94C0A3007E4498 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C88D1A94C0A3007E4498 /* GameScene.swift */; };
 		F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C88F1A94C0A3007E4498 /* GameViewController.swift */; };
@@ -43,6 +44,7 @@
 		F34BD0041A94F1A7009A4743 /* maleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleBot.png; sourceTree = "<group>"; };
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
 		F34BD0081A94F45E009A4743 /* LocationSence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSence.swift; sourceTree = "<group>"; };
+		F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeathRateByProvince.swift; path = images/DeathRateByProvince.swift; sourceTree = "<group>"; };
 		F370C8841A94C0A3007E4498 /* DeathBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeathBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F370C8881A94C0A3007E4498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F370C8891A94C0A3007E4498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			children = (
 				F370C8BB1A94D6D8007E4498 /* images */,
 				F370C8B71A94D49C007E4498 /* ActionButton.swift */,
+				F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */,
 				F34BD0081A94F45E009A4743 /* LocationSence.swift */,
 				F38668561A94EC2E00C1FF1D /* NewGameScene.swift */,
 				F370C8891A94C0A3007E4498 /* AppDelegate.swift */,
@@ -268,6 +271,7 @@
 				F370C8B61A94D304007E4498 /* Game.swift in Sources */,
 				F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */,
 				F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */,
+				F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */,
 				F370C8B21A94C68D007E4498 /* Action.swift in Sources */,
 				F370C8B41A94C69C007E4498 /* Death.swift in Sources */,
 				F370C88A1A94C0A3007E4498 /* AppDelegate.swift in Sources */,
