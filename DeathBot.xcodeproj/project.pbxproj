@@ -154,6 +154,7 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA9C63AE1A9861F50037C425 /* pizza.png */,
 				BA9C63AA1A9846970037C425 /* character.png */,
 				F34BD0041A94F1A7009A4743 /* maleBot.png */,
 				F34BD0061A94F1F1009A4743 /* femaleBot.png */,
@@ -241,7 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F34BD0071A94F1F1009A4743 /* femaleBot.png in Resources */,
+				BA9C63AF1A9861F50037C425 /* pizza.png in Resources */,
 				F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */,
 				BA9C63AB1A9846970037C425 /* character.png in Resources */,
 				F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */,
