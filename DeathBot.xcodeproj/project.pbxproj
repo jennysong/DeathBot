@@ -15,6 +15,9 @@
 		F370C8951A94C0A3007E4498 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F370C8941A94C0A3007E4498 /* Images.xcassets */; };
 		F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F370C8961A94C0A3007E4498 /* LaunchScreen.xib */; };
 		F370C8A41A94C0A3007E4498 /* DeathBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8A31A94C0A3007E4498 /* DeathBotTests.swift */; };
+		F370C8B01A94C67A007E4498 /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8AF1A94C67A007E4498 /* Bot.swift */; };
+		F370C8B21A94C68D007E4498 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B11A94C68D007E4498 /* Action.swift */; };
+		F370C8B41A94C69C007E4498 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B31A94C69C007E4498 /* Death.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		F370C89D1A94C0A3007E4498 /* DeathBotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeathBotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F370C8A21A94C0A3007E4498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F370C8A31A94C0A3007E4498 /* DeathBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathBotTests.swift; sourceTree = "<group>"; };
+		F370C8AF1A94C67A007E4498 /* Bot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bot.swift; sourceTree = "<group>"; };
+		F370C8B11A94C68D007E4498 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		F370C8B31A94C69C007E4498 /* Death.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,9 @@
 				F370C8911A94C0A3007E4498 /* Main.storyboard */,
 				F370C8941A94C0A3007E4498 /* Images.xcassets */,
 				F370C8961A94C0A3007E4498 /* LaunchScreen.xib */,
+				F370C8AF1A94C67A007E4498 /* Bot.swift */,
+				F370C8B11A94C68D007E4498 /* Action.swift */,
+				F370C8B31A94C69C007E4498 /* Death.swift */,
 				F370C8871A94C0A3007E4498 /* Supporting Files */,
 			);
 			path = DeathBot;
@@ -220,7 +229,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F370C88E1A94C0A3007E4498 /* GameScene.swift in Sources */,
+				F370C8B01A94C67A007E4498 /* Bot.swift in Sources */,
 				F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */,
+				F370C8B21A94C68D007E4498 /* Action.swift in Sources */,
+				F370C8B41A94C69C007E4498 /* Death.swift in Sources */,
 				F370C88A1A94C0A3007E4498 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,6 +425,7 @@
 				F370C8A91A94C0A3007E4498 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F370C8AA1A94C0A3007E4498 /* Build configuration list for PBXNativeTarget "DeathBotTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +434,7 @@
 				F370C8AC1A94C0A3007E4498 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
