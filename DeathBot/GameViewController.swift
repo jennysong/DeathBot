@@ -22,7 +22,7 @@ extension SKNode {
         } else {
             return nil
         }
-    }
+    }//
 }
 
 class GameViewController: UIViewController {
