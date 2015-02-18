@@ -21,7 +21,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMoveToView(view: SKView) {
-
+        var GameSceneBG = SKSpriteNode(imageNamed: "GameSceneBG")
+        GameSceneBG.size.height = self.size.height
+        GameSceneBG.size.width = self.size.width
+        GameSceneBG.anchorPoint = CGPoint(x:0, y:0)
+        GameSceneBG.zPosition = 1
+        addChild(GameSceneBG)
+        
         character.xScale = 0.3
         character.yScale = 0.3
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
