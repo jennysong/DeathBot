@@ -31,15 +31,25 @@ class Game: SKScene {
         addChild(background)
         addChild(backgroundTalkbox)
 
-        var buttonStart = SKSpriteNode(imageNamed: "buttonStart")
-        buttonStart.size.height = self.size.height * 0.3397
-        buttonStart.size.width = self.size.width * 0.336
-        buttonStart.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
+        var buttonNewGame = SKSpriteNode(imageNamed: "buttonNewGame")
+        buttonNewGame.size.height = self.size.height * 0.3397
+        buttonNewGame.size.width = self.size.width * 0.336
+        buttonNewGame.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
         
-        var buttonStart_ = SKSpriteNode(imageNamed: "buttonStart_")
-        buttonStart_.size.height = self.size.height * 0.3397
-        buttonStart_.size.width = self.size.width * 0.336
-        buttonStart_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
+        var buttonNewGame_ = SKSpriteNode(imageNamed: "buttonNewGame_")
+        buttonNewGame_.size.height = self.size.height * 0.3397
+        buttonNewGame_.size.width = self.size.width * 0.336
+        buttonNewGame_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
+        
+        var buttonContinue = SKSpriteNode(imageNamed: "buttonContinue")
+        buttonContinue.size.height = self.size.height * 0.3397
+        buttonContinue.size.width = self.size.width * 0.336
+        buttonContinue.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
+        
+        var buttonContinue_ = SKSpriteNode(imageNamed: "buttonContinue_")
+        buttonContinue_.size.height = self.size.height * 0.3397
+        buttonContinue_.size.width = self.size.width * 0.336
+        buttonContinue_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.22)
         
         var buttonHowTo = SKSpriteNode(imageNamed: "buttonHowTo")
         buttonHowTo.size.height = self.size.height * 0.287
@@ -50,17 +60,27 @@ class Game: SKScene {
         buttonHowTo_.size.width = self.size.width * 0.161379
         buttonHowTo_.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
         
-        let a:ActionButton = ActionButton(defaultButtonImage: buttonStart, activeButtonImage: buttonStart_, buttonAction: changeSceneToStart)
+        let newGame:ActionButton = ActionButton(defaultButtonImage: buttonNewGame, activeButtonImage: buttonNewGame_, buttonAction: changeSceneToNewGame)
         
-        let b:ActionButton = ActionButton(defaultButtonImage: buttonHowTo, activeButtonImage: buttonHowTo_, buttonAction: changeSceneToHowTo)
-        addChild(a)
-        addChild(b)
+        let continueGame:ActionButton = ActionButton(defaultButtonImage: buttonContinue, activeButtonImage: buttonContinue_, buttonAction: changeSceneToContinueGame)
+        
+        let howTo:ActionButton = ActionButton(defaultButtonImage: buttonHowTo, activeButtonImage: buttonHowTo_, buttonAction: changeSceneToHowTo)
+        addChild(newGame)
+        addChild(continueGame)
+        addChild(howTo)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func changeSceneToStart(){
+    func changeSceneToNewGame(){
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = NewGameScene(size: self.size)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
+    func changeSceneToContinueGame(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameScene(size: self.size)
