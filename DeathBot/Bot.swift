@@ -1,13 +1,13 @@
 
 import Foundation
 
-let ACTIONDEATHPORTION = 0.7
+let ACTIONDEATHPORTION = 0.79
 let AGEDEATHPORTION = 0.1
-let GENDERDEATHPORTION = 0.1
+let GENDERDEATHPORTION = 0.01
 let LOCATIONDEATHPORTION = 0.1
 
 class Bot {
-    var month: Int
+    var age: Int
     var gender: String
     var location: String
     var happiness: Int
@@ -18,7 +18,7 @@ class Bot {
     
     init(gender: String, location: String) {
        
-        month = 1
+        age = 0
         self.gender = gender
         self.location = location
         happiness = Int(arc4random()) % 50 + 50
@@ -47,22 +47,22 @@ class Bot {
     
     func doAction(action: String){
         //do action.
-        calculateDeathRate(action)
-        
+        var result = calculateDeathRate(action)
+        println("\(self.gender) \(self.age) year olds, Bot is \(action)ing, DeathRate = \(result)")
         //TO DO
     }
     
-    func calculateDeathRate(action: String) -> Double{
+    private func calculateDeathRate(action: String) -> Double{
         var result: Double = 0.0
         
         result += getActionDeathRate(action) * ACTIONDEATHPORTION
-        //result += ... * AGEDEATHPORTION
-        //result += ... * GENDERDEATHPORTION
+        result += DeathRateByAge(age: self.age).rate() * AGEDEATHPORTION
+        result += DeathRateByGender(gender: self.gender).rate() * GENDERDEATHPORTION
         result += DeathRateByProvince(province: self.location).rate() * LOCATIONDEATHPORTION
         return result
     }
     
-    func getActionDeathRate(action: String)->Double{
+    private func getActionDeathRate(action: String)->Double{
         return 0.0
     }
 }

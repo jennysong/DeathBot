@@ -26,6 +26,8 @@
 		F370C8B81A94D49C007E4498 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B71A94D49C007E4498 /* ActionButton.swift */; };
 		F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */; };
 		F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38668561A94EC2E00C1FF1D /* NewGameScene.swift */; };
+		F38F76BF1A95490C00FF8C04 /* DeathRateByAge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38F76BE1A95490C00FF8C04 /* DeathRateByAge.swift */; };
+		F393B8241A95525600EE3241 /* DeathRateByGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393B8231A95525600EE3241 /* DeathRateByGender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		F370C8B71A94D49C007E4498 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneHowTo.swift; sourceTree = "<group>"; };
 		F38668561A94EC2E00C1FF1D /* NewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameScene.swift; sourceTree = SOURCE_ROOT; };
+		F38F76BE1A95490C00FF8C04 /* DeathRateByAge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathRateByAge.swift; sourceTree = "<group>"; };
+		F393B8231A95525600EE3241 /* DeathRateByGender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathRateByGender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,23 +110,23 @@
 			isa = PBXGroup;
 			children = (
 				F370C8BB1A94D6D8007E4498 /* images */,
+				F393B8221A95504400EE3241 /* DeathRate */,
+				F370C8891A94C0A3007E4498 /* AppDelegate.swift */,
 				F370C8B71A94D49C007E4498 /* ActionButton.swift */,
-				F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */,
 				F34BD0081A94F45E009A4743 /* LocationSence.swift */,
 				F38668561A94EC2E00C1FF1D /* NewGameScene.swift */,
-				F370C8891A94C0A3007E4498 /* AppDelegate.swift */,
 				F370C88D1A94C0A3007E4498 /* GameScene.swift */,
 				F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */,
 				F370C88F1A94C0A3007E4498 /* GameViewController.swift */,
 				F370C8B51A94D304007E4498 /* Game.swift */,
+				F370C8AF1A94C67A007E4498 /* Bot.swift */,
+				504699E61A988A840035D259 /* BotNode.swift */,
+				F370C8B11A94C68D007E4498 /* Action.swift */,
+				F370C8B31A94C69C007E4498 /* Death.swift */,
 				F370C8911A94C0A3007E4498 /* Main.storyboard */,
 				F370C8941A94C0A3007E4498 /* Images.xcassets */,
 				F370C8961A94C0A3007E4498 /* LaunchScreen.xib */,
-				F370C8AF1A94C67A007E4498 /* Bot.swift */,
-				504699E61A988A840035D259 /* BotNode.swift */,
 				BA9C63A71A982B1F0037C425 /* MyPlayground.playground */,
-				F370C8B11A94C68D007E4498 /* Action.swift */,
-				F370C8B31A94C69C007E4498 /* Death.swift */,
 				F370C8871A94C0A3007E4498 /* Supporting Files */,
 			);
 			path = DeathBot;
@@ -161,6 +165,16 @@
 				F34BD0061A94F1F1009A4743 /* femaleBot.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		F393B8221A95504400EE3241 /* DeathRate */ = {
+			isa = PBXGroup;
+			children = (
+				F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */,
+				F38F76BE1A95490C00FF8C04 /* DeathRateByAge.swift */,
+				F393B8231A95525600EE3241 /* DeathRateByGender.swift */,
+			);
+			name = DeathRate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F370C88E1A94C0A3007E4498 /* GameScene.swift in Sources */,
+				F38F76BF1A95490C00FF8C04 /* DeathRateByAge.swift in Sources */,
 				F34BD0091A94F45E009A4743 /* LocationSence.swift in Sources */,
 				F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */,
 				F370C8B01A94C67A007E4498 /* Bot.swift in Sources */,
@@ -273,6 +288,7 @@
 				F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */,
 				F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */,
 				F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */,
+				F393B8241A95525600EE3241 /* DeathRateByGender.swift in Sources */,
 				504699E71A988A840035D259 /* BotNode.swift in Sources */,
 				F370C8B21A94C68D007E4498 /* Action.swift in Sources */,
 				F370C8B41A94C69C007E4498 /* Death.swift in Sources */,

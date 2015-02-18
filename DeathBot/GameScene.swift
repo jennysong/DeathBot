@@ -10,7 +10,7 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let character = BotNode()
-    var Jenny = Bot(gender: "female", location: "BC")
+    var Jenny = Bot(gender: "Female", location: "BC")
     var happiness_label = SKLabelNode(fontNamed:"Chalkduster")
     var health_label = SKLabelNode(fontNamed:"Chalkduster")
     struct PhysicsCategory {
@@ -84,11 +84,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         health_label.text = "Health: \(Jenny.health)"
         addFood()
+        Jenny.doAction("eat")
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
-        println("hello")
-        // 1
+        
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {

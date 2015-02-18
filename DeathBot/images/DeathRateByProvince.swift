@@ -9,7 +9,7 @@
 import Foundation
 
 class DeathRateByProvince {
-    var province: String
+    private var province: String
     init(province: String){
         self.province = province
     }
