@@ -52,6 +52,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         
+        
         health_label.text = "Health: \(Jenny.health)"
         health_label.fontSize = 20
         health_label.position = CGPoint(x:0.2 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
