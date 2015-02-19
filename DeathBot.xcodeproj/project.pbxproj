@@ -313,6 +313,13 @@
 			isa = PBXGroup;
 			children = (
 				F37295B61A95C9C00062CCD7 /* Flag */,
+				BA9C64021A99359C0037C425 /* action_button_.png */,
+				BA9C64031A99359C0037C425 /* back_button_.png */,
+				BA9C64041A99359C0037C425 /* move_button_.png */,
+				BA9C64001A992EAD0037C425 /* background.png */,
+				BA9C63FE1A992E3D0037C425 /* move_button.png */,
+				BA9C63FA1A992D040037C425 /* action_button.png */,
+				BA9C63FB1A992D040037C425 /* back_button.png */,
 				BA9C63CC1A9904000037C425 /* food */,
 				BA9C63B21A98D2A00037C425 /* female-adult.png */,
 				BA9C63F81A9915ED0037C425 /* room.png */,
@@ -504,6 +511,7 @@
 				BA9C63E21A9904BE0037C425 /* apple.png in Resources */,
 				F37295CE1A95C9D40062CCD7 /* PE.png in Resources */,
 				BA9C63E61A9904BE0037C425 /* carrot.png in Resources */,
+				BA9C64061A99359C0037C425 /* back_button_.png in Resources */,
 				F37295C51A95C9D40062CCD7 /* YT.png in Resources */,
 				BA9C63C81A98D2A00037C425 /* male-teenager.png in Resources */,
 				BA9C63F91A9915ED0037C425 /* room.png in Resources */,
