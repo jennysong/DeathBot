@@ -72,7 +72,7 @@ class LocationScene: SKScene {
         botDataManager.save()
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = GameScene(size: self.size)
+            let scene = GameScene(size: self.size, bot: bot)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }

@@ -19,8 +19,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         static let Character : UInt32 = 0b1       // 1
         static let Food      : UInt32 = 0b10      // 2
     }
+    override init(size: CGSize) {
+        super.init(size: size)
+        didMoveToView()
+    }
     
-    override func didMoveToView(view: SKView) {
+    init(size: CGSize,bot: Bot) {
+        super.init(size: size)
+        Jenny = bot
+        didMoveToView()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func didMoveToView() {
         var GameSceneBG = SKSpriteNode(imageNamed: "room.png")
         GameSceneBG.size.height = self.size.height
         GameSceneBG.size.width = self.size.width
