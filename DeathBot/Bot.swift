@@ -28,7 +28,7 @@ class Bot {
         drinker = 0
         status = "toddler"
     }
-    
+    //
     
     func grow_month(){
         self.month++
