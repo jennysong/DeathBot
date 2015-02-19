@@ -6,7 +6,7 @@ let AGEDEATHPORTION = 0.1
 let GENDERDEATHPORTION = 0.01
 let LOCATIONDEATHPORTION = 0.1
 
-class Bot {
+class Bot : NSObject, NSCoding{
     var age: Int
     var month: Int
     var gender: String
@@ -16,7 +16,23 @@ class Bot {
     var smoker: Int
     var drinker: Int
     var status: String
-
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        //
+        
+    }
+    required init(coder aDecoder: NSCoder) {
+        //
+        month = 0
+        age = 0
+        gender = "Male"
+        location = "BC"
+        happiness = Int(arc4random()) % 50 + 50
+        health = Int(arc4random()) % 50 + 50
+        smoker = 0
+        drinker = 0
+        status = "toddler"
+    }
     
     init(gender: String, location: String) {
        
