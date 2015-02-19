@@ -62,7 +62,7 @@
 		F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F370C8961A94C0A3007E4498 /* LaunchScreen.xib */; };
 		F370C8A41A94C0A3007E4498 /* DeathBotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8A31A94C0A3007E4498 /* DeathBotTests.swift */; };
 		F370C8B01A94C67A007E4498 /* Bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8AF1A94C67A007E4498 /* Bot.swift */; };
-		F370C8B21A94C68D007E4498 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B11A94C68D007E4498 /* Action.swift */; };
+		F370C8B21A94C68D007E4498 /* ActionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B11A94C68D007E4498 /* ActionList.swift */; };
 		F370C8B41A94C69C007E4498 /* Death.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B31A94C69C007E4498 /* Death.swift */; };
 		F370C8B61A94D304007E4498 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B51A94D304007E4498 /* Game.swift */; };
 		F370C8B81A94D49C007E4498 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B71A94D49C007E4498 /* ActionButton.swift */; };
@@ -160,7 +160,7 @@
 		F370C8A21A94C0A3007E4498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F370C8A31A94C0A3007E4498 /* DeathBotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeathBotTests.swift; sourceTree = "<group>"; };
 		F370C8AF1A94C67A007E4498 /* Bot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bot.swift; sourceTree = "<group>"; };
-		F370C8B11A94C68D007E4498 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		F370C8B11A94C68D007E4498 /* ActionList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionList.swift; sourceTree = "<group>"; };
 		F370C8B31A94C69C007E4498 /* Death.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Death.swift; sourceTree = "<group>"; };
 		F370C8B51A94D304007E4498 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F370C8B71A94D49C007E4498 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
@@ -263,8 +263,8 @@
 				BA9C63F51A9912890037C425 /* sounds */,
 				F370C8BB1A94D6D8007E4498 /* images */,
 				F393B8221A95504400EE3241 /* DeathRate */,
+				F39166C11A95E80100BEFC90 /* Button */,
 				F370C8891A94C0A3007E4498 /* AppDelegate.swift */,
-				F370C8B71A94D49C007E4498 /* ActionButton.swift */,
 				F34BD0081A94F45E009A4743 /* LocationScene.swift */,
 				F38668561A94EC2E00C1FF1D /* NewGameScene.swift */,
 				F370C88D1A94C0A3007E4498 /* GameScene.swift */,
@@ -275,7 +275,7 @@
 				F370C8AF1A94C67A007E4498 /* Bot.swift */,
 				504699E61A988A840035D259 /* BotNode.swift */,
 				BA9C63CA1A98D76E0037C425 /* FoodNode.swift */,
-				F370C8B11A94C68D007E4498 /* Action.swift */,
+				F370C8B11A94C68D007E4498 /* ActionList.swift */,
 				F370C8B31A94C69C007E4498 /* Death.swift */,
 				F370C8911A94C0A3007E4498 /* Main.storyboard */,
 				F370C8941A94C0A3007E4498 /* Images.xcassets */,
@@ -371,6 +371,14 @@
 				F37295C31A95C9D40062CCD7 /* SK.png */,
 			);
 			name = Flag;
+			sourceTree = "<group>";
+		};
+		F39166C11A95E80100BEFC90 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				F370C8B71A94D49C007E4498 /* ActionButton.swift */,
+			);
+			name = Button;
 			sourceTree = "<group>";
 		};
 		F393B8221A95504400EE3241 /* DeathRate */ = {
@@ -554,7 +562,7 @@
 				F37295B41A958EA80062CCD7 /* BotDataManager.swift in Sources */,
 				F393B8241A95525600EE3241 /* DeathRateByGender.swift in Sources */,
 				504699E71A988A840035D259 /* BotNode.swift in Sources */,
-				F370C8B21A94C68D007E4498 /* Action.swift in Sources */,
+				F370C8B21A94C68D007E4498 /* ActionList.swift in Sources */,
 				F370C8B41A94C69C007E4498 /* Death.swift in Sources */,
 				F370C88A1A94C0A3007E4498 /* AppDelegate.swift in Sources */,
 				F370C8B81A94D49C007E4498 /* ActionButton.swift in Sources */,

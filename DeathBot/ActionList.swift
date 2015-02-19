@@ -7,4 +7,12 @@
 //
 
 import Foundation
+import SpriteKit
 
+class ActionList {
+    var actions: Array<String> = []
+    init(){
+        
+    }
+    
+}
