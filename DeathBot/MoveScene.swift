@@ -25,12 +25,12 @@ class MoveScene: SKScene {
         addChild(locationBG)
         */
         
-        var backButton = SKSpriteNode(imageNamed: "backButton")
+        var backButton = SKSpriteNode(imageNamed: "back_button")
         backButton.size.height *= ratio
         backButton.size.width *= ratio
         backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.95)
         backButton.zPosition = 10
-        var backButton_ = SKSpriteNode(imageNamed: "backButton_")
+        var backButton_ = SKSpriteNode(imageNamed: "back_button_")
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
         backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.95)
@@ -49,8 +49,8 @@ class MoveScene: SKScene {
         addLocation("AB", x: self.size.width*(0.8), y: self.size.height*0.5)
         addLocation("NL", x: self.size.width*(0.2), y: self.size.height*0.8)
         addLocation("NT", x: self.size.width*(0.4), y: self.size.height*0.8)
-        addLocation("YT", x: self.size.width*(0.8), y: self.size.height*0.8)
-        addLocation("NU", x: self.size.width*(0.9), y: self.size.height*0.8)
+        addLocation("YT", x: self.size.width*(0.6), y: self.size.height*0.8)
+        addLocation("NU", x: self.size.width*(0.8), y: self.size.height*0.8)
         
         
         
@@ -88,8 +88,10 @@ class MoveScene: SKScene {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
-            let touchNode = nodeAtPoint(location) as SKSpriteNode
-            GoToGameScene(touchNode.name!)
+            let touchNode = nodeAtPoint(location)
+            if(touchNode.name != nil){
+                GoToGameScene(touchNode.name!)
+            }
         }
         
     }
