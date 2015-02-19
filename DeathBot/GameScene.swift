@@ -247,8 +247,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func checkLife() {
         if (Jenny.health <= 0 || Jenny.happiness <= 0 || Jenny.age >= 100) {
-            println("DIE")
-            character.removeFromParent()
+            runAction(SKAction.sequence([SKAction.runBlock() {
+                let revel = SKTransition.flipHorizontalWithDuration(0.5)
+                let scene = GameOverScene(size: self.size)
+                self.view?.presentScene(scene, transition: revel)
+                }]))
         }
         else if (Jenny.health >= 100) {
             println("Grow")
