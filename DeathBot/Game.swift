@@ -15,12 +15,12 @@ import AVFoundation
 
 class Game: SKScene {
     var botDataManager = BotDataManager()
-    
+    var bot:Bot
     
     override init(size: CGSize) {
+        bot = botDataManager.get()
         super.init(size: size)
-        var bot = botDataManager.get()
-        println("\(bot.gender),\(bot.location)")
+        println("Hi =\(bot.age) \(bot.gender),\(bot.location)")
         let ratio = 1/self.size.height*195
         
         var background = SKSpriteNode(imageNamed: "background")
@@ -91,7 +91,7 @@ class Game: SKScene {
     func changeSceneToContinueGame(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = GameScene(size: self.size)
+            let scene = GameScene(size: self.size,bot: self.bot)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }

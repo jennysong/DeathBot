@@ -19,19 +19,26 @@ class Bot : NSObject, NSCoding{
     
     func encodeWithCoder(aCoder: NSCoder) {
         //
-        
+        aCoder.encodeObject(age, forKey: "age")
+        aCoder.encodeObject(gender, forKey: "gender")
+        aCoder.encodeObject(location, forKey: "location")
+        aCoder.encodeObject(happiness, forKey: "happiness")
+        aCoder.encodeObject(health, forKey: "health")
+        aCoder.encodeObject(smoker, forKey: "smoker")
+        aCoder.encodeObject(drinker, forKey: "drinker")
+        aCoder.encodeObject(status, forKey: "status")
     }
     required init(coder aDecoder: NSCoder) {
         //
         //month = 0
-        age = 0
-        gender = "Male"
-        location = "BC"
-        happiness = Int(arc4random()) % 50 + 50
-        health = Int(arc4random()) % 50 + 50
-        smoker = 0
-        drinker = 0
-        status = "toddler"
+        self.age = aDecoder.decodeObjectForKey("age")! as Int
+        gender = aDecoder.decodeObjectForKey("gender")! as String
+        location = aDecoder.decodeObjectForKey("location")! as String
+        happiness = aDecoder.decodeObjectForKey("happiness")! as Int
+        health = aDecoder.decodeObjectForKey("health")! as Int
+        smoker = aDecoder.decodeObjectForKey("smoker")! as Int
+        drinker = aDecoder.decodeObjectForKey("drinker")! as Int
+        status = aDecoder.decodeObjectForKey("status")! as String
     }
     
     init(gender: String, location: String) {

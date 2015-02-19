@@ -9,7 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    
+    var botDataManager = BotDataManager()
     var Jenny = Bot(gender: "Female", location: "BC")
     var character = BotNode()
     var happiness_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
@@ -220,6 +220,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         age_label.text = "Age: \(Jenny.age)"
         var characScale = CGFloat(Double(Jenny.age) * 0.005 + 0.1)
         character.setScale(characScale)
+        botDataManager.addNewBot(Jenny)
+        botDataManager.save()
     }
     
 

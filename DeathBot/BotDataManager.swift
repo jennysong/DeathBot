@@ -16,7 +16,7 @@ class BotDataManager {
         // load existing high scores or set up an empty array
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0] as String
-        let path = documentsDirectory.stringByAppendingPathComponent("BotData.plist")
+        let path = documentsDirectory.stringByAppendingPathComponent("Bot.plist")
         let fileManager = NSFileManager.defaultManager()
         
         // check if file exists
@@ -32,6 +32,7 @@ class BotDataManager {
             // if so, unarchive it into an AnyObject, and then convert to an array of HighScores, if possible
             var botArray: AnyObject? = NSKeyedUnarchiver.unarchiveObjectWithData(rawData);
             self.bots = botArray as? [BotData] ?? [];
+            println(self.bots.isEmpty)
         }
     }
     
@@ -40,15 +41,15 @@ class BotDataManager {
         let saveData = NSKeyedArchiver.archivedDataWithRootObject(self.bots);
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray;
         let documentsDirectory = paths.objectAtIndex(0) as NSString;
-        let path = documentsDirectory.stringByAppendingPathComponent("BotData.plist");
-        
+        let path = documentsDirectory.stringByAppendingPathComponent("Bot.plist");
         saveData.writeToFile(path, atomically: true);
+        
     }
     
     // a simple function to add a new high score, to be called from your game logic
     // note that this doesn't sort or filter the scores in any way
     func addNewBot(newBot:Bot) {
-        let newBotData = BotData(bot: newBot, dateOfScore: NSDate());
+        let newBotData = BotData(bot: newBot);
         self.bots.append(newBotData);
         self.save();
     }
@@ -58,6 +59,7 @@ class BotDataManager {
         
         if !bots.isEmpty {
             bot = bots.removeLast().bot
+            println("hello \(bot.age)")
         }
         return bot
     }
