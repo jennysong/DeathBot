@@ -45,8 +45,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didMoveToView() {
-        println("\(Jenny.gender) \(Jenny.location)")
-        
         var GameSceneBG = SKSpriteNode(imageNamed: "background.png")
         GameSceneBG.size.height = self.size.height
         GameSceneBG.size.width = self.size.width
@@ -57,10 +55,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
 
         
-        updateStatus()
+        //updateStatus()
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         character.zPosition = 10
-        
+        var characScale = CGFloat(Double(Jenny.age) * 0.005 + 0.1)
+        character.setScale(characScale)
         character.physicsBody = SKPhysicsBody(rectangleOfSize: character.size)
         character.physicsBody?.dynamic = true
         character.physicsBody?.categoryBitMask = PhysicsCategory.Character
@@ -76,7 +75,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         happiness_label.fontSize = 20
         happiness_label.fontColor = SKColor.blackColor()
         happiness_label.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
-        happiness_label.zPosition = 5
+        happiness_label.zPosition = 20
         addChild(happiness_label)
         
         
@@ -84,7 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         health_label.fontSize = 20
         health_label.fontColor = SKColor.blackColor()
         health_label.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
-        health_label.zPosition = 5
+        health_label.zPosition = 20
         addChild(health_label)
 
         //age_label.text = "age: \(Jenny.age)"
@@ -147,8 +146,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func gotfood(character:SKNode, food:FoodNode) {
         self.Jenny.take(food.pickedFood)
-        println("Jenny eats \(food.pickedFood)")
-        println("health: \(Jenny.health) happy: \(Jenny.happiness) smoke: \(Jenny.smoker) drink: \(Jenny.drinker)")
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
         food.removeFromParent()
@@ -218,6 +215,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     func updateStatus(){
         checkLife()
+        updateCharacter()
+        
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         health_label.text = "Health: \(Jenny.health)"
         age_label.text = "Age: \(Jenny.age)"
@@ -227,6 +226,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         botDataManager.save()
     }
     
+    func updateCharacter(){
+        var x = character.position.x
+        var y = character.position.y
+        self.character.removeFromParent()
+        character = BotNode(bot: Jenny)
+        character.position = CGPoint(x: x, y: y)
+        character.zPosition = 10
+        
+        character.physicsBody = SKPhysicsBody(rectangleOfSize: character.size)
+        character.physicsBody?.dynamic = true
+        character.physicsBody?.categoryBitMask = PhysicsCategory.Character
+        character.physicsBody?.contactTestBitMask = PhysicsCategory.Food
+        character.physicsBody?.collisionBitMask = PhysicsCategory.None
+        character.physicsBody?.affectedByGravity = false
+        character.physicsBody?.usesPreciseCollisionDetection = true
+        addChild(character)
+    }
 
     
     func checkLife() {
@@ -239,13 +255,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             Jenny.grow_age()
             Jenny.health = 50
             Jenny.happiness = 50
-            
         }
         
     }
     
     func goBackToStart() {
-        println("go home")
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = Game(size: self.size)
@@ -259,7 +273,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func getMoveList() {
-        println("get moveList")
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = MoveScene(size: self.size, bot: self.Jenny)
