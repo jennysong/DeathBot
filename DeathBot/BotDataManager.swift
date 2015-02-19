@@ -53,4 +53,13 @@ class BotDataManager {
         self.save();
     }
     
+    func get() -> Bot {
+        var bot = Bot(gender: "Female", location: "BC")
+        
+        if !bots.isEmpty {
+            bot = bots.removeLast().bot
+        }
+        return bot
+    }
+    
 }

@@ -10,10 +10,11 @@ import Foundation
 import SpriteKit
 
 class LocationScene: SKScene {
-    
-    override init(size: CGSize) {
+    var botDataManager = BotDataManager()
+    var gender: String?
+    init(size: CGSize, gender: String) {
         super.init(size: size)
-        
+        self.gender = gender
         let ratio = 1/self.size.height*195
         
         
@@ -49,7 +50,7 @@ class LocationScene: SKScene {
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)
         
-        let bcB:ActionButton = ActionButton(defaultButtonImage: bc, activeButtonImage: bc_, buttonAction: goToGameScene)
+        let bcB:ActionButton = ActionButton(defaultButtonImage: bc, activeButtonImage: bc_, buttonAction: pickBCGoToGameScene)
         addChild(bcB)
         
     }
@@ -65,7 +66,10 @@ class LocationScene: SKScene {
             }]))
     }
     
-    func goToGameScene(){
+    func pickBCGoToGameScene(){
+        var bot = Bot(gender: self.gender!, location: "BC")
+        botDataManager.addNewBot(bot)
+        botDataManager.save()
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameScene(size: self.size)

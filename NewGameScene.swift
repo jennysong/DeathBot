@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 class NewGameScene: SKScene {
-    
+    var gender: String?
     override init(size: CGSize) {
         super.init(size: size)
         
@@ -60,10 +60,10 @@ class NewGameScene: SKScene {
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)
         
-        let maleB:ActionButton = ActionButton(defaultButtonImage: maleBot, activeButtonImage: maleBot_, buttonAction: goLocationSence)
+        let maleB:ActionButton = ActionButton(defaultButtonImage: maleBot, activeButtonImage: maleBot_, buttonAction: pickedMaleGoToLocationSence)
         addChild(maleB)
         
-        let femaleB:ActionButton = ActionButton(defaultButtonImage: femaleBot, activeButtonImage: femaleBot_, buttonAction: goLocationSence)
+        let femaleB:ActionButton = ActionButton(defaultButtonImage: femaleBot, activeButtonImage: femaleBot_, buttonAction: pickedFemaleGoToLocationSence)
         addChild(femaleB)
         
     }
@@ -79,10 +79,21 @@ class NewGameScene: SKScene {
             }]))
     }
     
-    func goLocationSence(){
+    func pickedMaleGoToLocationSence(){
+        self.gender = "Male"
+        println("\(self.gender!) is seleted")
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = LocationScene(size: self.size)
+            let scene = LocationScene(size: self.size, gender: self.gender!)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
+    func pickedFemaleGoToLocationSence(){
+        self.gender = "Female"
+        println("\(self.gender!) is seleted")
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = LocationScene(size: self.size, gender: self.gender!)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }

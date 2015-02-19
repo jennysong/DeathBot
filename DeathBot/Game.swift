@@ -14,8 +14,13 @@ import AVFoundation
 
 
 class Game: SKScene {
+    var botDataManager = BotDataManager()
+    
+    
     override init(size: CGSize) {
         super.init(size: size)
+        var bot = botDataManager.get()
+        println("\(bot.gender),\(bot.location)")
         let ratio = 1/self.size.height*195
         
         var background = SKSpriteNode(imageNamed: "background")
