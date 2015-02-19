@@ -43,16 +43,15 @@ class MoveScene: SKScene {
         addLocation("NS", x: self.size.width*(0.50), y: self.size.height*0.2)
         addLocation("NB", x: self.size.width*(0.68), y: self.size.height*0.2)
         addLocation("MB", x: self.size.width*(0.86), y: self.size.height*0.2)
-        addLocation("BC", x: self.size.width*(0.14), y: self.size.height*0.5)
-        addLocation("PE", x: self.size.width*(0.32), y: self.size.height*0.5)
-        addLocation("SK", x: self.size.width*(0.50), y: self.size.height*0.5)
-        addLocation("PE", x: self.size.width*(0.68), y: self.size.height*0.5)
-        addLocation("SK", x: self.size.width*(0.86), y: self.size.height*0.5)
-        addLocation("AB", x: self.size.width*(0.14), y: self.size.height*0.8)
-        addLocation("NL", x: self.size.width*(0.32), y: self.size.height*0.8)
-        addLocation("NT", x: self.size.width*(0.50), y: self.size.height*0.8)
-        addLocation("YT", x: self.size.width*(0.68), y: self.size.height*0.8)
-        addLocation("NU", x: self.size.width*(0.86), y: self.size.height*0.8)
+        addLocation("BC", x: self.size.width*(0.2), y: self.size.height*0.5)
+        addLocation("PE", x: self.size.width*(0.4), y: self.size.height*0.5)
+        addLocation("SK", x: self.size.width*(0.6), y: self.size.height*0.5)
+        addLocation("AB", x: self.size.width*(0.8), y: self.size.height*0.5)
+        addLocation("NL", x: self.size.width*(0.2), y: self.size.height*0.8)
+        addLocation("NT", x: self.size.width*(0.4), y: self.size.height*0.8)
+        addLocation("YT", x: self.size.width*(0.8), y: self.size.height*0.8)
+        addLocation("NU", x: self.size.width*(0.9), y: self.size.height*0.8)
+        
         
         
         
@@ -72,7 +71,6 @@ class MoveScene: SKScene {
     func addLocation(location: String,x: CGFloat, y: CGFloat){
         let ratio = 1/self.size.height*195
         var lo = SKSpriteNode(imageNamed: location)
-        lo.setScale(0.30)
         lo.name = location
         lo.position = CGPoint(x: x, y: y)
         lo.zPosition = 10
