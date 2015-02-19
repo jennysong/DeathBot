@@ -9,7 +9,7 @@
 import Foundation
 import SpriteKit
 
-class LocationSence: SKScene {
+class LocationScene: SKScene {
     
     override init(size: CGSize) {
         super.init(size: size)

@@ -26,7 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         GameSceneBG.size.width = self.size.width
         GameSceneBG.anchorPoint = CGPoint(x:0, y:0)
         GameSceneBG.zPosition = 1
-        addChild(GameSceneBG)
+        //addChild(GameSceneBG)
         
         character.setScale(0.3)
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
@@ -50,30 +50,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(happiness_label)
         
         
-        
-        
         health_label.text = "Health: \(Jenny.health)"
         health_label.fontSize = 20
         health_label.position = CGPoint(x:0.2 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         health_label.zPosition = 5
         addChild(health_label)
         
-        addFood()
-        addFood()
-        addFood()
-
+        runAction(SKAction.repeatActionForever(
+            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(Int(arc4random()%5))])
+            ))
     }
     
+    
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
             let actionMove = SKAction.moveTo(location, duration: NSTimeInterval(CGFloat(1.0)))
             character.runAction(actionMove)
-            
-
         }
     }
+    
+    
     func gotfood(character:SKNode, food:SKSpriteNode) {
         food.removeFromParent()
         Jenny.health -= 5
@@ -111,13 +108,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }*/
     
     func addFood(){
-        //let food = SKSpriteNode(imageNamed:"pizza.png")
-        let food = SKSpriteNode(imageNamed:"Character.png")
-        food.xScale = 0.3
-        food.yScale = 0.3
+        let food = SKSpriteNode(imageNamed:"pizza.png")
+        food.xScale = 0.1
+        food.yScale = 0.1
         var randomX = Double(arc4random()%100) / 100
         var randomY = Double(arc4random()%100) / 100
-        food.position = CGPoint(x:Double(self.frame.width) * randomX, y:Double(self.frame.height) * randomY)
+        food.position = CGPoint(x:(Double(self.frame.width) - Double(food.size.width)) * randomX + Double(food.size.width/2), y:(Double(self.frame.height) - Double(food.size.height)) * randomY + Double(food.size.height/2))
         food.zPosition = 1
         food.physicsBody = SKPhysicsBody(circleOfRadius: food.size.width/2)
         food.physicsBody?.dynamic = true

@@ -82,7 +82,7 @@ class NewGameScene: SKScene {
     func goLocationSence(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = LocationSence(size: self.size)
+            let scene = LocationScene(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
