@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		504699E71A988A840035D259 /* BotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504699E61A988A840035D259 /* BotNode.swift */; };
+		BA22B4511A9965DC00E79694 /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B44F1A9965DC00E79694 /* female.png */; };
+		BA22B4521A9965DC00E79694 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4501A9965DC00E79694 /* male.png */; };
+		BA22B4551A99688E00E79694 /* female_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4531A99688E00E79694 /* female_.png */; };
+		BA22B4561A99688E00E79694 /* male_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4541A99688E00E79694 /* male_.png */; };
 		BA9C63AB1A9846970037C425 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63AA1A9846970037C425 /* character.png */; };
 		BA9C63BE1A98D2A00037C425 /* female-adult.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B21A98D2A00037C425 /* female-adult.png */; };
 		BA9C63BF1A98D2A00037C425 /* female-child.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B31A98D2A00037C425 /* female-child.png */; };
@@ -100,6 +104,10 @@
 
 /* Begin PBXFileReference section */
 		504699E61A988A840035D259 /* BotNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNode.swift; sourceTree = "<group>"; };
+		BA22B44F1A9965DC00E79694 /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female.png; sourceTree = "<group>"; };
+		BA22B4501A9965DC00E79694 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
+		BA22B4531A99688E00E79694 /* female_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_.png; sourceTree = "<group>"; };
+		BA22B4541A99688E00E79694 /* male_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_.png; sourceTree = "<group>"; };
 		BA9C63A71A982B1F0037C425 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BA9C63AA1A9846970037C425 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
 		BA9C63B21A98D2A00037C425 /* female-adult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female-adult.png"; sourceTree = "<group>"; };
@@ -315,6 +323,10 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA22B4531A99688E00E79694 /* female_.png */,
+				BA22B4541A99688E00E79694 /* male_.png */,
+				BA22B44F1A9965DC00E79694 /* female.png */,
+				BA22B4501A9965DC00E79694 /* male.png */,
 				F37295B61A95C9C00062CCD7 /* Flag */,
 				BA9C64021A99359C0037C425 /* action_button_.png */,
 				BA9C64031A99359C0037C425 /* back_button_.png */,
@@ -472,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */,
+				BA22B4521A9965DC00E79694 /* male.png in Resources */,
 				BA9C63EA1A9904BE0037C425 /* cigarette.png in Resources */,
 				BA9C64011A992EAD0037C425 /* background.png in Resources */,
 				BA9C63AB1A9846970037C425 /* character.png in Resources */,
@@ -487,6 +500,7 @@
 				BA9C63C51A98D2A00037C425 /* male-child.png in Resources */,
 				BA9C63EC1A9904BE0037C425 /* drug.png in Resources */,
 				BA9C63BE1A98D2A00037C425 /* female-adult.png in Resources */,
+				BA22B4551A99688E00E79694 /* female_.png in Resources */,
 				BA9C63EF1A9904BE0037C425 /* grape.png in Resources */,
 				BA9C63C01A98D2A00037C425 /* female-golden-oldie.png in Resources */,
 				BA9C63E41A9904BE0037C425 /* bread.png in Resources */,
@@ -505,6 +519,7 @@
 				BA9C63FD1A992D040037C425 /* back_button.png in Resources */,
 				BA9C63C91A98D2A00037C425 /* male-toddler.png in Resources */,
 				F370C8951A94C0A3007E4498 /* Images.xcassets in Resources */,
+				BA22B4561A99688E00E79694 /* male_.png in Resources */,
 				BA9C63F41A9904BE0037C425 /* softdrink.png in Resources */,
 				BA9C64071A99359C0037C425 /* move_button_.png in Resources */,
 				BA9C63E91A9904BE0037C425 /* chicken.png in Resources */,
@@ -518,6 +533,7 @@
 				BA9C63BF1A98D2A00037C425 /* female-child.png in Resources */,
 				BA9C64051A99359C0037C425 /* action_button_.png in Resources */,
 				BA9C63C71A98D2A00037C425 /* male-senior.png in Resources */,
+				BA22B4511A9965DC00E79694 /* female.png in Resources */,
 				BA9C63F11A9904BE0037C425 /* milk.png in Resources */,
 				BA9C63E21A9904BE0037C425 /* apple.png in Resources */,
 				F37295CE1A95C9D40062CCD7 /* PE.png in Resources */,

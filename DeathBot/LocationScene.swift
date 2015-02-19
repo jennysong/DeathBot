@@ -78,7 +78,7 @@ class LocationScene: SKScene {
         lo.position = CGPoint(x: x, y: y)
         lo.zPosition = 10
         addChild(lo)
-        var lo_label = SKLabelNode(fontNamed:"Chalkduster")
+        var lo_label = SKLabelNode(fontNamed:"AvenirNext")
         
         lo_label.text = location
         lo_label.fontSize = 20

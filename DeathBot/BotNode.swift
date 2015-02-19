@@ -24,13 +24,13 @@ class BotNode: SKNode {
         addChild(bodyNode)
     }
     
-    /*init(bot: Bot){
+    init(bot: Bot){
         bodyNode = SKSpriteNode(imageNamed:"\(bot.gender)-\(bot.status).png")
         size = bodyNode.size
         super.init()
         
         addChild(bodyNode)
-    }*/
+    }
     
     override func setScale(scale: CGFloat) {
         super.setScale(scale)
