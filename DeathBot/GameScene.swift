@@ -56,10 +56,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         health_label.zPosition = 5
         addChild(health_label)
         
-        
-
         runAction(SKAction.repeatActionForever(
-            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(1)])
+            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(NSTimeInterval(arc4random()%5+1))])
             ))
     }
     
@@ -67,7 +65,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
-            let actionMove = SKAction.moveTo(location, duration: NSTimeInterval(CGFloat(1.0)))
+            var time = sqrt(pow(Double(location.x - character.position.x),2.0) + pow(Double(location.y - character.position.y),2.0))/300
+            let actionMove = SKAction.moveTo(location, duration: NSTimeInterval(CGFloat(time)))
             character.runAction(actionMove)
         }
     }
@@ -78,6 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println("Jenny eats \(food.pickedFood)")
         println("health: \(Jenny.health) happy: \(Jenny.happiness) smoke: \(Jenny.smoker) drink: \(Jenny.drinker)")
         Jenny.doAction("eat")
+        updateStatus()
         food.removeFromParent()
 
     }
@@ -121,6 +121,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         addChild(food)
 
+    }
+    
+    func updateStatus(){
+        happiness_label.text = "Happiness: \(Jenny.happiness)"
+        health_label.text = "Health: \(Jenny.health)"
     }
     
 }
