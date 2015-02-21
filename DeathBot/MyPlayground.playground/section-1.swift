@@ -3,7 +3,8 @@
 import UIKit
 
 var str = "Hello, playground"
-var a = Int(arc4random()) % 50 + 50
-
+var a: Int = 119/12
 println(a)
+
+
 

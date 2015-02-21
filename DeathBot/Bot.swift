@@ -8,6 +8,7 @@ let LOCATIONDEATHPORTION = 0.1
 
 class Bot {
     var age: Int
+    var month: Int
     var gender: String
     var location: String
     var happiness: Int
@@ -19,6 +20,7 @@ class Bot {
     
     init(gender: String, location: String) {
        
+        month = 0
         age = 0
         self.gender = gender
         self.location = location
@@ -28,23 +30,23 @@ class Bot {
         drinker = 0
         status = "toddler"
     }
-    //
     
     func grow_month(){
         self.month++
-        if month >= 36 && month < 156 {
+        age = Int(month/12)
+        if age >= 3 && age < 13 {
             status = "child"
         }
-        else if month >= 156 && month < 240 {
+        else if age >= 13 && age < 20 {
             status = "teen"
         }
-        else if month >= 240 && month < 660 {
+        else if age >= 20 && age < 55 {
             status = "adult"
         }
-        else if month >= 660 && month < 960 {
+        else if age >= 55 && age < 80 {
             status = "senior"
         }
-        else if month >= 960 {
+        else if age >= 80 {
             status = "oldie"
         }
     }

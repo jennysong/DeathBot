@@ -57,7 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(health_label)
         
         runAction(SKAction.repeatActionForever(
-            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(Int(arc4random()%5))])
+            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(1)])
             ))
     }
     
