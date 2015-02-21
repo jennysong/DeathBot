@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		504699E71A988A840035D259 /* BotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504699E61A988A840035D259 /* BotNode.swift */; };
 		BA9C63AB1A9846970037C425 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63AA1A9846970037C425 /* character.png */; };
+		BA9C63B11A98BAC90037C425 /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B01A98BAC90037C425 /* pizza.png */; };
 		F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0041A94F1A7009A4743 /* maleBot.png */; };
 		F34BD0091A94F45E009A4743 /* LocationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD0081A94F45E009A4743 /* LocationScene.swift */; };
 		F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */; };
@@ -42,6 +43,7 @@
 		504699E61A988A840035D259 /* BotNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNode.swift; sourceTree = "<group>"; };
 		BA9C63A71A982B1F0037C425 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BA9C63AA1A9846970037C425 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
+		BA9C63B01A98BAC90037C425 /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza.png; sourceTree = "<group>"; };
 		F34BD0041A94F1A7009A4743 /* maleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleBot.png; sourceTree = "<group>"; };
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
 		F34BD0081A94F45E009A4743 /* LocationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationScene.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA9C63B01A98BAC90037C425 /* pizza.png */,
 				BA9C63AA1A9846970037C425 /* character.png */,
 				F34BD0041A94F1A7009A4743 /* maleBot.png */,
 				F34BD0061A94F1F1009A4743 /* femaleBot.png */,
@@ -245,6 +248,7 @@
 			files = (
 				F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */,
 				BA9C63AB1A9846970037C425 /* character.png in Resources */,
+				BA9C63B11A98BAC90037C425 /* pizza.png in Resources */,
 				F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */,
 				F370C8951A94C0A3007E4498 /* Images.xcassets in Resources */,
 				F370C8931A94C0A3007E4498 /* Main.storyboard in Resources */,

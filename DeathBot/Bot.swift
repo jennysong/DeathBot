@@ -119,10 +119,24 @@ class Bot {
     
     func doAction(action: String){
         //do action.
+        calculateDeathRate(action)
+        
+        //TO DO
     }
     
+    func calculateDeathRate(action: String) -> Double{
+        var result: Double = 0.0
+        
+        result += getActionDeathRate(action) * ACTIONDEATHPORTION
+        //result += ... * AGEDEATHPORTION
+        //result += ... * GENDERDEATHPORTION
+        result += DeathRateByProvince(province: self.location).rate() * LOCATIONDEATHPORTION
+        return result
+    }
     
-    
+    func getActionDeathRate(action: String)->Double{
+        return 0.0
+    }
 }
 
 
