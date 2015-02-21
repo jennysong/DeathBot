@@ -11,8 +11,16 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let character = BotNode()
     var Jenny = Bot(gender: "Female", location: "BC")
-    var happiness_label = SKLabelNode(fontNamed:"Chalkduster")
-    var health_label = SKLabelNode(fontNamed:"Chalkduster")
+    var happiness_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
+    var health_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
+    var age_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
+    var back_button = SKSpriteNode(imageNamed: "back_button.png")
+    var action_button = SKSpriteNode(imageNamed: "action_button.png")
+    var move_button = SKSpriteNode(imageNamed: "move_button.png")
+    var back_button_ = SKSpriteNode(imageNamed: "back_button_.png")
+    var action_button_ = SKSpriteNode(imageNamed: "action_button_.png")
+    var move_button_ = SKSpriteNode(imageNamed: "move_button_.png")
+    
     struct PhysicsCategory {
         static let None      : UInt32 = 0
         static let All       : UInt32 = UInt32.max
@@ -35,7 +43,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didMoveToView() {
-        var GameSceneBG = SKSpriteNode(imageNamed: "room.png")
+        var GameSceneBG = SKSpriteNode(imageNamed: "background.png")
         GameSceneBG.size.height = self.size.height
         GameSceneBG.size.width = self.size.width
         GameSceneBG.anchorPoint = CGPoint(x:0, y:0)
@@ -59,16 +67,60 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         happiness_label.fontSize = 20
-        happiness_label.position = CGPoint(x:0.7 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
+        happiness_label.fontColor = SKColor.blackColor()
+        happiness_label.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         happiness_label.zPosition = 5
         addChild(happiness_label)
         
         
         health_label.text = "Health: \(Jenny.health)"
         health_label.fontSize = 20
-        health_label.position = CGPoint(x:0.2 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
+        health_label.fontColor = SKColor.blackColor()
+        health_label.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         health_label.zPosition = 5
         addChild(health_label)
+
+        age_label.text = "Month: \(Jenny.month)"
+        age_label.fontSize = 20
+        age_label.fontColor = SKColor.blackColor()
+        age_label.position = CGPoint(x:0.2 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
+        age_label.zPosition = 5
+        addChild(age_label)
+        
+        back_button.zPosition = 5
+        back_button.xScale = 0.5
+        back_button.yScale = 0.5
+        back_button.position = CGPoint(x:0.9 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        back_button_.zPosition = 5
+        back_button_.xScale = 0.5
+        back_button_.yScale = 0.5
+        back_button_.position = CGPoint(x:0.9 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        let goBack: ActionButton = ActionButton(defaultButtonImage: back_button, activeButtonImage: back_button_, buttonAction: goBackToStart)
+        addChild(goBack)
+        
+        action_button.zPosition = 5
+        action_button.xScale = 0.5
+        action_button.yScale = 0.5
+        action_button.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        action_button_.zPosition = 5
+        action_button_.xScale = 0.5
+        action_button_.yScale = 0.5
+        action_button_.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        let actionList:ActionButton = ActionButton(defaultButtonImage: action_button, activeButtonImage: action_button_, buttonAction: getActionList)
+        addChild(actionList)
+        
+        move_button.zPosition = 5
+        move_button.xScale = 0.5
+        move_button.yScale = 0.5
+        move_button.position = CGPoint(x:0.7 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        move_button_.zPosition = 5
+        move_button_.xScale = 0.5
+        move_button_.yScale = 0.5
+        move_button_.position = CGPoint(x:0.7 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        let moveList:ActionButton = ActionButton(defaultButtonImage: move_button, activeButtonImage: move_button_, buttonAction: getMoveList)
+        addChild(moveList)
+        
+        
         
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(randomTime())])
@@ -94,6 +146,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
         food.removeFromParent()
+        
 
     }
     
@@ -155,11 +208,41 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func updateStatus(){
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         health_label.text = "Health: \(Jenny.health)"
+        age_label.text = "Month: \(Jenny.month)"
+        checkLife()
     }
     
     func randomTime() -> NSTimeInterval {  //1 to 3 sec
-        return NSTimeInterval(arc4random()%3+1)
+        return NSTimeInterval(arc4random()%3+2)
     }
     
+    func checkLife() {
+        if (Jenny.health <= 0 || Jenny.happiness <= 0) {
+            println("DIE")
+            character.removeFromParent()
+        }
+        else if (Jenny.health >= 100) {
+            println("Grow")
+            Jenny.grow_month()
+            Jenny.health = 50
+            Jenny.happiness = 50
+            
+        }
+        
+    }
     
+    func goBackToStart() {
+        println("go home")
+        // go home.
+    }
+    
+    func getActionList() {
+        println("get actionlist")
+        //get actionlist
+    }
+    
+    func getMoveList() {
+        println("get moveList")
+        //get moveList
+    }
 }

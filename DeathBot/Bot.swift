@@ -73,7 +73,7 @@ class Bot : NSObject, NSCoding{
         switch food {
             case "burger":
                 self.happiness += 5
-                self.health -= 5
+                self.health -= 10
             case "cherry":
                 self.happiness += 5
                 self.health += 5
@@ -106,7 +106,7 @@ class Bot : NSObject, NSCoding{
                 self.health += 5
             case "softdrink":
                 self.happiness += 5
-                self.health -= 5
+                self.health -= 10
             case "lobster":
                 self.happiness += 5
                 self.health += 5
@@ -118,12 +118,12 @@ class Bot : NSObject, NSCoding{
                 self.health += 5
             case "cigarette":
                 self.happiness += 5
-                self.health -= 5
-                self.smoker += 10
+                self.health -= 10
+                self.smoker += 20
             case "alcohol":
                 self.happiness += 5
-                self.health -= 5
-                self.drinker += 10
+                self.health -= 10
+                self.drinker += 20
             case "donut":
                 self.happiness += 5
                 self.health -= 5
