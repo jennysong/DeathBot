@@ -8,7 +8,7 @@ let LOCATIONDEATHPORTION = 0.1
 
 class Bot : NSObject, NSCoding{
     var age: Int
-    var month: Int
+    //var month: Int
     var gender: String
     var location: String
     var happiness: Int
@@ -23,7 +23,7 @@ class Bot : NSObject, NSCoding{
     }
     required init(coder aDecoder: NSCoder) {
         //
-        month = 0
+        //month = 0
         age = 0
         gender = "Male"
         location = "BC"
@@ -36,7 +36,7 @@ class Bot : NSObject, NSCoding{
     
     init(gender: String, location: String) {
        
-        month = 0
+        //month = 0
         age = 0
         self.gender = gender
         self.location = location
@@ -47,9 +47,9 @@ class Bot : NSObject, NSCoding{
         status = "toddler"
     }
     
-    func grow_month(){
-        self.month++
-        age = Int(month/12)
+    func grow_age(){
+        self.age++
+        
         if age >= 3 && age < 13 {
             status = "child"
         }

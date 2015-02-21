@@ -83,7 +83,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         health_label.zPosition = 5
         addChild(health_label)
 
-        //age_label.text = "Month: \(Jenny.month)"
+        //age_label.text = "age: \(Jenny.age)"
         age_label.fontSize = 20
         age_label.fontColor = SKColor.blackColor()
         age_label.position = CGPoint(x:0.2 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
@@ -210,23 +210,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
 
     func randomTime() -> NSTimeInterval {  //1 to 3 sec
-        return NSTimeInterval(arc4random()%3+2)
+        return NSTimeInterval(arc4random()%3+1)
     }
 
     func updateStatus(){
         checkLife()
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         health_label.text = "Health: \(Jenny.health)"
-        age_label.text = "Month: \(Jenny.month)"
+        age_label.text = "Age: \(Jenny.age)"
         updateCharac()
     }
     
     func updateCharac() {
-        if (Jenny.health < 50) {character.setScale(0.1)}
-        else if (Jenny.health < 60) {character.setScale(0.2)}
-        else if (Jenny.health < 70) {character.setScale(0.3)}
-        else if (Jenny.health < 80) {character.setScale(0.4)}
-        else {character.setScale(0.5)}
+        
+        var characScale = CGFloat(Double(Jenny.age) * 0.009 + 0.1)
+        character.setScale(characScale)
+ 
+
+        
     }
     
     func checkLife() {
@@ -236,7 +237,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         else if (Jenny.health >= 100) {
             println("Grow")
-            Jenny.grow_month()
+            Jenny.grow_age()
             Jenny.health = 50
             Jenny.happiness = 50
             
