@@ -14,6 +14,7 @@ class FoodNode: SKNode, SKPhysicsContactDelegate {
     var pickedFood: String = ""
     var width: CGFloat = 0.0
     var height: CGFloat = 0.0
+    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(6 * Double(NSEC_PER_SEC)))
     
     struct PhysicsCategory {
         static let None      : UInt32 = 0
@@ -26,7 +27,7 @@ class FoodNode: SKNode, SKPhysicsContactDelegate {
         super.init()
         var randnum0to19 = Int(arc4random()%20)
         pickedFood = foodarray[randnum0to19]
-        let food = SKSpriteNode(imageNamed:"pizza.png")
+        let food = SKSpriteNode(imageNamed:"\(pickedFood).png")
         
         food.xScale = 0.3
         food.yScale = 0.3
@@ -35,6 +36,9 @@ class FoodNode: SKNode, SKPhysicsContactDelegate {
         height = food.size.height
        
         addChild(food)
+        
+
+
         
     }
 

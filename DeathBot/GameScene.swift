@@ -57,7 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(health_label)
         
         runAction(SKAction.repeatActionForever(
-            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(NSTimeInterval(arc4random()%5+1))])
+            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(NSTimeInterval(arc4random()%3+1))])
             ))
     }
     
@@ -120,7 +120,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         food.physicsBody?.affectedByGravity = false
 
         addChild(food)
-
+        dispatch_after(food.delayTime, dispatch_get_main_queue()) {
+            food.removeFromParent()
+        }
     }
     
     func updateStatus(){

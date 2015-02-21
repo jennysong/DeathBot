@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		504699E71A988A840035D259 /* BotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504699E61A988A840035D259 /* BotNode.swift */; };
 		BA9C63AB1A9846970037C425 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63AA1A9846970037C425 /* character.png */; };
-		BA9C63B11A98BAC90037C425 /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B01A98BAC90037C425 /* pizza.png */; };
 		BA9C63BE1A98D2A00037C425 /* female-adult.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B21A98D2A00037C425 /* female-adult.png */; };
 		BA9C63BF1A98D2A00037C425 /* female-child.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B31A98D2A00037C425 /* female-child.png */; };
 		BA9C63C01A98D2A00037C425 /* female-golden-oldie.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B41A98D2A00037C425 /* female-golden-oldie.png */; };
@@ -23,6 +22,26 @@
 		BA9C63C81A98D2A00037C425 /* male-teenager.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63BC1A98D2A00037C425 /* male-teenager.png */; };
 		BA9C63C91A98D2A00037C425 /* male-toddler.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63BD1A98D2A00037C425 /* male-toddler.png */; };
 		BA9C63CB1A98D76E0037C425 /* FoodNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9C63CA1A98D76E0037C425 /* FoodNode.swift */; };
+		BA9C63E11A9904BE0037C425 /* alcohol.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63CD1A9904BE0037C425 /* alcohol.png */; };
+		BA9C63E21A9904BE0037C425 /* apple.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63CE1A9904BE0037C425 /* apple.png */; };
+		BA9C63E31A9904BE0037C425 /* banana.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63CF1A9904BE0037C425 /* banana.png */; };
+		BA9C63E41A9904BE0037C425 /* bread.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D01A9904BE0037C425 /* bread.png */; };
+		BA9C63E51A9904BE0037C425 /* burger.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D11A9904BE0037C425 /* burger.png */; };
+		BA9C63E61A9904BE0037C425 /* carrot.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D21A9904BE0037C425 /* carrot.png */; };
+		BA9C63E71A9904BE0037C425 /* cheese.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D31A9904BE0037C425 /* cheese.png */; };
+		BA9C63E81A9904BE0037C425 /* cherry.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D41A9904BE0037C425 /* cherry.png */; };
+		BA9C63E91A9904BE0037C425 /* chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D51A9904BE0037C425 /* chicken.png */; };
+		BA9C63EA1A9904BE0037C425 /* cigarette.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D61A9904BE0037C425 /* cigarette.png */; };
+		BA9C63EB1A9904BE0037C425 /* donut.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D71A9904BE0037C425 /* donut.png */; };
+		BA9C63EC1A9904BE0037C425 /* drug.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D81A9904BE0037C425 /* drug.png */; };
+		BA9C63ED1A9904BE0037C425 /* egg.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63D91A9904BE0037C425 /* egg.png */; };
+		BA9C63EE1A9904BE0037C425 /* fish.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DA1A9904BE0037C425 /* fish.png */; };
+		BA9C63EF1A9904BE0037C425 /* grape.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DB1A9904BE0037C425 /* grape.png */; };
+		BA9C63F01A9904BE0037C425 /* lobster.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DC1A9904BE0037C425 /* lobster.png */; };
+		BA9C63F11A9904BE0037C425 /* milk.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DD1A9904BE0037C425 /* milk.png */; };
+		BA9C63F21A9904BE0037C425 /* pepper.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DE1A9904BE0037C425 /* pepper.png */; };
+		BA9C63F31A9904BE0037C425 /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DF1A9904BE0037C425 /* pizza.png */; };
+		BA9C63F41A9904BE0037C425 /* softdrink.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63E01A9904BE0037C425 /* softdrink.png */; };
 		F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0041A94F1A7009A4743 /* maleBot.png */; };
 		F34BD0091A94F45E009A4743 /* LocationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD0081A94F45E009A4743 /* LocationScene.swift */; };
 		F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */; };
@@ -58,7 +77,6 @@
 		504699E61A988A840035D259 /* BotNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNode.swift; sourceTree = "<group>"; };
 		BA9C63A71A982B1F0037C425 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BA9C63AA1A9846970037C425 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
-		BA9C63B01A98BAC90037C425 /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza.png; sourceTree = "<group>"; };
 		BA9C63B21A98D2A00037C425 /* female-adult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female-adult.png"; sourceTree = "<group>"; };
 		BA9C63B31A98D2A00037C425 /* female-child.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female-child.png"; sourceTree = "<group>"; };
 		BA9C63B41A98D2A00037C425 /* female-golden-oldie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female-golden-oldie.png"; sourceTree = "<group>"; };
@@ -72,6 +90,26 @@
 		BA9C63BC1A98D2A00037C425 /* male-teenager.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "male-teenager.png"; sourceTree = "<group>"; };
 		BA9C63BD1A98D2A00037C425 /* male-toddler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "male-toddler.png"; sourceTree = "<group>"; };
 		BA9C63CA1A98D76E0037C425 /* FoodNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodNode.swift; sourceTree = "<group>"; };
+		BA9C63CD1A9904BE0037C425 /* alcohol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alcohol.png; path = food/alcohol.png; sourceTree = "<group>"; };
+		BA9C63CE1A9904BE0037C425 /* apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = apple.png; path = food/apple.png; sourceTree = "<group>"; };
+		BA9C63CF1A9904BE0037C425 /* banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = banana.png; path = food/banana.png; sourceTree = "<group>"; };
+		BA9C63D01A9904BE0037C425 /* bread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bread.png; path = food/bread.png; sourceTree = "<group>"; };
+		BA9C63D11A9904BE0037C425 /* burger.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = burger.png; path = food/burger.png; sourceTree = "<group>"; };
+		BA9C63D21A9904BE0037C425 /* carrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = carrot.png; path = food/carrot.png; sourceTree = "<group>"; };
+		BA9C63D31A9904BE0037C425 /* cheese.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cheese.png; path = food/cheese.png; sourceTree = "<group>"; };
+		BA9C63D41A9904BE0037C425 /* cherry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cherry.png; path = food/cherry.png; sourceTree = "<group>"; };
+		BA9C63D51A9904BE0037C425 /* chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = chicken.png; path = food/chicken.png; sourceTree = "<group>"; };
+		BA9C63D61A9904BE0037C425 /* cigarette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cigarette.png; path = food/cigarette.png; sourceTree = "<group>"; };
+		BA9C63D71A9904BE0037C425 /* donut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = donut.png; path = food/donut.png; sourceTree = "<group>"; };
+		BA9C63D81A9904BE0037C425 /* drug.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = drug.png; path = food/drug.png; sourceTree = "<group>"; };
+		BA9C63D91A9904BE0037C425 /* egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = egg.png; path = food/egg.png; sourceTree = "<group>"; };
+		BA9C63DA1A9904BE0037C425 /* fish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fish.png; path = food/fish.png; sourceTree = "<group>"; };
+		BA9C63DB1A9904BE0037C425 /* grape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grape.png; path = food/grape.png; sourceTree = "<group>"; };
+		BA9C63DC1A9904BE0037C425 /* lobster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = lobster.png; path = food/lobster.png; sourceTree = "<group>"; };
+		BA9C63DD1A9904BE0037C425 /* milk.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = milk.png; path = food/milk.png; sourceTree = "<group>"; };
+		BA9C63DE1A9904BE0037C425 /* pepper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pepper.png; path = food/pepper.png; sourceTree = "<group>"; };
+		BA9C63DF1A9904BE0037C425 /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizza.png; path = food/pizza.png; sourceTree = "<group>"; };
+		BA9C63E01A9904BE0037C425 /* softdrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = softdrink.png; path = food/softdrink.png; sourceTree = "<group>"; };
 		F34BD0041A94F1A7009A4743 /* maleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleBot.png; sourceTree = "<group>"; };
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
 		F34BD0081A94F45E009A4743 /* LocationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationScene.swift; sourceTree = "<group>"; };
@@ -116,6 +154,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA9C63CC1A9904000037C425 /* food */ = {
+			isa = PBXGroup;
+			children = (
+				BA9C63CD1A9904BE0037C425 /* alcohol.png */,
+				BA9C63CE1A9904BE0037C425 /* apple.png */,
+				BA9C63CF1A9904BE0037C425 /* banana.png */,
+				BA9C63D01A9904BE0037C425 /* bread.png */,
+				BA9C63D11A9904BE0037C425 /* burger.png */,
+				BA9C63D21A9904BE0037C425 /* carrot.png */,
+				BA9C63D31A9904BE0037C425 /* cheese.png */,
+				BA9C63D41A9904BE0037C425 /* cherry.png */,
+				BA9C63D51A9904BE0037C425 /* chicken.png */,
+				BA9C63D61A9904BE0037C425 /* cigarette.png */,
+				BA9C63D71A9904BE0037C425 /* donut.png */,
+				BA9C63D81A9904BE0037C425 /* drug.png */,
+				BA9C63D91A9904BE0037C425 /* egg.png */,
+				BA9C63DA1A9904BE0037C425 /* fish.png */,
+				BA9C63DB1A9904BE0037C425 /* grape.png */,
+				BA9C63DC1A9904BE0037C425 /* lobster.png */,
+				BA9C63DD1A9904BE0037C425 /* milk.png */,
+				BA9C63DE1A9904BE0037C425 /* pepper.png */,
+				BA9C63DF1A9904BE0037C425 /* pizza.png */,
+				BA9C63E01A9904BE0037C425 /* softdrink.png */,
+			);
+			name = food;
+			sourceTree = "<group>";
+		};
 		F370C87B1A94C0A3007E4498 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +254,7 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA9C63CC1A9904000037C425 /* food */,
 				BA9C63B21A98D2A00037C425 /* female-adult.png */,
 				BA9C63B31A98D2A00037C425 /* female-child.png */,
 				BA9C63B41A98D2A00037C425 /* female-golden-oldie.png */,
@@ -201,7 +267,6 @@
 				BA9C63BB1A98D2A00037C425 /* male-senior.png */,
 				BA9C63BC1A98D2A00037C425 /* male-teenager.png */,
 				BA9C63BD1A98D2A00037C425 /* male-toddler.png */,
-				BA9C63B01A98BAC90037C425 /* pizza.png */,
 				BA9C63AA1A9846970037C425 /* character.png */,
 				F34BD0041A94F1A7009A4743 /* maleBot.png */,
 				F34BD0061A94F1F1009A4743 /* femaleBot.png */,
@@ -300,23 +365,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */,
+				BA9C63EA1A9904BE0037C425 /* cigarette.png in Resources */,
 				BA9C63AB1A9846970037C425 /* character.png in Resources */,
+				BA9C63ED1A9904BE0037C425 /* egg.png in Resources */,
 				BA9C63C61A98D2A00037C425 /* male-golden-oldie.png in Resources */,
 				BA9C63C31A98D2A00037C425 /* female-toddler.png in Resources */,
+				BA9C63EE1A9904BE0037C425 /* fish.png in Resources */,
+				BA9C63E11A9904BE0037C425 /* alcohol.png in Resources */,
 				BA9C63C51A98D2A00037C425 /* male-child.png in Resources */,
-				BA9C63B11A98BAC90037C425 /* pizza.png in Resources */,
+				BA9C63EC1A9904BE0037C425 /* drug.png in Resources */,
 				BA9C63BE1A98D2A00037C425 /* female-adult.png in Resources */,
+				BA9C63EF1A9904BE0037C425 /* grape.png in Resources */,
 				BA9C63C01A98D2A00037C425 /* female-golden-oldie.png in Resources */,
+				BA9C63E41A9904BE0037C425 /* bread.png in Resources */,
+				BA9C63F31A9904BE0037C425 /* pizza.png in Resources */,
+				BA9C63F21A9904BE0037C425 /* pepper.png in Resources */,
 				BA9C63C41A98D2A00037C425 /* male-adult.png in Resources */,
+				BA9C63E71A9904BE0037C425 /* cheese.png in Resources */,
 				BA9C63C11A98D2A00037C425 /* female-senior.png in Resources */,
 				F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */,
+				BA9C63EB1A9904BE0037C425 /* donut.png in Resources */,
+				BA9C63F01A9904BE0037C425 /* lobster.png in Resources */,
 				BA9C63C91A98D2A00037C425 /* male-toddler.png in Resources */,
 				F370C8951A94C0A3007E4498 /* Images.xcassets in Resources */,
+				BA9C63F41A9904BE0037C425 /* softdrink.png in Resources */,
+				BA9C63E91A9904BE0037C425 /* chicken.png in Resources */,
 				BA9C63C21A98D2A00037C425 /* female-teenager.png in Resources */,
+				BA9C63E31A9904BE0037C425 /* banana.png in Resources */,
+				BA9C63E51A9904BE0037C425 /* burger.png in Resources */,
 				BA9C63BF1A98D2A00037C425 /* female-child.png in Resources */,
 				BA9C63C71A98D2A00037C425 /* male-senior.png in Resources */,
+				BA9C63F11A9904BE0037C425 /* milk.png in Resources */,
+				BA9C63E21A9904BE0037C425 /* apple.png in Resources */,
+				BA9C63E61A9904BE0037C425 /* carrot.png in Resources */,
 				BA9C63C81A98D2A00037C425 /* male-teenager.png in Resources */,
 				F370C8931A94C0A3007E4498 /* Main.storyboard in Resources */,
+				BA9C63E81A9904BE0037C425 /* cherry.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
