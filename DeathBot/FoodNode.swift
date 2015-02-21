@@ -14,7 +14,7 @@ class FoodNode: SKNode, SKPhysicsContactDelegate {
     var pickedFood: String = ""
     var width: CGFloat = 0.0
     var height: CGFloat = 0.0
-    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(6 * Double(NSEC_PER_SEC)))
+    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(8 * Double(NSEC_PER_SEC)))
     
     struct PhysicsCategory {
         static let None      : UInt32 = 0

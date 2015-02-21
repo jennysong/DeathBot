@@ -42,6 +42,7 @@
 		BA9C63F21A9904BE0037C425 /* pepper.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DE1A9904BE0037C425 /* pepper.png */; };
 		BA9C63F31A9904BE0037C425 /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DF1A9904BE0037C425 /* pizza.png */; };
 		BA9C63F41A9904BE0037C425 /* softdrink.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63E01A9904BE0037C425 /* softdrink.png */; };
+		BA9C63F71A9912890037C425 /* bite.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63F61A9912890037C425 /* bite.mp3 */; };
 		F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0041A94F1A7009A4743 /* maleBot.png */; };
 		F34BD0091A94F45E009A4743 /* LocationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD0081A94F45E009A4743 /* LocationScene.swift */; };
 		F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */; };
@@ -112,6 +113,7 @@
 		BA9C63DE1A9904BE0037C425 /* pepper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pepper.png; path = food/pepper.png; sourceTree = "<group>"; };
 		BA9C63DF1A9904BE0037C425 /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizza.png; path = food/pizza.png; sourceTree = "<group>"; };
 		BA9C63E01A9904BE0037C425 /* softdrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = softdrink.png; path = food/softdrink.png; sourceTree = "<group>"; };
+		BA9C63F61A9912890037C425 /* bite.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bite.mp3; sourceTree = "<group>"; };
 		F34BD0041A94F1A7009A4743 /* maleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleBot.png; sourceTree = "<group>"; };
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
 		F34BD0081A94F45E009A4743 /* LocationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationScene.swift; sourceTree = "<group>"; };
@@ -185,6 +187,14 @@
 			name = food;
 			sourceTree = "<group>";
 		};
+		BA9C63F51A9912890037C425 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				BA9C63F61A9912890037C425 /* bite.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
 		F370C87B1A94C0A3007E4498 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 		F370C8861A94C0A3007E4498 /* DeathBot */ = {
 			isa = PBXGroup;
 			children = (
+				BA9C63F51A9912890037C425 /* sounds */,
 				F370C8BB1A94D6D8007E4498 /* images */,
 				F393B8221A95504400EE3241 /* DeathRate */,
 				F370C8891A94C0A3007E4498 /* AppDelegate.swift */,
@@ -414,6 +425,7 @@
 				BA9C63E61A9904BE0037C425 /* carrot.png in Resources */,
 				BA9C63C81A98D2A00037C425 /* male-teenager.png in Resources */,
 				F370C8931A94C0A3007E4498 /* Main.storyboard in Resources */,
+				BA9C63F71A9912890037C425 /* bite.mp3 in Resources */,
 				BA9C63E81A9904BE0037C425 /* cherry.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

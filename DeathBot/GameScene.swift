@@ -57,7 +57,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(health_label)
         
         runAction(SKAction.repeatActionForever(
-            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(NSTimeInterval(arc4random()%3+1))])
+            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(randomTime())])
             ))
     }
     
@@ -78,6 +78,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println("health: \(Jenny.health) happy: \(Jenny.happiness) smoke: \(Jenny.smoker) drink: \(Jenny.drinker)")
         Jenny.doAction("eat")
         updateStatus()
+        runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
         food.removeFromParent()
 
     }
@@ -107,10 +108,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func addFood() {
         var food = FoodNode()
-        var randomX = Double(arc4random()%100) / 100
-        var randomY = Double(arc4random()%100) / 100
-
-        food.position = CGPoint(x:(Double(self.frame.width) - Double(food.width)) * randomX + Double(food.width/2), y:(Double(self.frame.height) - Double(food.height)) * randomY + Double(food.height/2))
+        var a = Double(pow(food.width/2,2.0) + pow(food.height/2,2.0))
+        var b = Double(pow(character.size.width/2.0,2.0) + pow(character.size.height/2,2.0))
+        var distLimit = a+b
+        var positionX: Double = 0.0
+        var positionY: Double = 0.0
+        var distance: Double = 0.0
+        do {
+            var randomX = Double(arc4random()%100) / 100
+            var randomY = Double(arc4random()%100) / 100
+            positionX = (Double(self.frame.width) - Double(food.width)) * randomX + Double(food.width/2)
+            positionY = (Double(self.frame.height) - Double(food.height)) * randomY + Double(food.height/2)
+            distance = pow(positionX - Double(character.position.x),2.0) + pow(positionY - Double(character.position.y),2.0)
+        } while distance < distLimit
+        
+        food.position = CGPoint(x:positionX, y:positionY)
+        
         
         food.physicsBody = SKPhysicsBody(circleOfRadius: food.width/2)
         food.physicsBody?.dynamic = true
@@ -129,5 +142,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         health_label.text = "Health: \(Jenny.health)"
     }
+    
+    func randomTime() -> NSTimeInterval {  //1 to 3 sec
+        return NSTimeInterval(arc4random()%3+1)
+    }
+    
     
 }
