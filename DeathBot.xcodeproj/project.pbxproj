@@ -58,6 +58,8 @@
 		F370C8B61A94D304007E4498 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B51A94D304007E4498 /* Game.swift */; };
 		F370C8B81A94D49C007E4498 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B71A94D49C007E4498 /* ActionButton.swift */; };
 		F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */; };
+		F37295B21A958C670062CCD7 /* BotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37295B11A958C670062CCD7 /* BotData.swift */; };
+		F37295B41A958EA80062CCD7 /* BotDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37295B31A958EA80062CCD7 /* BotDataManager.swift */; };
 		F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38668561A94EC2E00C1FF1D /* NewGameScene.swift */; };
 		F38F76BF1A95490C00FF8C04 /* DeathRateByAge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38F76BE1A95490C00FF8C04 /* DeathRateByAge.swift */; };
 		F393B8241A95525600EE3241 /* DeathRateByGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393B8231A95525600EE3241 /* DeathRateByGender.swift */; };
@@ -131,6 +133,8 @@
 		F370C8B51A94D304007E4498 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F370C8B71A94D49C007E4498 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneHowTo.swift; sourceTree = "<group>"; };
+		F37295B11A958C670062CCD7 /* BotData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotData.swift; sourceTree = "<group>"; };
+		F37295B31A958EA80062CCD7 /* BotDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDataManager.swift; sourceTree = "<group>"; };
 		F38668561A94EC2E00C1FF1D /* NewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameScene.swift; sourceTree = SOURCE_ROOT; };
 		F38F76BE1A95490C00FF8C04 /* DeathRateByAge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathRateByAge.swift; sourceTree = "<group>"; };
 		F393B8231A95525600EE3241 /* DeathRateByGender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathRateByGender.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				F370C8961A94C0A3007E4498 /* LaunchScreen.xib */,
 				BA9C63A71A982B1F0037C425 /* MyPlayground.playground */,
 				F370C8871A94C0A3007E4498 /* Supporting Files */,
+				F37295B51A9599650062CCD7 /* BotData */,
 			);
 			path = DeathBot;
 			sourceTree = "<group>";
@@ -272,6 +277,15 @@
 				F34BD0061A94F1F1009A4743 /* femaleBot.png */,
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		F37295B51A9599650062CCD7 /* BotData */ = {
+			isa = PBXGroup;
+			children = (
+				F37295B31A958EA80062CCD7 /* BotDataManager.swift */,
+				F37295B11A958C670062CCD7 /* BotData.swift */,
+			);
+			name = BotData;
 			sourceTree = "<group>";
 		};
 		F393B8221A95504400EE3241 /* DeathRate */ = {
@@ -419,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F370C88E1A94C0A3007E4498 /* GameScene.swift in Sources */,
+				F37295B21A958C670062CCD7 /* BotData.swift in Sources */,
 				F38F76BF1A95490C00FF8C04 /* DeathRateByAge.swift in Sources */,
 				F34BD0091A94F45E009A4743 /* LocationScene.swift in Sources */,
 				F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */,
@@ -428,6 +443,7 @@
 				BA9C63CB1A98D76E0037C425 /* FoodNode.swift in Sources */,
 				F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */,
 				F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */,
+				F37295B41A958EA80062CCD7 /* BotDataManager.swift in Sources */,
 				F393B8241A95525600EE3241 /* DeathRateByGender.swift in Sources */,
 				504699E71A988A840035D259 /* BotNode.swift in Sources */,
 				F370C8B21A94C68D007E4498 /* Action.swift in Sources */,
