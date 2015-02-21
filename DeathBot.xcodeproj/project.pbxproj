@@ -43,6 +43,7 @@
 		BA9C63F31A9904BE0037C425 /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63DF1A9904BE0037C425 /* pizza.png */; };
 		BA9C63F41A9904BE0037C425 /* softdrink.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63E01A9904BE0037C425 /* softdrink.png */; };
 		BA9C63F71A9912890037C425 /* bite.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63F61A9912890037C425 /* bite.mp3 */; };
+		BA9C63F91A9915ED0037C425 /* room.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63F81A9915ED0037C425 /* room.png */; };
 		F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0041A94F1A7009A4743 /* maleBot.png */; };
 		F34BD0091A94F45E009A4743 /* LocationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD0081A94F45E009A4743 /* LocationScene.swift */; };
 		F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */; };
@@ -114,6 +115,7 @@
 		BA9C63DF1A9904BE0037C425 /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pizza.png; path = food/pizza.png; sourceTree = "<group>"; };
 		BA9C63E01A9904BE0037C425 /* softdrink.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = softdrink.png; path = food/softdrink.png; sourceTree = "<group>"; };
 		BA9C63F61A9912890037C425 /* bite.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bite.mp3; sourceTree = "<group>"; };
+		BA9C63F81A9915ED0037C425 /* room.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = room.png; sourceTree = "<group>"; };
 		F34BD0041A94F1A7009A4743 /* maleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleBot.png; sourceTree = "<group>"; };
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
 		F34BD0081A94F45E009A4743 /* LocationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationScene.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			children = (
 				BA9C63CC1A9904000037C425 /* food */,
 				BA9C63B21A98D2A00037C425 /* female-adult.png */,
+				BA9C63F81A9915ED0037C425 /* room.png */,
 				BA9C63B31A98D2A00037C425 /* female-child.png */,
 				BA9C63B41A98D2A00037C425 /* female-golden-oldie.png */,
 				BA9C63B51A98D2A00037C425 /* female-senior.png */,
@@ -424,6 +427,7 @@
 				BA9C63E21A9904BE0037C425 /* apple.png in Resources */,
 				BA9C63E61A9904BE0037C425 /* carrot.png in Resources */,
 				BA9C63C81A98D2A00037C425 /* male-teenager.png in Resources */,
+				BA9C63F91A9915ED0037C425 /* room.png in Resources */,
 				F370C8931A94C0A3007E4498 /* Main.storyboard in Resources */,
 				BA9C63F71A9912890037C425 /* bite.mp3 in Resources */,
 				BA9C63E81A9904BE0037C425 /* cherry.png in Resources */,

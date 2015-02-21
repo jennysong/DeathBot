@@ -21,12 +21,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMoveToView(view: SKView) {
-        var GameSceneBG = SKSpriteNode(imageNamed: "GameSceneBG")
+        var GameSceneBG = SKSpriteNode(imageNamed: "room.png")
         GameSceneBG.size.height = self.size.height
         GameSceneBG.size.width = self.size.width
         GameSceneBG.anchorPoint = CGPoint(x:0, y:0)
         GameSceneBG.zPosition = 1
-        //addChild(GameSceneBG)
+        addChild(GameSceneBG)
         
         character.setScale(0.2)
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
@@ -123,7 +123,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         } while distance < distLimit
         
         food.position = CGPoint(x:positionX, y:positionY)
-        
+        food.zPosition = 2
         
         food.physicsBody = SKPhysicsBody(circleOfRadius: food.width/2)
         food.physicsBody?.dynamic = true
