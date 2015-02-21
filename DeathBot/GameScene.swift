@@ -9,7 +9,7 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    let character = SKSpriteNode(imageNamed:"Character.png")
+    let character = BotNode()
     var Jenny = Bot(gender: "female", location: "BC")
     var happiness_label = SKLabelNode(fontNamed:"Chalkduster")
     var health_label = SKLabelNode(fontNamed:"Chalkduster")
@@ -28,8 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         GameSceneBG.zPosition = 1
         addChild(GameSceneBG)
         
-        character.xScale = 0.3
-        character.yScale = 0.3
+        character.setScale(0.3)
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         character.zPosition = 10
         
@@ -74,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
         }
     }
-    func gotfood(character:SKSpriteNode, food:SKSpriteNode) {
+    func gotfood(character:SKNode, food:SKSpriteNode) {
         food.removeFromParent()
         Jenny.health -= 5
         Jenny.happiness += 5
@@ -102,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // 2
         if ((firstBody.categoryBitMask & PhysicsCategory.Character != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Food != 0)) {
-                gotfood(firstBody.node as SKSpriteNode, food: secondBody.node as SKSpriteNode)
+                gotfood(firstBody.node! as SKNode, food: secondBody.node as SKSpriteNode)
         }
         
     }
