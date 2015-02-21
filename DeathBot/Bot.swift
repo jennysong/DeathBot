@@ -1,6 +1,11 @@
 
 import Foundation
 
+let ACTIONDEATHPORTION = 0.7
+let AGEDEATHPORTION = 0.1
+let GENDERDEATHPORTION = 0.1
+let LOCATIONDEATHPORTION = 0.1
+
 class Bot {
     var month: Int
     var gender: String

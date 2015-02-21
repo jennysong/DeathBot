@@ -8,19 +8,41 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
-    let character = SKSpriteNode(imageNamed:"Character.png")
+class GameScene: SKScene, SKPhysicsContactDelegate {
+    let character = BotNode()
     var Jenny = Bot(gender: "female", location: "BC")
+    var happiness_label = SKLabelNode(fontNamed:"Chalkduster")
+    var health_label = SKLabelNode(fontNamed:"Chalkduster")
+    struct PhysicsCategory {
+        static let None      : UInt32 = 0
+        static let All       : UInt32 = UInt32.max
+        static let Character : UInt32 = 0b1       // 1
+        static let Food      : UInt32 = 0b10      // 2
+    }
     
     override func didMoveToView(view: SKView) {
-
-        character.xScale = 0.3
-        character.yScale = 0.3
+        var GameSceneBG = SKSpriteNode(imageNamed: "GameSceneBG")
+        GameSceneBG.size.height = self.size.height
+        GameSceneBG.size.width = self.size.width
+        GameSceneBG.anchorPoint = CGPoint(x:0, y:0)
+        GameSceneBG.zPosition = 1
+        addChild(GameSceneBG)
+        
+        character.setScale(0.3)
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         character.zPosition = 10
-        addChild(character)
         
-        var happiness_label = SKLabelNode(fontNamed:"Chalkduster")
+        character.physicsBody = SKPhysicsBody(rectangleOfSize: character.size)
+        character.physicsBody?.dynamic = true
+        character.physicsBody?.categoryBitMask = PhysicsCategory.Character
+        character.physicsBody?.contactTestBitMask = PhysicsCategory.Food
+        character.physicsBody?.collisionBitMask = PhysicsCategory.None
+        character.physicsBody?.affectedByGravity = false
+        character.physicsBody?.usesPreciseCollisionDetection = true
+        addChild(character)
+        physicsWorld.contactDelegate = self
+        
+        
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         happiness_label.fontSize = 20
         happiness_label.position = CGPoint(x:0.7 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
@@ -28,7 +50,8 @@ class GameScene: SKScene {
         addChild(happiness_label)
         
         
-        var health_label = SKLabelNode(fontNamed:"Chalkduster")
+        
+        
         health_label.text = "Health: \(Jenny.health)"
         health_label.fontSize = 20
         health_label.position = CGPoint(x:0.2 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
@@ -51,33 +74,21 @@ class GameScene: SKScene {
 
         }
     }
-   
-    override func update(currentTime: CFTimeInterval) {
+    func gotfood(character:SKNode, food:SKSpriteNode) {
+        food.removeFromParent()
+        Jenny.health -= 5
+        Jenny.happiness += 5
+        if Jenny.happiness>=100 {
+            Jenny.happiness = 100
+        }
+        happiness_label.text = "Happiness: \(Jenny.happiness)"
+        health_label.text = "Health: \(Jenny.health)"
+        addFood()
     }
-    
-    func addFood(){
-        let food = SKSpriteNode(imageNamed:"pizza.png")
-        food.xScale = 0.3
-        food.yScale = 0.3
-        var randomX = Double(arc4random()%100) / 100
-        var randomY = Double(arc4random()%100) / 100
-        food.position = CGPoint(x:Double(self.frame.width) * randomX, y:Double(self.frame.height) * randomY)
-        food.zPosition = 1
-        addChild(food)
-        
-    }
-    
-    /*
-    struct PhysicsCategory {
-        static let None      : UInt32 = 0
-        static let All       : UInt32 = UInt32.max
-        static let character : UInt32 = 0b1       // 1
-        static let food      : UInt32 = 0b10      // 2
-    }
-    
     
     func didBeginContact(contact: SKPhysicsContact) {
-    
+        println("hello")
+        // 1
         var firstBody: SKPhysicsBody
         var secondBody: SKPhysicsBody
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
@@ -88,17 +99,35 @@ class GameScene: SKScene {
             secondBody = contact.bodyA
         }
         
-        if ((firstBody.categoryBitMask & PhysicsCategory.character != 0) &&
-        (secondBody.categoryBitMask & PhysicsCategory.food != 0)) {
-            //gotFood(food)
-            println("collide")
+        // 2
+        if ((firstBody.categoryBitMask & PhysicsCategory.Character != 0) &&
+            (secondBody.categoryBitMask & PhysicsCategory.Food != 0)) {
+                gotfood(firstBody.node! as SKNode, food: secondBody.node as SKSpriteNode)
         }
+        
+    }
+   /*
+    override func update(currentTime: CFTimeInterval) {
     }*/
     
-    
-    func gotFood(food: SKSpriteNode) {
-        food.removeFromParent()
-        Jenny.health -= 5
-        Jenny.happiness += 5
+    func addFood(){
+        //let food = SKSpriteNode(imageNamed:"pizza.png")
+        let food = SKSpriteNode(imageNamed:"Character.png")
+        food.xScale = 0.3
+        food.yScale = 0.3
+        var randomX = Double(arc4random()%100) / 100
+        var randomY = Double(arc4random()%100) / 100
+        food.position = CGPoint(x:Double(self.frame.width) * randomX, y:Double(self.frame.height) * randomY)
+        food.zPosition = 1
+        food.physicsBody = SKPhysicsBody(circleOfRadius: food.size.width/2)
+        food.physicsBody?.dynamic = true
+        food.physicsBody?.categoryBitMask = PhysicsCategory.Food
+        food.physicsBody?.contactTestBitMask = PhysicsCategory.Character
+        food.physicsBody?.collisionBitMask = PhysicsCategory.None
+        food.physicsBody?.affectedByGravity = false
+        addChild(food)
+        
     }
+    
+    
 }
