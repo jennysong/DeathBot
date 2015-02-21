@@ -17,41 +17,45 @@ class LocationScene: SKScene {
         self.gender = gender
         let ratio = 1/self.size.height*195
         
-        
+        /*
         var locationBG = SKSpriteNode(imageNamed: "locationBG")
         locationBG.size.height = self.size.height
         locationBG.size.width = self.size.width
         locationBG.anchorPoint = CGPoint(x:0, y:0)
         locationBG.zPosition = 1
         addChild(locationBG)
-        
-        var bc = SKSpriteNode(imageNamed: "bc")
-        bc.size.height *= ratio
-        bc.size.width *= ratio
-        bc.position = CGPoint(x:self.size.width*(0.25), y:self.size.height*0.5)
-        bc.zPosition = 10
-        var bc_ = SKSpriteNode(imageNamed: "bc")
-        bc_.size.height *= ratio
-        bc_.size.width *= ratio
-        bc_.position = CGPoint(x:self.size.width*(0.25), y:self.size.height*0.5)
-        bc_.zPosition = 10
+        */
         
         var backButton = SKSpriteNode(imageNamed: "backButton")
         backButton.size.height *= ratio
         backButton.size.width *= ratio
-        backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.95)
         backButton.zPosition = 10
         var backButton_ = SKSpriteNode(imageNamed: "backButton_")
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
-        backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.95)
         backButton_.zPosition = 10
-        
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)
         
-        let bcB:ActionButton = ActionButton(defaultButtonImage: bc, activeButtonImage: bc_, buttonAction: pickBCGoToGameScene)
-        addChild(bcB)
+        addLocation("ON", x: self.size.width*(0.14), y: self.size.height*0.2)
+        addLocation("QC", x: self.size.width*(0.32), y: self.size.height*0.2)
+        addLocation("NS", x: self.size.width*(0.50), y: self.size.height*0.2)
+        addLocation("NB", x: self.size.width*(0.68), y: self.size.height*0.2)
+        addLocation("MB", x: self.size.width*(0.86), y: self.size.height*0.2)
+        addLocation("BC", x: self.size.width*(0.14), y: self.size.height*0.5)
+        addLocation("PE", x: self.size.width*(0.32), y: self.size.height*0.5)
+        addLocation("SK", x: self.size.width*(0.50), y: self.size.height*0.5)
+        addLocation("PE", x: self.size.width*(0.68), y: self.size.height*0.5)
+        addLocation("SK", x: self.size.width*(0.86), y: self.size.height*0.5)
+        addLocation("AB", x: self.size.width*(0.14), y: self.size.height*0.8)
+        addLocation("NL", x: self.size.width*(0.32), y: self.size.height*0.8)
+        addLocation("NT", x: self.size.width*(0.50), y: self.size.height*0.8)
+        addLocation("YT", x: self.size.width*(0.68), y: self.size.height*0.8)
+        addLocation("NU", x: self.size.width*(0.86), y: self.size.height*0.8)
+        
+        
         
     }
     
@@ -66,8 +70,36 @@ class LocationScene: SKScene {
             }]))
     }
     
-    func pickBCGoToGameScene(){
-        var bot = Bot(gender: self.gender!, location: "BC")
+    func addLocation(location: String,x: CGFloat, y: CGFloat){
+        let ratio = 1/self.size.height*195
+        var lo = SKSpriteNode(imageNamed: location)
+        lo.setScale(0.30)
+        lo.name = location
+        lo.position = CGPoint(x: x, y: y)
+        lo.zPosition = 10
+        addChild(lo)
+        var lo_label = SKLabelNode(fontNamed:"Chalkduster")
+        
+        lo_label.text = location
+        lo_label.fontSize = 20
+        lo_label.position = CGPoint(x: x, y: y - lo.size.height/1.35)
+        lo_label.zPosition = 10
+        addChild(lo_label)
+
+        
+    }
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        for touch: AnyObject in touches {
+            let location = touch.locationInNode(self)
+            let touchNode = nodeAtPoint(location) as SKSpriteNode
+            GoToGameScene(touchNode.name!)
+        }
+        
+    }
+    
+    func GoToGameScene(location: String){
+        var bot = Bot(gender: self.gender!, location: location)
+        println("NewBot is created! Gender : \(self.gender!), Location: \(location)")
         botDataManager.addNewBot(bot)
         botDataManager.save()
         runAction(SKAction.sequence([SKAction.runBlock() {
@@ -76,5 +108,6 @@ class LocationScene: SKScene {
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
+
     
 }
