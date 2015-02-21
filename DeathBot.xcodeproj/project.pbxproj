@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA9C63AB1A9846970037C425 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63AA1A9846970037C425 /* character.png */; };
 		F370C88A1A94C0A3007E4498 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8891A94C0A3007E4498 /* AppDelegate.swift */; };
 		F370C88E1A94C0A3007E4498 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C88D1A94C0A3007E4498 /* GameScene.swift */; };
 		F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C88F1A94C0A3007E4498 /* GameViewController.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		BA9C63A71A982B1F0037C425 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
+		BA9C63AA1A9846970037C425 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
 		F370C8841A94C0A3007E4498 /* DeathBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeathBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F370C8881A94C0A3007E4498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F370C8891A94C0A3007E4498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA9C63AA1A9846970037C425 /* character.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */,
+				BA9C63AB1A9846970037C425 /* character.png in Resources */,
 				F370C8951A94C0A3007E4498 /* Images.xcassets in Resources */,
 				F370C8931A94C0A3007E4498 /* Main.storyboard in Resources */,
 			);
