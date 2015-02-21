@@ -14,7 +14,7 @@ class BotNode: SKNode {
 //    var rightFoot: SKSpriteNode
     var size: CGSize
     override init() {
-        bodyNode = SKSpriteNode(imageNamed:"Character.png")
+        bodyNode = SKSpriteNode(imageNamed:"male-toddler.png")
         size = bodyNode.size
         super.init()
         

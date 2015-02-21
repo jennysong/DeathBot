@@ -28,7 +28,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         GameSceneBG.zPosition = 1
         //addChild(GameSceneBG)
         
-        character.setScale(0.3)
+        character.setScale(0.2)
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         character.zPosition = 10
         
@@ -56,6 +56,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         health_label.zPosition = 5
         addChild(health_label)
         
+        
+
         runAction(SKAction.repeatActionForever(
             SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(1)])
             ))
@@ -71,17 +73,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     
-    func gotfood(character:SKNode, food:SKSpriteNode) {
-        food.removeFromParent()
-        Jenny.health -= 5
-        Jenny.happiness += 5
-        if Jenny.happiness>=100 {
-            Jenny.happiness = 100
-        }
-        happiness_label.text = "Happiness: \(Jenny.happiness)"
-        health_label.text = "Health: \(Jenny.health)"
-        addFood()
+    func gotfood(character:SKNode, food:FoodNode) {
+        self.Jenny.take(food.pickedFood)
+        println("Jenny eats \(food.pickedFood)")
+        println("health: \(Jenny.health) happy: \(Jenny.happiness) smoke: \(Jenny.smoker) drink: \(Jenny.drinker)")
         Jenny.doAction("eat")
+        food.removeFromParent()
+
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -99,7 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // 2
         if ((firstBody.categoryBitMask & PhysicsCategory.Character != 0) &&
             (secondBody.categoryBitMask & PhysicsCategory.Food != 0)) {
-                gotfood(firstBody.node! as SKNode, food: secondBody.node as SKSpriteNode)
+                gotfood(firstBody.node! as SKNode, food: secondBody.node as FoodNode)
         }
         
     }
@@ -107,23 +105,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(currentTime: CFTimeInterval) {
     }*/
     
-    func addFood(){
-        let food = SKSpriteNode(imageNamed:"pizza.png")
-        food.xScale = 0.1
-        food.yScale = 0.1
+    func addFood() {
+        var food = FoodNode()
         var randomX = Double(arc4random()%100) / 100
         var randomY = Double(arc4random()%100) / 100
-        food.position = CGPoint(x:(Double(self.frame.width) - Double(food.size.width)) * randomX + Double(food.size.width/2), y:(Double(self.frame.height) - Double(food.size.height)) * randomY + Double(food.size.height/2))
-        food.zPosition = 1
-        food.physicsBody = SKPhysicsBody(circleOfRadius: food.size.width/2)
+
+        food.position = CGPoint(x:(Double(self.frame.width) - Double(food.width)) * randomX + Double(food.width/2), y:(Double(self.frame.height) - Double(food.height)) * randomY + Double(food.height/2))
+        
+        food.physicsBody = SKPhysicsBody(circleOfRadius: food.width/2)
         food.physicsBody?.dynamic = true
         food.physicsBody?.categoryBitMask = PhysicsCategory.Food
         food.physicsBody?.contactTestBitMask = PhysicsCategory.Character
         food.physicsBody?.collisionBitMask = PhysicsCategory.None
         food.physicsBody?.affectedByGravity = false
+
         addChild(food)
-        
+
     }
-    
     
 }

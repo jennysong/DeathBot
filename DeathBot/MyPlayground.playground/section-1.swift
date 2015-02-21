@@ -8,3 +8,15 @@ println(a)
 
 
 
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
+arc4random()%3
