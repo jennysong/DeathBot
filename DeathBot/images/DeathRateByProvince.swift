@@ -9,8 +9,12 @@
 import Foundation
 
 class DeathRateByProvince {
-    func rate(province: String) -> Double {
-        switch province {
+    var province: String
+    init(province: String){
+        self.province = province
+    }
+    func rate() -> Double {
+        switch self.province {
             case "ON":
                 return 0.377316
             case "QC":
