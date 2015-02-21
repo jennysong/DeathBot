@@ -50,7 +50,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         GameSceneBG.zPosition = 1
         addChild(GameSceneBG)
         
-        character.setScale(0.2)
+        
+
+        
+        updateStatus()
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         character.zPosition = 10
         
@@ -65,7 +68,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         
-        happiness_label.text = "Happiness: \(Jenny.happiness)"
+        //happiness_label.text = "Happiness: \(Jenny.happiness)"
         happiness_label.fontSize = 20
         happiness_label.fontColor = SKColor.blackColor()
         happiness_label.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
@@ -73,21 +76,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(happiness_label)
         
         
-        health_label.text = "Health: \(Jenny.health)"
+        //health_label.text = "Health: \(Jenny.health)"
         health_label.fontSize = 20
         health_label.fontColor = SKColor.blackColor()
         health_label.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         health_label.zPosition = 5
         addChild(health_label)
 
-        age_label.text = "Month: \(Jenny.month)"
+        //age_label.text = "Month: \(Jenny.month)"
         age_label.fontSize = 20
         age_label.fontColor = SKColor.blackColor()
         age_label.position = CGPoint(x:0.2 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         age_label.zPosition = 5
         addChild(age_label)
         
-        back_button.zPosition = 5
+        back_button.zPosition = 20
         back_button.xScale = 0.5
         back_button.yScale = 0.5
         back_button.position = CGPoint(x:0.9 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
@@ -98,7 +101,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let goBack: ActionButton = ActionButton(defaultButtonImage: back_button, activeButtonImage: back_button_, buttonAction: goBackToStart)
         addChild(goBack)
         
-        action_button.zPosition = 5
+        action_button.zPosition = 20
         action_button.xScale = 0.5
         action_button.yScale = 0.5
         action_button.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
@@ -109,7 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let actionList:ActionButton = ActionButton(defaultButtonImage: action_button, activeButtonImage: action_button_, buttonAction: getActionList)
         addChild(actionList)
         
-        move_button.zPosition = 5
+        move_button.zPosition = 20
         move_button.xScale = 0.5
         move_button.yScale = 0.5
         move_button.position = CGPoint(x:0.7 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
@@ -205,15 +208,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+
+    func randomTime() -> NSTimeInterval {  //1 to 3 sec
+        return NSTimeInterval(arc4random()%3+2)
+    }
+
     func updateStatus(){
+        checkLife()
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         health_label.text = "Health: \(Jenny.health)"
         age_label.text = "Month: \(Jenny.month)"
-        checkLife()
+        updateCharac()
     }
     
-    func randomTime() -> NSTimeInterval {  //1 to 3 sec
-        return NSTimeInterval(arc4random()%3+2)
+    func updateCharac() {
+        if (Jenny.health < 50) {character.setScale(0.1)}
+        else if (Jenny.health < 60) {character.setScale(0.2)}
+        else if (Jenny.health < 70) {character.setScale(0.3)}
+        else if (Jenny.health < 80) {character.setScale(0.4)}
+        else {character.setScale(0.5)}
     }
     
     func checkLife() {

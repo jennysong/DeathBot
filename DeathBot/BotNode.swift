@@ -24,6 +24,7 @@ class BotNode: SKNode {
         super.setScale(scale)
         size.height = bodyNode.size.height * yScale
         size.width = bodyNode.size.width * xScale
+
     }
 
     required init?(coder aDecoder: NSCoder) {
