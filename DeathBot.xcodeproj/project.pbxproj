@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		504699E71A988A840035D259 /* BotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504699E61A988A840035D259 /* BotNode.swift */; };
 		50DD81861A9A5895007CEB20 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD81851A9A5895007CEB20 /* RESTClient.swift */; };
+		50DD818A1A9A75AA007CEB20 /* loading-modal.png in Resources */ = {isa = PBXBuildFile; fileRef = 50DD81891A9A75AA007CEB20 /* loading-modal.png */; };
 		BA22B4511A9965DC00E79694 /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B44F1A9965DC00E79694 /* female.png */; };
 		BA22B4521A9965DC00E79694 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4501A9965DC00E79694 /* male.png */; };
 		BA22B4551A99688E00E79694 /* female_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4531A99688E00E79694 /* female_.png */; };
@@ -163,6 +164,7 @@
 /* Begin PBXFileReference section */
 		504699E61A988A840035D259 /* BotNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNode.swift; sourceTree = "<group>"; };
 		50DD81851A9A5895007CEB20 /* RESTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
+		50DD81891A9A75AA007CEB20 /* loading-modal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading-modal.png"; sourceTree = "<group>"; };
 		BA22B44F1A9965DC00E79694 /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female.png; sourceTree = "<group>"; };
 		BA22B4501A9965DC00E79694 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
 		BA22B4531A99688E00E79694 /* female_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_.png; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				50DD81891A9A75AA007CEB20 /* loading-modal.png */,
 				F32A131C1A9A4A51004C6EBC /* about_bg_1024.png */,
 				BA875E2D1A9A5C4300A6DD2D /* dead_egg.png */,
 				BA875E2E1A9A5C4300A6DD2D /* gameover_bg.png */,
@@ -693,6 +696,7 @@
 				F3BCA7631A99B0B600F8C7A9 /* QC.png in Resources */,
 				F3B4C3EF1A99C683009B5202 /* female-senior.png in Resources */,
 				BA875E361A9A5C4300A6DD2D /* gameover_title.png in Resources */,
+				50DD818A1A9A75AA007CEB20 /* loading-modal.png in Resources */,
 				F3B4C3E51A99C64D009B5202 /* male-teenager.png in Resources */,
 				F3B4C3ED1A99C683009B5202 /* female-child.png in Resources */,
 				BA9C63E11A9904BE0037C425 /* alcohol.png in Resources */,
