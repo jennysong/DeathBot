@@ -50,7 +50,10 @@ class MoveScene: SKScene {
         addLocation("NU", x: self.size.width*(0.735), y: self.size.height*0.43)
         addLocation("PE", x: self.size.width*(0.735), y: self.size.height*0.33)
         addLocation("SK", x: self.size.width*(0.735), y: self.size.height*0.23)
-        
+        //UIAlertView(title: "AAA", message: "aaa", delegate: nil, cancelButtonTitle: "Cancel", otherButtonTitles: "OK").show()
+        var currentLocation = getLocationName(bot.location)
+        var DRBP = DeathRateByProvince(province: bot.location).rate() * 100
+        UIAlertView(title: "From \(currentLocation)", message: "The death rate by location is \(DRBP)%.\nIf you do not want to move, pick the same location.", delegate: nil, cancelButtonTitle: "OK").show()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -78,6 +81,10 @@ class MoveScene: SKScene {
             let location = touch.locationInNode(self)
             let touchNode = nodeAtPoint(location)
             if(touchNode.name != nil){
+                self.bot?.location = touchNode.name!
+                var currentLocation = getLocationName(touchNode.name!)
+                var DRBP = DeathRateByProvince(province: touchNode.name!).rate() * 100
+                UIAlertView(title: "To \(currentLocation)", message: "The death rate by location is \(DRBP)%.\nIf you do not want to move, pick the same location.", delegate: nil, cancelButtonTitle: "OK").show()
                 GoToGameScene(touchNode.name!)
             }
         }
@@ -92,5 +99,36 @@ class MoveScene: SKScene {
             }]))
     }
     
-    
+    func getLocationName(code: String) -> String{
+        switch code {
+            case "ON":
+                return "Ontario"
+            case "QC":
+                return "Quebec"
+            case "NS":
+                return "Nova Scotia"
+            case "NB":
+                return "New Brunswick"
+            case "MB":
+                return "Manitoba"
+            case "BC":
+                return "British Columbia"
+            case "PE":
+                return "Prince Edward Island"
+            case "SK":
+                return "Saskatchewan"
+            case "AB":
+                return "Alberta"
+            case "NL":
+                return "Newfoundland and Labrador"
+            case "NT":
+                return "Northwest Territories"
+            case "YT":
+                return "Yukon"
+            case "NU":
+                return "Nunavut"
+        default:
+            return "Worng Location"
+        }
+    }
 }
