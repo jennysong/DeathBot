@@ -60,7 +60,11 @@ class NaturalDeathGameOverScene: SKScene {
         runAction(SKAction.sequence([SKAction.runBlock{
             var currentLocation = self.getLocationName(bot.location)
             var DRBP = DeathRateByProvince(province: bot.location).rate() * 100
-            UIAlertView(title: "Reason of Death", message: "The death rate is 80%.\n", delegate: nil, cancelButtonTitle: "OK").show()
+            if(self.bot.gender == "Male"){
+                UIAlertView(title: "Natural Death: \(self.bot.age) years old", message: "According to Canadian Statistics, the average life expectancy for Male Canadians are 80.\nCongratulations, you have lived a full happy life!", delegate: nil, cancelButtonTitle: "OK").show()
+            }else {
+                UIAlertView(title: "Natural Death: \(self.bot.age) years old", message: "According to Canadian Statistics, the average life expectancy for Female Canadians are 84.\nCongratulations, you have lived a full happy life!", delegate: nil, cancelButtonTitle: "OK").show()
+            }
             },SKAction.waitForDuration(1.5),SKAction.runBlock{
                 gameOverBG.runAction(fadeInImages)
                 deadEgg.runAction(fadeInImages)}, SKAction.waitForDuration(1.2), SKAction.runBlock{
