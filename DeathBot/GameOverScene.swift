@@ -63,7 +63,7 @@ class GameOverScene: SKScene {
                 gameoverTitle.runAction(fadeInImages)}, SKAction.waitForDuration(1.5), SKAction.runBlock{
                     var currentLocation = self.getLocationName(bot.location)
                     var DRBP = DeathRateByProvince(province: bot.location).rate() * 100
-                    UIAlertView(title: "Reason of Death", message: "The death rate by location is \(DRBP)%.\n", delegate: nil, cancelButtonTitle: "OK").show()
+                    UIAlertView(title: "Reason of Death", message: "The death rate is 80%.\n", delegate: nil, cancelButtonTitle: "OK").show()
                     goBack.runAction(fadeInImages)
             }]))
     }
