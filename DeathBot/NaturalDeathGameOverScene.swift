@@ -18,19 +18,19 @@ class NaturalDeathGameOverScene: SKScene {
         let ratio = 1/self.size.height*195
         
         
-        var gameOverBG = SKSpriteNode(imageNamed: "gameover_bg.png")
+        var gameOverBG = SKSpriteNode(imageNamed: "reward_bg.png")
         gameOverBG.size.height = self.size.height
         gameOverBG.size.width = self.size.width
         gameOverBG.anchorPoint = CGPoint(x:0, y:0)
         gameOverBG.zPosition = 1
         
         
-        var deadEgg = SKSpriteNode(imageNamed: "dead_egg.png")
-        deadEgg.setScale(0.5)
+        var deadEgg = SKSpriteNode(imageNamed: "natural_death_egg.png")
+        deadEgg.setScale(0.5*0.95)
         deadEgg.position = CGPoint(x:self.size.width*(0.50), y:self.size.width*(0.353))
         deadEgg.zPosition = 10
         
-        var gameoverTitle = SKSpriteNode(imageNamed: "gameover_title.png")
+        var gameoverTitle = SKSpriteNode(imageNamed: "natural_death_title.png")
         gameoverTitle.setScale(0.5)
         gameoverTitle.position = CGPoint(x:self.size.width*(0.50), y:self.size.width*(0.433))
         gameoverTitle.zPosition = 5
@@ -61,11 +61,12 @@ class NaturalDeathGameOverScene: SKScene {
             var currentLocation = self.getLocationName(bot.location)
             var DRBP = DeathRateByProvince(province: bot.location).rate() * 100
             UIAlertView(title: "Reason of Death", message: "The death rate is 80%.\n", delegate: nil, cancelButtonTitle: "OK").show()
-            goBack.runAction(fadeInImages)
             },SKAction.waitForDuration(1.5),SKAction.runBlock{
                 gameOverBG.runAction(fadeInImages)
                 deadEgg.runAction(fadeInImages)}, SKAction.waitForDuration(1.2), SKAction.runBlock{
-                    gameoverTitle.runAction(fadeInImages)}]))
+                    gameoverTitle.runAction(fadeInImages)
+                    goBack.runAction(fadeInImages)
+            }]))
     }
     
     required init?(coder aDecoder: NSCoder) {
