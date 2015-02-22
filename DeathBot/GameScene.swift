@@ -383,12 +383,24 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func getActionList() {
         let revel = SKTransition.crossFadeWithDuration(0.5)
+        let loading_modal = SKSpriteNode(imageNamed: "loading-modal.png");
+        loading_modal.setScale(0.5)
+        loading_modal.zPosition = 100
+        loading_modal.anchorPoint = CGPoint(x:0, y:0)
+        
         RESTClient.post("http://code.shawnjung.ca/actions/search",
             data: [
                 "age": self.Jenny.age,
                 "gender": self.Jenny.gender,
                 "province": self.Jenny.location
             ],
+            before: { request in
+                self.addChild(loading_modal)
+            },
+            error: { data, response in
+                loading_modal.removeFromParent()
+                // Add UIAlertView here
+            },
             success: { data, response in
                 var actions = data as NSArray
                 self.runAction(SKAction.sequence([SKAction.runBlock() {

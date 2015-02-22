@@ -11,12 +11,13 @@ import SpriteKit
 
 class ActionDetailScene: SKScene {
     var Jenny: Bot?
-    var actionNumb: Int?
+    var deathList: NSArray?
     var botDataManager = BotDataManager()
-    init(size: CGSize, bot: Bot, action: Int) {
+    init(size: CGSize, bot: Bot, deathArray: NSArray) {
         super.init(size: size)
         Jenny = bot
-        actionNumb = action
+        deathList = deathArray
+        println(deathList!)
         
         
         var actionTitle = "Go Camping"
