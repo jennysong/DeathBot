@@ -254,7 +254,7 @@
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
 		F34BD0081A94F45E009A4743 /* LocationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationScene.swift; sourceTree = "<group>"; };
 		F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeathRateByProvince.swift; path = images/DeathRateByProvince.swift; sourceTree = "<group>"; };
-		F370C8841A94C0A3007E4498 /* DeathBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeathBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F370C8841A94C0A3007E4498 /* HumtyDumty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HumtyDumty.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F370C8881A94C0A3007E4498 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F370C8891A94C0A3007E4498 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F370C88D1A94C0A3007E4498 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -386,7 +386,7 @@
 		F370C8851A94C0A3007E4498 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F370C8841A94C0A3007E4498 /* DeathBot.app */,
+				F370C8841A94C0A3007E4498 /* HumtyDumty.app */,
 				F370C89D1A94C0A3007E4498 /* DeathBotTests.xctest */,
 			);
 			name = Products;
@@ -617,7 +617,7 @@
 			);
 			name = DeathBot;
 			productName = DeathBot;
-			productReference = F370C8841A94C0A3007E4498 /* DeathBot.app */;
+			productReference = F370C8841A94C0A3007E4498 /* HumtyDumty.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F370C89C1A94C0A3007E4498 /* DeathBotTests */ = {
@@ -966,7 +966,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DeathBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HumtyDumty;
 			};
 			name = Debug;
 		};
@@ -976,7 +976,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DeathBot/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = HumtyDumty;
 			};
 			name = Release;
 		};
