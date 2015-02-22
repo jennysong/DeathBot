@@ -58,9 +58,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         GameSceneBG.zPosition = 1
         addChild(GameSceneBG)
         
-        
-
-        
         //updateStatus()
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         character.zPosition = 10
@@ -91,7 +88,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         happiness_button_.xScale = 0.5
         happiness_button_.yScale = 0.5
         happiness_button_.position = CGPoint(x:0.92 * Double(self.frame.width), y: 0.922 * Double(self.frame.height))
-        let happyButton:ActionButton = ActionButton(defaultButtonImage: happiness_button, activeButtonImage: happiness_button_, buttonAction: getActionList)
+        let happyButton:ActionButton = ActionButton(defaultButtonImage: happiness_button, activeButtonImage: happiness_button_, buttonAction: get_happiness_info)
         addChild(happyButton)
         
         
@@ -109,7 +106,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         health_button_.xScale = 0.5
         health_button_.yScale = 0.5
         health_button_.position = CGPoint(x:0.805 * Double(self.frame.width), y: 0.922 * Double(self.frame.height))
-        let healthButton:ActionButton = ActionButton(defaultButtonImage: health_button, activeButtonImage: health_button_, buttonAction: getActionList)
+        let healthButton:ActionButton = ActionButton(defaultButtonImage: health_button, activeButtonImage: health_button_, buttonAction: get_health_info)
         addChild(healthButton)
         
         age_label.text = "\(Jenny.age)"
@@ -126,36 +123,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         age_button_.xScale = 0.5
         age_button_.yScale = 0.5
         age_button_.position = CGPoint(x:0.69 * Double(self.frame.width), y: 0.922 * Double(self.frame.height))
-        let ageButton:ActionButton = ActionButton(defaultButtonImage: age_button, activeButtonImage: age_button_, buttonAction: getActionList)
+        let ageButton:ActionButton = ActionButton(defaultButtonImage: age_button, activeButtonImage: age_button_, buttonAction: get_age_info)
         addChild(ageButton)
         
-        back_button.zPosition = 20
+        back_button.zPosition = 10
         back_button.xScale = 0.5
         back_button.yScale = 0.5
         back_button.position = CGPoint(x:0.05 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
-        back_button_.zPosition = 5
+        back_button_.zPosition = 10
         back_button_.xScale = 0.5
         back_button_.yScale = 0.5
         back_button_.position = CGPoint(x:0.05 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         let goBack: ActionButton = ActionButton(defaultButtonImage: back_button, activeButtonImage: back_button_, buttonAction: goBackToStart)
         addChild(goBack)
         
-        action_button.zPosition = 20
+        action_button.zPosition = 10
         action_button.xScale = 0.5
         action_button.yScale = 0.5
         action_button.position = CGPoint(x:0.81 * Double(self.frame.width), y: 0.12 * Double(self.frame.height))
-        action_button_.zPosition = 5
+        action_button_.zPosition = 10
         action_button_.xScale = 0.5
         action_button_.yScale = 0.5
         action_button_.position = CGPoint(x:0.81 * Double(self.frame.width), y: 0.12 * Double(self.frame.height))
         let actionList:ActionButton = ActionButton(defaultButtonImage: action_button, activeButtonImage: action_button_, buttonAction: getActionList)
         addChild(actionList)
         
-        move_button.zPosition = 20
+        move_button.zPosition = 10
         move_button.xScale = 0.5
         move_button.yScale = 0.5
         move_button.position = CGPoint(x:0.92 * Double(self.frame.width), y: 0.12 * Double(self.frame.height))
-        move_button_.zPosition = 5
+        move_button_.zPosition = 10
         move_button_.xScale = 0.5
         move_button_.yScale = 0.5
         move_button_.position = CGPoint(x:0.92 * Double(self.frame.width), y: 0.12 * Double(self.frame.height))
@@ -318,6 +315,20 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
     }
     
+    func get_happiness_info() {
+        //TODO
+    }
+    
+    func get_health_info() {
+        //TODO
+    }
+    
+    func get_age_info() {
+        //TODO
+    }
+    
+    
+    
     func goBackToStart() {
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
@@ -327,9 +338,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func getActionList() {
-        println("get actionlist")
-        //get actionlist
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.crossFadeWithDuration(0.5)
+            let scene = ActionScene(size: self.size, bot: self.Jenny)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
     }
+
     
     func getMoveList() {
         runAction(SKAction.sequence([SKAction.runBlock() {

@@ -143,6 +143,7 @@ class Bot : NSObject, NSCoding{
             default:
                 break
         }
+        if self.happiness>=100 {self.happiness = 100}
     }
     
     
