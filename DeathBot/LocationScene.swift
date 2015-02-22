@@ -60,7 +60,7 @@ class LocationScene: SKScene {
     }
     func goBackToPrevious(){
         runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let revel = SKTransition.fadeWithColor(SKColor.blackColor(), duration: NSTimeInterval(1.3))
             let scene = NewGameScene(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
