@@ -97,33 +97,33 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         back_button.zPosition = 20
         back_button.xScale = 0.5
         back_button.yScale = 0.5
-        back_button.position = CGPoint(x:0.9 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        back_button.position = CGPoint(x:0.05 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         back_button_.zPosition = 5
         back_button_.xScale = 0.5
         back_button_.yScale = 0.5
-        back_button_.position = CGPoint(x:0.9 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        back_button_.position = CGPoint(x:0.05 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
         let goBack: ActionButton = ActionButton(defaultButtonImage: back_button, activeButtonImage: back_button_, buttonAction: goBackToStart)
         addChild(goBack)
         
         action_button.zPosition = 20
         action_button.xScale = 0.5
         action_button.yScale = 0.5
-        action_button.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        action_button.position = CGPoint(x:0.85 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
         action_button_.zPosition = 5
         action_button_.xScale = 0.5
         action_button_.yScale = 0.5
-        action_button_.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        action_button_.position = CGPoint(x:0.85 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
         let actionList:ActionButton = ActionButton(defaultButtonImage: action_button, activeButtonImage: action_button_, buttonAction: getActionList)
         addChild(actionList)
         
         move_button.zPosition = 20
         move_button.xScale = 0.5
         move_button.yScale = 0.5
-        move_button.position = CGPoint(x:0.7 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        move_button.position = CGPoint(x:0.95 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
         move_button_.zPosition = 5
         move_button_.xScale = 0.5
         move_button_.yScale = 0.5
-        move_button_.position = CGPoint(x:0.7 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
+        move_button_.position = CGPoint(x:0.95 * Double(self.frame.width), y: 0.1 * Double(self.frame.height))
         let moveList:ActionButton = ActionButton(defaultButtonImage: move_button, activeButtonImage: move_button_, buttonAction: getMoveList)
         addChild(moveList)
         
