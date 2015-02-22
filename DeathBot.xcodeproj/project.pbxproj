@@ -102,10 +102,17 @@
 		F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */; };
 		F37295B21A958C670062CCD7 /* BotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37295B11A958C670062CCD7 /* BotData.swift */; };
 		F37295B41A958EA80062CCD7 /* BotDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37295B31A958EA80062CCD7 /* BotDataManager.swift */; };
+		F381224D1A9636A500A10777 /* female_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = F38122481A9636A500A10777 /* female_button_.png */; };
+		F381224E1A9636A500A10777 /* female_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F38122491A9636A500A10777 /* female_button.png */; };
+		F381224F1A9636A500A10777 /* gender_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F381224A1A9636A500A10777 /* gender_bg.png */; };
+		F38122501A9636A500A10777 /* male_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = F381224B1A9636A500A10777 /* male_button_.png */; };
+		F38122511A9636A500A10777 /* male_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F381224C1A9636A500A10777 /* male_button.png */; };
 		F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38668561A94EC2E00C1FF1D /* NewGameScene.swift */; };
 		F38F76BF1A95490C00FF8C04 /* DeathRateByAge.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38F76BE1A95490C00FF8C04 /* DeathRateByAge.swift */; };
 		F39166C01A95E1E800BEFC90 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39166BF1A95E1E800BEFC90 /* GameOverScene.swift */; };
 		F393B8241A95525600EE3241 /* DeathRateByGender.swift in Sources */ = {isa = PBXBuildFile; fileRef = F393B8231A95525600EE3241 /* DeathRateByGender.swift */; };
+		F3BCA7461A99A86000F8C7A9 /* landing_back_button__360.png in Resources */ = {isa = PBXBuildFile; fileRef = F3BCA7451A99A86000F8C7A9 /* landing_back_button__360.png */; };
+		F3BCA7481A99A88F00F8C7A9 /* landing_back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F3BCA7471A99A88F00F8C7A9 /* landing_back_button.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,10 +227,17 @@
 		F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneHowTo.swift; sourceTree = "<group>"; };
 		F37295B11A958C670062CCD7 /* BotData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotData.swift; sourceTree = "<group>"; };
 		F37295B31A958EA80062CCD7 /* BotDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDataManager.swift; sourceTree = "<group>"; };
+		F38122481A9636A500A10777 /* female_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_button_.png; sourceTree = "<group>"; };
+		F38122491A9636A500A10777 /* female_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_button.png; sourceTree = "<group>"; };
+		F381224A1A9636A500A10777 /* gender_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gender_bg.png; sourceTree = "<group>"; };
+		F381224B1A9636A500A10777 /* male_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_button_.png; sourceTree = "<group>"; };
+		F381224C1A9636A500A10777 /* male_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_button.png; sourceTree = "<group>"; };
 		F38668561A94EC2E00C1FF1D /* NewGameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGameScene.swift; sourceTree = SOURCE_ROOT; };
 		F38F76BE1A95490C00FF8C04 /* DeathRateByAge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathRateByAge.swift; sourceTree = "<group>"; };
 		F39166BF1A95E1E800BEFC90 /* GameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		F393B8231A95525600EE3241 /* DeathRateByGender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeathRateByGender.swift; sourceTree = "<group>"; };
+		F3BCA7451A99A86000F8C7A9 /* landing_back_button__360.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landing_back_button__360.png; sourceTree = "<group>"; };
+		F3BCA7471A99A88F00F8C7A9 /* landing_back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = landing_back_button.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,6 +447,20 @@
 			name = Flag;
 			sourceTree = "<group>";
 		};
+		F38122471A96368600A10777 /* gender */ = {
+			isa = PBXGroup;
+			children = (
+				F3BCA7471A99A88F00F8C7A9 /* landing_back_button.png */,
+				F3BCA7451A99A86000F8C7A9 /* landing_back_button__360.png */,
+				F38122481A9636A500A10777 /* female_button_.png */,
+				F38122491A9636A500A10777 /* female_button.png */,
+				F381224A1A9636A500A10777 /* gender_bg.png */,
+				F381224B1A9636A500A10777 /* male_button_.png */,
+				F381224C1A9636A500A10777 /* male_button.png */,
+			);
+			name = gender;
+			sourceTree = "<group>";
+		};
 		F39166C11A95E80100BEFC90 /* Button */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,11 +567,13 @@
 				BA9C63EA1A9904BE0037C425 /* cigarette.png in Resources */,
 				BA9C64011A992EAD0037C425 /* background.png in Resources */,
 				BA9C63AB1A9846970037C425 /* character.png in Resources */,
+				F381224F1A9636A500A10777 /* gender_bg.png in Resources */,
 				BA9C63ED1A9904BE0037C425 /* egg.png in Resources */,
 				BA9C63C61A98D2A00037C425 /* male-golden-oldie.png in Resources */,
 				BA9C63C31A98D2A00037C425 /* female-toddler.png in Resources */,
 				BAAFFF8E1A9995C1009AEF78 /* BC.png in Resources */,
 				BA22B45D1A9984D300E79694 /* age_button_.png in Resources */,
+				F3BCA7461A99A86000F8C7A9 /* landing_back_button__360.png in Resources */,
 				BA9C63EE1A9904BE0037C425 /* fish.png in Resources */,
 				BA9C63E11A9904BE0037C425 /* alcohol.png in Resources */,
 				BA9C63C51A98D2A00037C425 /* male-child.png in Resources */,
@@ -573,6 +603,7 @@
 				BAAFFF981A9995C1009AEF78 /* SK.png in Resources */,
 				F370C8951A94C0A3007E4498 /* Images.xcassets in Resources */,
 				BA22B4561A99688E00E79694 /* male_.png in Resources */,
+				F38122511A9636A500A10777 /* male_button.png in Resources */,
 				BA9C63F41A9904BE0037C425 /* softdrink.png in Resources */,
 				BAAFFF971A9995C1009AEF78 /* QC.png in Resources */,
 				BAAFFF901A9995C1009AEF78 /* NB.png in Resources */,
@@ -590,6 +621,7 @@
 				BAAFFF8D1A9995C1009AEF78 /* AB.png in Resources */,
 				BA22B45E1A9984D300E79694 /* age_button.png in Resources */,
 				BA9C63BF1A98D2A00037C425 /* female-child.png in Resources */,
+				F381224D1A9636A500A10777 /* female_button_.png in Resources */,
 				BA9C64051A99359C0037C425 /* action_button_.png in Resources */,
 				BA9C63C71A98D2A00037C425 /* male-senior.png in Resources */,
 				BA22B4511A9965DC00E79694 /* female.png in Resources */,
@@ -600,11 +632,14 @@
 				BA9C64061A99359C0037C425 /* back_button_.png in Resources */,
 				BAAFFFA21A999CCB009AEF78 /* continue_button_.png in Resources */,
 				BA22B4601A9984D300E79694 /* happiness_button.png in Resources */,
+				F3BCA7481A99A88F00F8C7A9 /* landing_back_button.png in Resources */,
 				BAAFFF911A9995C1009AEF78 /* NL.png in Resources */,
 				BA9C63C81A98D2A00037C425 /* male-teenager.png in Resources */,
+				F381224E1A9636A500A10777 /* female_button.png in Resources */,
 				BAAFFF991A9995C1009AEF78 /* YT.png in Resources */,
 				BA9C63F91A9915ED0037C425 /* room.png in Resources */,
 				F370C8931A94C0A3007E4498 /* Main.storyboard in Resources */,
+				F38122501A9636A500A10777 /* male_button_.png in Resources */,
 				BA9C63FC1A992D040037C425 /* action_button.png in Resources */,
 				BA9C63F71A9912890037C425 /* bite.mp3 in Resources */,
 				BAAFFFA31A999CCB009AEF78 /* continue_button.png in Resources */,

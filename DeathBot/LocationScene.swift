@@ -26,17 +26,17 @@ class LocationScene: SKScene {
         addChild(locationBG)
         */
         
-        var backButton = SKSpriteNode(imageNamed: "backButton")
+        var backButton = SKSpriteNode(imageNamed: "back_button")
         backButton.size.height *= ratio
         backButton.size.width *= ratio
         backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.95)
         backButton.zPosition = 10
-        var backButton_ = SKSpriteNode(imageNamed: "backButton_")
+        var backButton_ = SKSpriteNode(imageNamed: "back_button_")
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
         backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.95)
         backButton_.zPosition = 10
-        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
+        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToPrevious)
         addChild(goBack)
         
         addLocation("ON", x: self.size.width*(0.14), y: self.size.height*0.2)
@@ -44,16 +44,14 @@ class LocationScene: SKScene {
         addLocation("NS", x: self.size.width*(0.50), y: self.size.height*0.2)
         addLocation("NB", x: self.size.width*(0.68), y: self.size.height*0.2)
         addLocation("MB", x: self.size.width*(0.86), y: self.size.height*0.2)
-        addLocation("BC", x: self.size.width*(0.14), y: self.size.height*0.5)
-        addLocation("PE", x: self.size.width*(0.32), y: self.size.height*0.5)
-        addLocation("SK", x: self.size.width*(0.50), y: self.size.height*0.5)
-        addLocation("PE", x: self.size.width*(0.68), y: self.size.height*0.5)
-        addLocation("SK", x: self.size.width*(0.86), y: self.size.height*0.5)
-        addLocation("AB", x: self.size.width*(0.14), y: self.size.height*0.8)
-        addLocation("NL", x: self.size.width*(0.32), y: self.size.height*0.8)
-        addLocation("NT", x: self.size.width*(0.50), y: self.size.height*0.8)
-        addLocation("YT", x: self.size.width*(0.68), y: self.size.height*0.8)
-        addLocation("NU", x: self.size.width*(0.86), y: self.size.height*0.8)
+        addLocation("BC", x: self.size.width*(0.2), y: self.size.height*0.5)
+        addLocation("PE", x: self.size.width*(0.4), y: self.size.height*0.5)
+        addLocation("SK", x: self.size.width*(0.6), y: self.size.height*0.5)
+        addLocation("AB", x: self.size.width*(0.8), y: self.size.height*0.5)
+        addLocation("NL", x: self.size.width*(0.2), y: self.size.height*0.8)
+        addLocation("NT", x: self.size.width*(0.4), y: self.size.height*0.8)
+        addLocation("YT", x: self.size.width*(0.6), y: self.size.height*0.8)
+        addLocation("NU", x: self.size.width*(0.8), y: self.size.height*0.8)
         
         
         
@@ -62,10 +60,10 @@ class LocationScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func goBackToStart(){
+    func goBackToPrevious(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = Game(size: self.size)
+            let scene = NewGameScene(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
@@ -91,8 +89,10 @@ class LocationScene: SKScene {
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         for touch: AnyObject in touches {
             let location = touch.locationInNode(self)
-            let touchNode = nodeAtPoint(location) as SKSpriteNode
-            GoToGameScene(touchNode.name!)
+            let touchNode = nodeAtPoint(location)
+            if(touchNode.name != nil){
+                GoToGameScene(touchNode.name!)
+            }
         }
         
     }
