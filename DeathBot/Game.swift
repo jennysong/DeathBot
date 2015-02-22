@@ -21,11 +21,11 @@ class Game: SKScene {
     override init(size: CGSize) {
         bot = botDataManager.get()
         super.init(size: size)
-        let ratio = 1/self.size.height*195
+        
         
         var background = SKSpriteNode(imageNamed: "landingBG")
-        background.yScale = 0.5
-        background.xScale = 0.5
+        background.yScale = self.size.width/background.size.width
+        background.size.width = self.size.width
         background.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.42 * Double(self.frame.height))
         background.zPosition = 1
 
