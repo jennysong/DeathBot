@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		504699E71A988A840035D259 /* BotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504699E61A988A840035D259 /* BotNode.swift */; };
+		50DD81861A9A5895007CEB20 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD81851A9A5895007CEB20 /* RESTClient.swift */; };
 		BA22B4511A9965DC00E79694 /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B44F1A9965DC00E79694 /* female.png */; };
 		BA22B4521A9965DC00E79694 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4501A9965DC00E79694 /* male.png */; };
 		BA22B4551A99688E00E79694 /* female_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4531A99688E00E79694 /* female_.png */; };
@@ -151,6 +152,7 @@
 
 /* Begin PBXFileReference section */
 		504699E61A988A840035D259 /* BotNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNode.swift; sourceTree = "<group>"; };
+		50DD81851A9A5895007CEB20 /* RESTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		BA22B44F1A9965DC00E79694 /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female.png; sourceTree = "<group>"; };
 		BA22B4501A9965DC00E79694 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
 		BA22B4531A99688E00E79694 /* female_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_.png; sourceTree = "<group>"; };
@@ -388,6 +390,7 @@
 				BA9C63A71A982B1F0037C425 /* MyPlayground.playground */,
 				F370C8871A94C0A3007E4498 /* Supporting Files */,
 				F37295B51A9599650062CCD7 /* BotData */,
+				50DD81851A9A5895007CEB20 /* RESTClient.swift */,
 			);
 			path = DeathBot;
 			sourceTree = "<group>";
@@ -763,6 +766,7 @@
 				F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */,
 				F370C8B01A94C67A007E4498 /* Bot.swift in Sources */,
 				F370C8B61A94D304007E4498 /* Game.swift in Sources */,
+				50DD81861A9A5895007CEB20 /* RESTClient.swift in Sources */,
 				F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */,
 				BA9C63CB1A98D76E0037C425 /* FoodNode.swift in Sources */,
 				F39166C01A95E1E800BEFC90 /* GameOverScene.swift in Sources */,

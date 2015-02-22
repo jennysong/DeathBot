@@ -358,11 +358,23 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func getActionList() {
-        runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.crossFadeWithDuration(0.5)
-            let scene = ActionScene(size: self.size, bot: self.Jenny)
-            self.view?.presentScene(scene, transition: revel)
-            }]))
+        let revel = SKTransition.crossFadeWithDuration(0.5)
+        RESTClient.post("http://code.shawnjung.ca/actions/search",
+            data: [
+                "age": self.Jenny.age,
+                "gender": self.Jenny.gender,
+                "province": self.Jenny.location
+            ],
+            success: { data, response in
+                var actions = data as NSArray
+                self.runAction(SKAction.sequence([SKAction.runBlock() {
+                    let scene = ActionScene(size: self.size, bot: self.Jenny, actions: actions)
+                    self.view?.presentScene(scene, transition: revel)
+                    }]))
+            }
+        )
+
+
     }
 
     

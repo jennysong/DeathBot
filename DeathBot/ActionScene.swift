@@ -14,42 +14,11 @@ class ActionScene: SKScene {
     var Jenny: Bot?
     var botDataManager = BotDataManager()
 
-    init(size: CGSize, bot: Bot) {
+    init(size: CGSize, bot: Bot, actions: Array<AnyObject>? = nil) {
         super.init(size: size)
         Jenny = bot
-
         
-       
-        
-        var uri = NSURL(string: "http://code.shawnjung.ca/actions/search?age=\(Jenny!.age)&gender=\(Jenny!.gender)&province=\(Jenny!.location)")
-        let webRequest = NSMutableURLRequest(URL: uri!)
-        webRequest.HTTPMethod = "GET"
-        
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(webRequest) {(data, response, error) in
-            if let result = NSString(data: data, encoding: NSUTF8StringEncoding) {
-                println(result)
-            }
-            else {
-                println("alert")
-            }
-        }
-        task.resume()
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        println(actions)
         
         
         var actiontitle1 = "Go Camping"
