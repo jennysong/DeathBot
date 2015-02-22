@@ -17,6 +17,19 @@ class ActionSuccessScene: SKScene {
         let ratio = 1/self.size.height*195
         var reward = reward
         
+        if reward == "high" {
+            self.bot.grow_age()
+            self.bot.grow_age()
+            self.bot.grow_age()
+        }
+        else if reward == "medium" {
+            self.bot.grow_age()
+            self.bot.grow_age()
+        }
+        else {
+            self.bot.grow_age()
+        }
+        
         var rewardBG = SKSpriteNode(imageNamed: "reward_bg.png")
         rewardBG.size.height = self.size.height
         rewardBG.size.width = self.size.width
