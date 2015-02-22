@@ -73,7 +73,7 @@ class LocationScene: SKScene {
     func addLocation(location: String,x: CGFloat, y: CGFloat){
         let ratio = 1/self.size.height*195
         var lo = SKSpriteNode(imageNamed: location)
-        lo.setScale(0.30)
+ //       lo.setScale(0.30)
         lo.name = location
         lo.position = CGPoint(x: x, y: y)
         lo.zPosition = 10
