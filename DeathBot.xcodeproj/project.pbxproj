@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		504699E71A988A840035D259 /* BotNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504699E61A988A840035D259 /* BotNode.swift */; };
+		50DD81861A9A5895007CEB20 /* RESTClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD81851A9A5895007CEB20 /* RESTClient.swift */; };
 		BA22B4511A9965DC00E79694 /* female.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B44F1A9965DC00E79694 /* female.png */; };
 		BA22B4521A9965DC00E79694 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4501A9965DC00E79694 /* male.png */; };
 		BA22B4551A99688E00E79694 /* female_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4531A99688E00E79694 /* female_.png */; };
@@ -100,6 +101,11 @@
 		F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */; };
 		F37295B21A958C670062CCD7 /* BotData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37295B11A958C670062CCD7 /* BotData.swift */; };
 		F37295B41A958EA80062CCD7 /* BotDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F37295B31A958EA80062CCD7 /* BotDataManager.swift */; };
+		F37996EA1A9A2E41000C144B /* gameover_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F37996E91A9A2E41000C144B /* gameover_bg.png */; };
+		F37996EE1A9A2E6E000C144B /* gameover_home_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = F37996EB1A9A2E6E000C144B /* gameover_home_button_.png */; };
+		F37996EF1A9A2E6E000C144B /* gameover_home_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F37996EC1A9A2E6E000C144B /* gameover_home_button.png */; };
+		F37996F01A9A2E6E000C144B /* gameover_title.png in Resources */ = {isa = PBXBuildFile; fileRef = F37996ED1A9A2E6E000C144B /* gameover_title.png */; };
+		F37996F21A9A2E79000C144B /* dead_egg.png in Resources */ = {isa = PBXBuildFile; fileRef = F37996F11A9A2E79000C144B /* dead_egg.png */; };
 		F381224D1A9636A500A10777 /* female_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = F38122481A9636A500A10777 /* female_button_.png */; };
 		F381224E1A9636A500A10777 /* female_button.png in Resources */ = {isa = PBXBuildFile; fileRef = F38122491A9636A500A10777 /* female_button.png */; };
 		F381224F1A9636A500A10777 /* gender_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F381224A1A9636A500A10777 /* gender_bg.png */; };
@@ -159,6 +165,7 @@
 
 /* Begin PBXFileReference section */
 		504699E61A988A840035D259 /* BotNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotNode.swift; sourceTree = "<group>"; };
+		50DD81851A9A5895007CEB20 /* RESTClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTClient.swift; sourceTree = "<group>"; };
 		BA22B44F1A9965DC00E79694 /* female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female.png; sourceTree = "<group>"; };
 		BA22B4501A9965DC00E79694 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
 		BA22B4531A99688E00E79694 /* female_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_.png; sourceTree = "<group>"; };
@@ -257,6 +264,11 @@
 		F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneHowTo.swift; sourceTree = "<group>"; };
 		F37295B11A958C670062CCD7 /* BotData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotData.swift; sourceTree = "<group>"; };
 		F37295B31A958EA80062CCD7 /* BotDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotDataManager.swift; sourceTree = "<group>"; };
+		F37996E91A9A2E41000C144B /* gameover_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_bg.png; sourceTree = "<group>"; };
+		F37996EB1A9A2E6E000C144B /* gameover_home_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_home_button_.png; sourceTree = "<group>"; };
+		F37996EC1A9A2E6E000C144B /* gameover_home_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_home_button.png; sourceTree = "<group>"; };
+		F37996ED1A9A2E6E000C144B /* gameover_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_title.png; sourceTree = "<group>"; };
+		F37996F11A9A2E79000C144B /* dead_egg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dead_egg.png; sourceTree = "<group>"; };
 		F38122481A9636A500A10777 /* female_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_button_.png; sourceTree = "<group>"; };
 		F38122491A9636A500A10777 /* female_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_button.png; sourceTree = "<group>"; };
 		F381224A1A9636A500A10777 /* gender_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gender_bg.png; sourceTree = "<group>"; };
@@ -405,6 +417,7 @@
 				BA9C63A71A982B1F0037C425 /* MyPlayground.playground */,
 				F370C8871A94C0A3007E4498 /* Supporting Files */,
 				F37295B51A9599650062CCD7 /* BotData */,
+				50DD81851A9A5895007CEB20 /* RESTClient.swift */,
 			);
 			path = DeathBot;
 			sourceTree = "<group>";
@@ -665,6 +678,7 @@
 				F3BCA7591A99B0B600F8C7A9 /* location_background.png in Resources */,
 				F3BCA7581A99B0B600F8C7A9 /* AB.png in Resources */,
 				BA75A7461A9A251E008F03C1 /* action_confirm_dialog_bg.png in Resources */,
+				F37996F21A9A2E79000C144B /* dead_egg.png in Resources */,
 				BA75A7381A9A0A09008F03C1 /* action_list_item_bg_high.png in Resources */,
 				BA9C63EA1A9904BE0037C425 /* cigarette.png in Resources */,
 				F3B4C3EE1A99C683009B5202 /* female-golden-oldie.png in Resources */,
@@ -681,6 +695,7 @@
 				BA875E261A9A5AE400A6DD2D /* reward_medium.png in Resources */,
 				BA875E201A9A5A0900A6DD2D /* reward_bg.png in Resources */,
 				F3BCA7631A99B0B600F8C7A9 /* QC.png in Resources */,
+				F37996EE1A9A2E6E000C144B /* gameover_home_button_.png in Resources */,
 				F3B4C3EF1A99C683009B5202 /* female-senior.png in Resources */,
 				BA875E361A9A5C4300A6DD2D /* gameover_title.png in Resources */,
 				F3B4C3E51A99C64D009B5202 /* male-teenager.png in Resources */,
@@ -696,6 +711,7 @@
 				BA22B45F1A9984D300E79694 /* happiness_button_.png in Resources */,
 				F3BCA7651A99B0B600F8C7A9 /* YT.png in Resources */,
 				BA9C63E41A9904BE0037C425 /* bread.png in Resources */,
+				F37996F01A9A2E6E000C144B /* gameover_title.png in Resources */,
 				BAC4C39B1A9A29A000E7CA04 /* action_confirm_low.png in Resources */,
 				BA9C63FF1A992E3D0037C425 /* move_button.png in Resources */,
 				BA75A7341A9A075E008F03C1 /* action_modal_bg.png in Resources */,
@@ -758,6 +774,7 @@
 				BA75A7331A9A075E008F03C1 /* action_list_dialog_bg.png in Resources */,
 				F381224E1A9636A500A10777 /* female_button.png in Resources */,
 				F3B4C3EC1A99C683009B5202 /* female-adult.png in Resources */,
+				F37996EA1A9A2E41000C144B /* gameover_bg.png in Resources */,
 				F3BCA7641A99B0B600F8C7A9 /* SK.png in Resources */,
 				F3BCA75F1A99B0B600F8C7A9 /* NT.png in Resources */,
 				BA875E251A9A5AE400A6DD2D /* reward_low.png in Resources */,
@@ -794,6 +811,7 @@
 				F370C8BA1A94D5A0007E4498 /* GameSceneHowTo.swift in Sources */,
 				F370C8B01A94C67A007E4498 /* Bot.swift in Sources */,
 				F370C8B61A94D304007E4498 /* Game.swift in Sources */,
+				50DD81861A9A5895007CEB20 /* RESTClient.swift in Sources */,
 				F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */,
 				BA9C63CB1A98D76E0037C425 /* FoodNode.swift in Sources */,
 				F39166C01A95E1E800BEFC90 /* GameOverScene.swift in Sources */,
