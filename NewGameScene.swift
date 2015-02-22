@@ -54,7 +54,7 @@ class NewGameScene: SKScene {
         var backButton_ = SKSpriteNode(imageNamed: "landing_back_button__360.png")
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
-        backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        backButton_.position = CGPoint(x:self.size.width*(0.057), y:self.size.height*0.78)
         backButton_.zPosition = 10
         
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
