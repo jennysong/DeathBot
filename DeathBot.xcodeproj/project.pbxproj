@@ -12,6 +12,12 @@
 		BA22B4521A9965DC00E79694 /* male.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4501A9965DC00E79694 /* male.png */; };
 		BA22B4551A99688E00E79694 /* female_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4531A99688E00E79694 /* female_.png */; };
 		BA22B4561A99688E00E79694 /* male_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4541A99688E00E79694 /* male_.png */; };
+		BA22B45D1A9984D300E79694 /* age_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4571A9984D300E79694 /* age_button_.png */; };
+		BA22B45E1A9984D300E79694 /* age_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4581A9984D300E79694 /* age_button.png */; };
+		BA22B45F1A9984D300E79694 /* happiness_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B4591A9984D300E79694 /* happiness_button_.png */; };
+		BA22B4601A9984D300E79694 /* happiness_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B45A1A9984D300E79694 /* happiness_button.png */; };
+		BA22B4611A9984D300E79694 /* health_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B45B1A9984D300E79694 /* health_button_.png */; };
+		BA22B4621A9984D300E79694 /* health_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BA22B45C1A9984D300E79694 /* health_button.png */; };
 		BA9C63AB1A9846970037C425 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63AA1A9846970037C425 /* character.png */; };
 		BA9C63BE1A98D2A00037C425 /* female-adult.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B21A98D2A00037C425 /* female-adult.png */; };
 		BA9C63BF1A98D2A00037C425 /* female-child.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63B31A98D2A00037C425 /* female-child.png */; };
@@ -109,6 +115,12 @@
 		BA22B4501A9965DC00E79694 /* male.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male.png; sourceTree = "<group>"; };
 		BA22B4531A99688E00E79694 /* female_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = female_.png; sourceTree = "<group>"; };
 		BA22B4541A99688E00E79694 /* male_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = male_.png; sourceTree = "<group>"; };
+		BA22B4571A9984D300E79694 /* age_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = age_button_.png; sourceTree = "<group>"; };
+		BA22B4581A9984D300E79694 /* age_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = age_button.png; sourceTree = "<group>"; };
+		BA22B4591A9984D300E79694 /* happiness_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happiness_button_.png; sourceTree = "<group>"; };
+		BA22B45A1A9984D300E79694 /* happiness_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = happiness_button.png; sourceTree = "<group>"; };
+		BA22B45B1A9984D300E79694 /* health_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_button_.png; sourceTree = "<group>"; };
+		BA22B45C1A9984D300E79694 /* health_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = health_button.png; sourceTree = "<group>"; };
 		BA9C63A71A982B1F0037C425 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BA9C63AA1A9846970037C425 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
 		BA9C63B21A98D2A00037C425 /* female-adult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "female-adult.png"; sourceTree = "<group>"; };
@@ -326,6 +338,12 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				BA22B4571A9984D300E79694 /* age_button_.png */,
+				BA22B4581A9984D300E79694 /* age_button.png */,
+				BA22B4591A9984D300E79694 /* happiness_button_.png */,
+				BA22B45A1A9984D300E79694 /* happiness_button.png */,
+				BA22B45B1A9984D300E79694 /* health_button_.png */,
+				BA22B45C1A9984D300E79694 /* health_button.png */,
 				BA22B4531A99688E00E79694 /* female_.png */,
 				BA22B4541A99688E00E79694 /* male_.png */,
 				BA22B44F1A9965DC00E79694 /* female.png */,
@@ -486,6 +504,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA22B4621A9984D300E79694 /* health_button.png in Resources */,
 				F370C8981A94C0A3007E4498 /* LaunchScreen.xib in Resources */,
 				BA22B4521A9965DC00E79694 /* male.png in Resources */,
 				BA9C63EA1A9904BE0037C425 /* cigarette.png in Resources */,
@@ -495,6 +514,7 @@
 				BA9C63C61A98D2A00037C425 /* male-golden-oldie.png in Resources */,
 				BA9C63C31A98D2A00037C425 /* female-toddler.png in Resources */,
 				F37295C91A95C9D40062CCD7 /* NL.png in Resources */,
+				BA22B45D1A9984D300E79694 /* age_button_.png in Resources */,
 				BA9C63EE1A9904BE0037C425 /* fish.png in Resources */,
 				F37295C61A95C9D40062CCD7 /* BC.png in Resources */,
 				BA9C63E11A9904BE0037C425 /* alcohol.png in Resources */,
@@ -506,6 +526,7 @@
 				BA22B4551A99688E00E79694 /* female_.png in Resources */,
 				BA9C63EF1A9904BE0037C425 /* grape.png in Resources */,
 				BA9C63C01A98D2A00037C425 /* female-golden-oldie.png in Resources */,
+				BA22B45F1A9984D300E79694 /* happiness_button_.png in Resources */,
 				BA9C63E41A9904BE0037C425 /* bread.png in Resources */,
 				BA9C63FF1A992E3D0037C425 /* move_button.png in Resources */,
 				BA9C63F31A9904BE0037C425 /* pizza.png in Resources */,
@@ -529,9 +550,11 @@
 				BA9C63C21A98D2A00037C425 /* female-teenager.png in Resources */,
 				F37295CC1A95C9D40062CCD7 /* NU.png in Resources */,
 				BA9C63E31A9904BE0037C425 /* banana.png in Resources */,
+				BA22B4611A9984D300E79694 /* health_button_.png in Resources */,
 				BA9C63E51A9904BE0037C425 /* burger.png in Resources */,
 				F37295CA1A95C9D40062CCD7 /* NT.png in Resources */,
 				F37295CB1A95C9D40062CCD7 /* NS.png in Resources */,
+				BA22B45E1A9984D300E79694 /* age_button.png in Resources */,
 				F37295C71A95C9D40062CCD7 /* MB.png in Resources */,
 				BA9C63BF1A98D2A00037C425 /* female-child.png in Resources */,
 				BA9C64051A99359C0037C425 /* action_button_.png in Resources */,
@@ -542,6 +565,7 @@
 				F37295CE1A95C9D40062CCD7 /* PE.png in Resources */,
 				BA9C63E61A9904BE0037C425 /* carrot.png in Resources */,
 				BA9C64061A99359C0037C425 /* back_button_.png in Resources */,
+				BA22B4601A9984D300E79694 /* happiness_button.png in Resources */,
 				F37295C51A95C9D40062CCD7 /* YT.png in Resources */,
 				BA9C63C81A98D2A00037C425 /* male-teenager.png in Resources */,
 				BA9C63F91A9915ED0037C425 /* room.png in Resources */,
