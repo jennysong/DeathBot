@@ -180,7 +180,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func gotfood(character:SKNode, food:FoodNode) {
         var (deathRate,action) = self.Jenny.take(food.pickedFood)
         if dieOrNot(deathRate) {
-            gameOverByNaturalDeath()
+            gameOver()
         }
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
