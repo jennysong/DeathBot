@@ -20,62 +20,79 @@ class Game: SKScene {
     override init(size: CGSize) {
         bot = botDataManager.get()
         super.init(size: size)
-        println("Hi =\(bot.age) \(bot.gender),\(bot.location)")
         let ratio = 1/self.size.height*195
         
-        var background = SKSpriteNode(imageNamed: "background")
-        background.size.height = self.size.height
-        background.size.width = self.size.width
-        background.anchorPoint = CGPoint(x:0, y:0)
-        
-        var backgroundTalkbox = SKSpriteNode(imageNamed: "backgroundTalkbox")
-        backgroundTalkbox.size.height = self.size.height * 0.65312
-        backgroundTalkbox.size.width = self.size.width * 0.49817
-        backgroundTalkbox.position = CGPoint(x:self.size.width*(0.35), y:self.size.height*0.55)
-        
-        addChild(background)
-        addChild(backgroundTalkbox)
+        var background = SKSpriteNode(imageNamed: "landingBG")
+        background.yScale = 0.5
+        background.xScale = 0.5
+        background.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.42 * Double(self.frame.height))
+        background.zPosition = 1
 
-        var buttonNewGame = SKSpriteNode(imageNamed: "buttonNewGame")
-        buttonNewGame.size.height = self.size.height * 0.3397
-        buttonNewGame.size.width = self.size.width * 0.336
-        buttonNewGame.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
+        var buttonNewGame = SKSpriteNode(imageNamed: "start_button")
+        buttonNewGame.yScale = 0.5
+        buttonNewGame.xScale = 0.5
+        buttonNewGame.position = CGPoint(x:0.37 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
         buttonNewGame.zPosition = 10
-        var buttonNewGame_ = SKSpriteNode(imageNamed: "buttonNewGame_")
-        buttonNewGame_.size.height = self.size.height * 0.3397
-        buttonNewGame_.size.width = self.size.width * 0.336
-        buttonNewGame_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
+        var buttonNewGame_ = SKSpriteNode(imageNamed: "start_button_")
+        buttonNewGame_.yScale = 0.5
+        buttonNewGame_.xScale = 0.5
+        buttonNewGame_.position = CGPoint(x:0.37 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
         buttonNewGame_.zPosition = 10
-        var buttonContinue = SKSpriteNode(imageNamed: "buttonContinue")
-        buttonContinue.size.height = self.size.height * 0.3397
-        buttonContinue.size.width = self.size.width * 0.336
-        buttonContinue.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
-        buttonContinue.zPosition = 10
-        var buttonContinue_ = SKSpriteNode(imageNamed: "buttonContinue_")
-        buttonContinue_.size.height = self.size.height * 0.3397
-        buttonContinue_.size.width = self.size.width * 0.336
-        buttonContinue_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.22)
-        buttonContinue_.zPosition = 10
-        var buttonHowTo = SKSpriteNode(imageNamed: "buttonHowTo")
-        buttonHowTo.size.height = self.size.height * 0.287
-        buttonHowTo.size.width = self.size.width * 0.161379
-        buttonHowTo.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
-        buttonHowTo.zPosition = 10
         
-        var buttonHowTo_ = SKSpriteNode(imageNamed: "buttonHowTo_")
-        buttonHowTo_.size.height = self.size.height * 0.287
-        buttonHowTo_.size.width = self.size.width * 0.161379
-        buttonHowTo_.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
+        var buttonContinue = SKSpriteNode(imageNamed: "continue_button")
+        buttonContinue.yScale = 0.5
+        buttonContinue.xScale = 0.5
+        buttonContinue.position = CGPoint(x:0.63 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
+        buttonContinue.zPosition = 10
+        var buttonContinue_ = SKSpriteNode(imageNamed: "continue_button_")
+        buttonContinue_.yScale = 0.5
+        buttonContinue_.xScale = 0.5
+        buttonContinue_.position = CGPoint(x:0.63 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
+        buttonContinue_.zPosition = 10
+        
+        var buttonHowTo = SKSpriteNode(imageNamed: "info_button")
+        buttonHowTo.yScale = 0.5
+        buttonHowTo.xScale = 0.5
+        buttonHowTo.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
+        buttonHowTo.zPosition = 10
+        var buttonHowTo_ = SKSpriteNode(imageNamed: "info_button_")
+        buttonHowTo_.yScale = 0.5
+        buttonHowTo_.xScale = 0.5
+        buttonHowTo_.position = CGPoint(x:0.8 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
         buttonHowTo_.zPosition = 10
+        
+        var copyrightLabel = SKSpriteNode(imageNamed: "copyright_label")
+        copyrightLabel.yScale = 0.5
+        copyrightLabel.xScale = 0.5
+        copyrightLabel.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.03 * Double(self.frame.height))
+        copyrightLabel.zPosition = 10
         
         let newGame:ActionButton = ActionButton(defaultButtonImage: buttonNewGame, activeButtonImage: buttonNewGame_, buttonAction: changeSceneToNewGame)
         
         let continueGame:ActionButton = ActionButton(defaultButtonImage: buttonContinue, activeButtonImage: buttonContinue_, buttonAction: changeSceneToContinueGame)
         
         let howTo:ActionButton = ActionButton(defaultButtonImage: buttonHowTo, activeButtonImage: buttonHowTo_, buttonAction: changeSceneToHowTo)
+        addChild(background)
         addChild(newGame)
         addChild(continueGame)
         addChild(howTo)
+        addChild(copyrightLabel)
+        newGame.alpha = 0
+        continueGame.alpha = 0
+        howTo.alpha = 0
+        copyrightLabel.alpha = 0
+        
+        let moveBackground = SKAction.moveTo(CGPoint(x:0.5 * Double(self.frame.width), y: 0.57 * Double(self.frame.height)), duration: NSTimeInterval(1))
+        let fadeInImages = SKAction.fadeInWithDuration(1)
+  
+        
+        runAction(SKAction.sequence([SKAction.waitForDuration(1), SKAction.runBlock{
+            background.runAction(moveBackground)},SKAction.waitForDuration(0.8),SKAction.runBlock{newGame.runAction(fadeInImages)
+                continueGame.runAction(fadeInImages)
+                howTo.runAction(fadeInImages)
+                copyrightLabel.runAction(fadeInImages)} ]))
+        
+
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -83,7 +100,7 @@ class Game: SKScene {
     }
     func changeSceneToNewGame(){
         runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let revel = SKTransition.fadeWithColor(SKColor.blackColor(), duration: NSTimeInterval(1.3))
             let scene = NewGameScene(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
