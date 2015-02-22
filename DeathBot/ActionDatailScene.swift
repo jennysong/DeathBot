@@ -111,7 +111,7 @@ class ActionDetailScene: SKScene {
         actionlabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         actionlabel.fontSize = 20
         actionlabel.fontColor = SKColor.blackColor()
-        actionlabel.position = CGPoint(x:0.365 * Double(self.frame.width), y: 0.645 * Double(self.frame.height))
+        actionlabel.position = CGPoint(x:0.38 * Double(self.frame.width), y: 0.645 * Double(self.frame.height))
         actionlabel.zPosition = 25
         addChild(actionlabel)
         
