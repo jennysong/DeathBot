@@ -246,11 +246,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
 
     func randomTime() -> NSTimeInterval {  //1 to 3 sec
-        return NSTimeInterval(arc4random()%1)
+        return NSTimeInterval(arc4random()%3+1)
     }
 
     func updateStatus(){
         checkLife()
+        updateCharacter()
+        
         happiness_label.text = "\(Jenny.happiness)"
         health_label.text = "\(Jenny.health)"
         age_label.text = "\(Jenny.age)"
