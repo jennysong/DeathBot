@@ -8,7 +8,7 @@
 
 import Foundation
 import SpriteKit
-
+//
 class NaturalDeathGameOverScene: SKScene {
     var bot: Bot
     init(size: CGSize,bot: Bot) {
