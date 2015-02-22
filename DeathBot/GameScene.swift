@@ -319,14 +319,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func get_happiness_info() {
         //TODO
-        UIAlertView(title: "Happiness", message: "When happiness is 0, Humpty Dumpty is dead from depression.", delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: "Happiness", message: "When happiness is 0, Humpty Dumpty dies from depression.", delegate: nil, cancelButtonTitle: "OK").show()
         self.happiness_button.hidden = true
         self.happiness_button_.hidden = false
     }
     
     func get_health_info() {
         //TODO
-        UIAlertView(title: "Health", message: "When heart is 0, Humpty Dumpty is dead from bad health.", delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: "Health", message: "When heart is 0, Humpty Dumpty dies from bad health.", delegate: nil, cancelButtonTitle: "OK").show()
         SKAction.sequence([SKAction.waitForDuration(NSTimeInterval(1)), SKAction.runBlock(){
             self.health_button.hidden = true
             self.health_button_.hidden = false
@@ -335,7 +335,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func get_age_info() {
         //TODO
-        UIAlertView(title: "Age", message: "This icon represents age of Humpty Dumpty.", delegate: nil, cancelButtonTitle: "OK").show()
+        UIAlertView(title: "Age", message: "0 to 2 : Toddler\n3 to 12 : Child\n13 to 19: Teenager\n20 to 54 : Adult\n55 to 79: Senior\n80 >= Golden-Oldie", delegate: nil, cancelButtonTitle: "OK").show()
         SKAction.sequence([SKAction.waitForDuration(NSTimeInterval(1)), SKAction.runBlock(){
             self.age_button.hidden = false
             self.age_button_.hidden = true
