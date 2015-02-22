@@ -64,7 +64,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //updateStatus()
         character.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         character.zPosition = 10
-        var characScale = CGFloat(Double(Jenny.age) * 0.005 + 0.1)
+        var characScale = CGFloat(Double(Jenny.age) * 0.005 + 0.3)
         character.setScale(characScale)
         character.physicsBody = SKPhysicsBody(rectangleOfSize: character.size)
         character.physicsBody?.dynamic = true
