@@ -9,8 +9,9 @@
 import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
-    let character = BotNode()
+    
     var Jenny = Bot(gender: "Female", location: "BC")
+    var character = BotNode()
     var happiness_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
     var health_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
     var age_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
@@ -145,7 +146,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.Jenny.take(food.pickedFood)
         println("Jenny eats \(food.pickedFood)")
         println("health: \(Jenny.health) happy: \(Jenny.happiness) smoke: \(Jenny.smoker) drink: \(Jenny.drinker)")
-        Jenny.doAction("eat")
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
         food.removeFromParent()
@@ -218,17 +218,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         happiness_label.text = "Happiness: \(Jenny.happiness)"
         health_label.text = "Health: \(Jenny.health)"
         age_label.text = "Age: \(Jenny.age)"
-        updateCharac()
+        var characScale = CGFloat(Double(Jenny.age) * 0.005 + 0.1)
+        character.setScale(characScale)
     }
     
-    func updateCharac() {
-        
-        var characScale = CGFloat(Double(Jenny.age) * 0.009 + 0.1)
-        character.setScale(characScale)
- 
 
-        
-    }
     
     func checkLife() {
         if (Jenny.health <= 0 || Jenny.happiness <= 0) {

@@ -13,13 +13,25 @@ class BotNode: SKNode {
 //    var leftFoot: SKSpriteNode
 //    var rightFoot: SKSpriteNode
     var size: CGSize
+    
     override init() {
+        
         bodyNode = SKSpriteNode(imageNamed:"male-toddler.png")
+        
         size = bodyNode.size
         super.init()
         
         addChild(bodyNode)
     }
+    
+    /*init(bot: Bot){
+        bodyNode = SKSpriteNode(imageNamed:"\(bot.gender)-\(bot.status).png")
+        size = bodyNode.size
+        super.init()
+        
+        addChild(bodyNode)
+    }*/
+    
     override func setScale(scale: CGFloat) {
         super.setScale(scale)
         size.height = bodyNode.size.height * yScale

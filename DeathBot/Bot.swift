@@ -54,7 +54,7 @@ class Bot : NSObject, NSCoding{
             status = "child"
         }
         else if age >= 13 && age < 20 {
-            status = "teen"
+            status = "teenager"
         }
         else if age >= 20 && age < 55 {
             status = "adult"
@@ -63,7 +63,7 @@ class Bot : NSObject, NSCoding{
             status = "senior"
         }
         else if age >= 80 {
-            status = "oldie"
+            status = "golden-oldie"
         }
     }
     
@@ -76,46 +76,46 @@ class Bot : NSObject, NSCoding{
                 self.health -= 10
             case "cherry":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "banana":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "fish":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "apple":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "milk":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "chicken":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "pepper":
                 self.happiness -= 5
-                self.health += 5
+                self.health += 50
             case "grape":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "egg":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "carrot":
                 self.happiness -= 5
-                self.health += 5
+                self.health += 50
             case "softdrink":
                 self.happiness += 5
                 self.health -= 10
             case "lobster":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "cheese":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "bread":
                 self.happiness += 5
-                self.health += 5
+                self.health += 50
             case "cigarette":
                 self.happiness += 5
                 self.health -= 10
