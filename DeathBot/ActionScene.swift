@@ -11,12 +11,46 @@ import Foundation
 import SpriteKit
 
 class ActionScene: SKScene {
-    var bot: Bot?
+    var Jenny: Bot?
     var botDataManager = BotDataManager()
+
     init(size: CGSize, bot: Bot) {
         super.init(size: size)
-        self.bot = bot
+        Jenny = bot
 
+        
+       
+        
+        var uri = NSURL(string: "http://code.shawnjung.ca/actions/search?age=\(Jenny!.age)&gender=\(Jenny!.gender)&province=\(Jenny!.location)")
+        let webRequest = NSMutableURLRequest(URL: uri!)
+        webRequest.HTTPMethod = "GET"
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(webRequest) {(data, response, error) in
+            if let result = NSString(data: data, encoding: NSUTF8StringEncoding) {
+                println(result)
+            }
+            else {
+                println("alert")
+            }
+        }
+        task.resume()
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         var actiontitle1 = "Go Camping"
         var actionrisk1 = "high"
@@ -61,7 +95,13 @@ class ActionScene: SKScene {
         action_list_item_1.yScale = 0.5
         action_list_item_1.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.725 * Double(self.frame.height))
         action_list_item_1.zPosition = 20
-        addChild(action_list_item_1)
+        var action_list_item_1_ = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk1).png")
+        action_list_item_1_.xScale = 0.5
+        action_list_item_1_.yScale = 0.5
+        action_list_item_1_.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.725 * Double(self.frame.height))
+        action_list_item_1_.zPosition = 20
+        let action_1:ActionButton = ActionButton(defaultButtonImage: action_list_item_1, activeButtonImage: action_list_item_1_, buttonAction: action1)
+        addChild(action_1)
         
         
         var action_list_item_2 = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk2).png")
@@ -69,29 +109,52 @@ class ActionScene: SKScene {
         action_list_item_2.yScale = 0.5
         action_list_item_2.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.6 * Double(self.frame.height))
         action_list_item_2.zPosition = 20
-        addChild(action_list_item_2)
+        var action_list_item_2_ = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk2).png")
+        action_list_item_2_.xScale = 0.5
+        action_list_item_2_.yScale = 0.5
+        action_list_item_2_.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.6 * Double(self.frame.height))
+        action_list_item_2_.zPosition = 20
+        let action_2:ActionButton = ActionButton(defaultButtonImage: action_list_item_2, activeButtonImage: action_list_item_2_, buttonAction: action2)
+        addChild(action_2)
         
         var action_list_item_3 = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk3).png")
         action_list_item_3.xScale = 0.5
         action_list_item_3.yScale = 0.5
         action_list_item_3.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.475 * Double(self.frame.height))
         action_list_item_3.zPosition = 20
-        addChild(action_list_item_3)
+        var action_list_item_3_ = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk3).png")
+        action_list_item_3_.xScale = 0.5
+        action_list_item_3_.yScale = 0.5
+        action_list_item_3_.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.475 * Double(self.frame.height))
+        action_list_item_3_.zPosition = 20
+        let action_3:ActionButton = ActionButton(defaultButtonImage: action_list_item_3, activeButtonImage: action_list_item_3_, buttonAction: action3)
+        addChild(action_3)
         
         var action_list_item_4 = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk4).png")
         action_list_item_4.xScale = 0.5
         action_list_item_4.yScale = 0.5
         action_list_item_4.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.35 * Double(self.frame.height))
         action_list_item_4.zPosition = 20
-        addChild(action_list_item_4)
+        var action_list_item_4_ = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk4).png")
+        action_list_item_4_.xScale = 0.5
+        action_list_item_4_.yScale = 0.5
+        action_list_item_4_.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.35 * Double(self.frame.height))
+        action_list_item_4_.zPosition = 20
+        let action_4:ActionButton = ActionButton(defaultButtonImage: action_list_item_4, activeButtonImage: action_list_item_4_, buttonAction: action4)
+        addChild(action_4)
         
         var action_list_item_5 = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk5).png")
         action_list_item_5.xScale = 0.5
         action_list_item_5.yScale = 0.5
         action_list_item_5.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.225 * Double(self.frame.height))
         action_list_item_5.zPosition = 20
-        addChild(action_list_item_5)
-        
+        var action_list_item_5_ = SKSpriteNode(imageNamed: "action_list_item_bg_\(actionrisk5).png")
+        action_list_item_5_.xScale = 0.5
+        action_list_item_5_.yScale = 0.5
+        action_list_item_5_.position = CGPoint(x:0.5 * Double(self.frame.width), y: 0.225 * Double(self.frame.height))
+        action_list_item_5_.zPosition = 20
+        let action_5:ActionButton = ActionButton(defaultButtonImage: action_list_item_5, activeButtonImage: action_list_item_5_, buttonAction: action5)
+        addChild(action_5)
         
         
         
@@ -152,12 +215,38 @@ class ActionScene: SKScene {
     func action_list_close_call(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.crossFadeWithDuration(0.5)
-            let scene = GameScene(size: self.size,bot: self.bot!)
+            let scene = GameScene(size: self.size,bot: self.Jenny!)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
+    
+    func action1(){
+        action(1)
+    }
+    func action2(){
+        action(2)
+    }
+    func action3(){
+        action(3)
+    }
+    func action4(){
+        action(4)
+    }
+    func action5(){
+        action(5)
+    }
+    
+    
+    func action(numb: Int){
+        println("action \(numb)!")
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.crossFadeWithDuration(0.5)
+            let scene = ActionDetailScene(size: self.size, bot: self.Jenny!, action: numb)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
     
     
-    
 }
+
 
