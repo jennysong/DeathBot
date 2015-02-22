@@ -82,12 +82,13 @@ class Game: SKScene {
         howTo.alpha = 0
         copyrightLabel.alpha = 0
         
-        let moveBackground = SKAction.moveTo(CGPoint(x:0.5 * Double(self.frame.width), y: 0.57 * Double(self.frame.height)), duration: NSTimeInterval(1))
+        let moveBackground = SKAction.moveTo(CGPoint(x:0.5 * Double(self.frame.width), y: 0.57 * Double(self.frame.height)), duration: NSTimeInterval(1.2))
+            moveBackground.timingMode = .EaseInEaseOut
         let fadeInImages = SKAction.fadeInWithDuration(1)
   
         
         runAction(SKAction.sequence([SKAction.waitForDuration(1), SKAction.runBlock{
-            background.runAction(moveBackground)},SKAction.waitForDuration(0.8),SKAction.runBlock{newGame.runAction(fadeInImages)
+            background.runAction(moveBackground)},SKAction.waitForDuration(1.2),SKAction.runBlock{newGame.runAction(fadeInImages)
                 continueGame.runAction(fadeInImages)
                 howTo.runAction(fadeInImages)
                 copyrightLabel.runAction(fadeInImages)} ]))
