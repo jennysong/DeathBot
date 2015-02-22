@@ -83,11 +83,11 @@ class Game: SKScene {
         copyrightLabel.alpha = 0
         
         let moveBackground = SKAction.moveTo(CGPoint(x:0.5 * Double(self.frame.width), y: 0.57 * Double(self.frame.height)), duration: NSTimeInterval(1))
-        let fadeInImages = SKAction.fadeInWithDuration(1.5)
+        let fadeInImages = SKAction.fadeInWithDuration(1)
   
         
         runAction(SKAction.sequence([SKAction.waitForDuration(1), SKAction.runBlock{
-            background.runAction(moveBackground)},SKAction.waitForDuration(0.5),SKAction.runBlock{newGame.runAction(fadeInImages)
+            background.runAction(moveBackground)},SKAction.waitForDuration(0.8),SKAction.runBlock{newGame.runAction(fadeInImages)
                 continueGame.runAction(fadeInImages)
                 howTo.runAction(fadeInImages)
                 copyrightLabel.runAction(fadeInImages)} ]))
@@ -100,7 +100,7 @@ class Game: SKScene {
     }
     func changeSceneToNewGame(){
         runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.crossFadeWithDuration(0.5)
+            let revel = SKTransition.fadeWithColor(SKColor.blackColor(), duration: NSTimeInterval(1.3))
             let scene = NewGameScene(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
