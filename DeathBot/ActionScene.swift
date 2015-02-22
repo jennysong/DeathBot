@@ -57,7 +57,7 @@ class ActionScene: SKScene {
         var item_node_pressed = SKSpriteNode(imageNamed: "action_list_item_bg_\(risk).png")
         
         var base_x = Double(99.5)
-        var base_y = 293.5-46*Double(index)
+        var base_y = 292-46*Double(index)
         
         var button_callback = { () -> Void in
 
