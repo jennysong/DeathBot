@@ -16,14 +16,14 @@ class NewGameScene: SKScene {
         
         let ratio = 1/self.size.height*195
         
-        
+        /*
         var newGameBG = SKSpriteNode(imageNamed: "newGameBG")
         newGameBG.size.height = self.size.height
         newGameBG.size.width = self.size.width
         newGameBG.anchorPoint = CGPoint(x:0, y:0)
         newGameBG.zPosition = 1
         addChild(newGameBG)
-        
+        */
         var maleBot = SKSpriteNode(imageNamed: "maleBot")
         maleBot.size.height *= ratio
         maleBot.size.width *= ratio

@@ -40,30 +40,33 @@ class Game: SKScene {
         buttonNewGame.size.height = self.size.height * 0.3397
         buttonNewGame.size.width = self.size.width * 0.336
         buttonNewGame.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
-        
+        buttonNewGame.zPosition = 10
         var buttonNewGame_ = SKSpriteNode(imageNamed: "buttonNewGame_")
         buttonNewGame_.size.height = self.size.height * 0.3397
         buttonNewGame_.size.width = self.size.width * 0.336
         buttonNewGame_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
-        
+        buttonNewGame_.zPosition = 10
         var buttonContinue = SKSpriteNode(imageNamed: "buttonContinue")
         buttonContinue.size.height = self.size.height * 0.3397
         buttonContinue.size.width = self.size.width * 0.336
         buttonContinue.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.42)
-        
+        buttonContinue.zPosition = 10
         var buttonContinue_ = SKSpriteNode(imageNamed: "buttonContinue_")
         buttonContinue_.size.height = self.size.height * 0.3397
         buttonContinue_.size.width = self.size.width * 0.336
         buttonContinue_.position = CGPoint(x:self.size.width*(0.80), y:self.size.height*0.22)
-        
+        buttonContinue_.zPosition = 10
         var buttonHowTo = SKSpriteNode(imageNamed: "buttonHowTo")
         buttonHowTo.size.height = self.size.height * 0.287
         buttonHowTo.size.width = self.size.width * 0.161379
         buttonHowTo.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
+        buttonHowTo.zPosition = 10
+        
         var buttonHowTo_ = SKSpriteNode(imageNamed: "buttonHowTo_")
         buttonHowTo_.size.height = self.size.height * 0.287
         buttonHowTo_.size.width = self.size.width * 0.161379
         buttonHowTo_.position = CGPoint(x:self.size.width*(0.10), y:self.size.height*0.15)
+        buttonHowTo_.zPosition = 10
         
         let newGame:ActionButton = ActionButton(defaultButtonImage: buttonNewGame, activeButtonImage: buttonNewGame_, buttonAction: changeSceneToNewGame)
         
