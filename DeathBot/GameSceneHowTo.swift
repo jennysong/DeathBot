@@ -17,7 +17,7 @@ class GameSceneHowTo: SKScene {
         let ratio = 1/self.size.height*195
         
         
-        var infoBackground = SKSpriteNode(imageNamed: "about_bg_1024.png")
+        var infoBackground = SKSpriteNode(imageNamed: "about_bg_720.png")
         infoBackground.size.height = self.size.height
         infoBackground.size.width = self.size.width
         infoBackground.anchorPoint = CGPoint(x:0, y:0)
