@@ -142,10 +142,27 @@ class ActionDetailScene: SKScene {
     }
     
     func goto_action_result(){
-        runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.crossFadeWithDuration(0.5)
-            let scene = ActionSuccessScene(size: self.size, bot: self.Jenny!)
-            self.view?.presentScene(scene, transition: revel)
-            }]))
+        var randomNum = Int(arc4random()%100)
+        var probability = 0
+        if self.risk == "high" {probability = 50}
+        else if self.risk == "medium" {probability = 30}
+        else {probability = 20}
+        
+        
+        if randomNum > probability {
+        
+            runAction(SKAction.sequence([SKAction.runBlock() {
+                let revel = SKTransition.crossFadeWithDuration(0.5)
+                let scene = ActionSuccessScene(size: self.size, bot: self.Jenny!, reward: self.risk)
+                self.view?.presentScene(scene, transition: revel)
+                }]))
+        }
+        else {
+            runAction(SKAction.sequence([SKAction.runBlock() {
+                let revel = SKTransition.crossFadeWithDuration(0.5)
+                let scene = GameOverScene(size: self.size, bot: self.Jenny!, message: "You took a risk and the risk took you..")
+                self.view?.presentScene(scene, transition: revel)
+                }]))
+        }
     }
 }

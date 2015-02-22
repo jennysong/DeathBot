@@ -27,6 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var back_button_ = SKSpriteNode(imageNamed: "back_button_.png")
     var action_button_ = SKSpriteNode(imageNamed: "action_button_.png")
     var move_button_ = SKSpriteNode(imageNamed: "move_button_.png")
+    var dyingMessage:String = ""
     
     struct PhysicsCategory {
         static let None      : UInt32 = 0
@@ -180,7 +181,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func gotfood(character:SKNode, food:FoodNode) {
         var (deathRate,action) = self.Jenny.take(food.pickedFood)
         if dieOrNot(deathRate) {
-            gameOverByNaturalDeath()
+            self.dyingMessage = "You have been food poisoned!!"
+            gameOver()
         }
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
@@ -305,9 +307,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     
     func checkLife() {
-        if (Jenny.health <= 0 || Jenny.happiness <= 0 || Jenny.age >= 100) {
+        if Jenny.health <= 0 {
+            self.dyingMessage = "You ate too much junk food and your health has gone bad!"
             gameOver()
         }
+        else if Jenny.happiness <= 0 {
+            self.dyingMessage = "You were depressed and made the wrong choice :'("
+            gameOver()
+        }
+        else if Jenny.age >= 100 {
+            gameOverByNaturalDeath()
+        }
+
         else if (Jenny.health >= 100) {
             println("Grow")
             Jenny.grow_age()
@@ -357,7 +368,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         botDataManager.save()
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = GameOverScene(size: self.size,bot:self.Jenny)
+            let scene = GameOverScene(size: self.size,bot:self.Jenny,message:self.dyingMessage)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }

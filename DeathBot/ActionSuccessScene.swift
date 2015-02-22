@@ -11,11 +11,24 @@ import SpriteKit
 
 class ActionSuccessScene: SKScene {
     var bot: Bot
-    init(size: CGSize,bot: Bot) {
+    init(size:CGSize, bot:Bot, reward:String) {
         self.bot = bot
         super.init(size: size)
         let ratio = 1/self.size.height*195
-        var reward = "low"
+        var reward = reward
+        
+        if reward == "high" {
+            self.bot.grow_age()
+            self.bot.grow_age()
+            self.bot.grow_age()
+        }
+        else if reward == "medium" {
+            self.bot.grow_age()
+            self.bot.grow_age()
+        }
+        else {
+            self.bot.grow_age()
+        }
         
         var rewardBG = SKSpriteNode(imageNamed: "reward_bg.png")
         rewardBG.size.height = self.size.height
