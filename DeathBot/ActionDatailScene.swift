@@ -12,17 +12,25 @@ import SpriteKit
 class ActionDetailScene: SKScene {
     var Jenny: Bot?
     var deathList: NSArray?
+    var action: NSDictionary
+    var risk: String
+    var actions: Array<AnyObject>
     var botDataManager = BotDataManager()
-    init(size: CGSize, bot: Bot, deathArray: NSArray) {
+    init(size: CGSize, bot: Bot, risk: String, action: NSDictionary, actions: Array<AnyObject>? = nil) {
+        self.action  = action
+        self.actions = actions!
+        self.risk    = risk
+        
         super.init(size: size)
         Jenny = bot
-        deathList = deathArray
-        println(deathList!)
         
+        var actionTitle = action["title"] as String
+        var actionRisk = risk
+        var actionPossibleRisk: Array<String> = []
         
-        var actionTitle = "Go Camping"
-        var actionRisk = "high"
-        var actionPossibleRisk = ["Poisoned","Suicide","Depression"]
+        for death in action["deaths"] as Array<NSDictionary> {
+            actionPossibleRisk.append(death["causal"] as String)
+        }
         var riskLabel = 1
         
         if actionRisk == "high" {riskLabel = 3}
@@ -127,7 +135,7 @@ class ActionDetailScene: SKScene {
     func goback_to_actionscene(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.crossFadeWithDuration(0.5)
-            let scene = ActionScene(size: self.size, bot: self.Jenny!)
+            let scene = ActionScene(size: self.size, bot: self.Jenny!, actions: self.actions)
             self.view?.presentScene(scene, transition: revel)
             }]))
 

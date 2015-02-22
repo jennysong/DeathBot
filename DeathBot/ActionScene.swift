@@ -46,22 +46,6 @@ class ActionScene: SKScene {
             }]))
     }
     
-    func action1(){
-        action(deathArray1!)
-    }
-    func action2(){
-        action(deathArray2!)
-    }
-    func action3(){
-        action(deathArray3!)
-    }
-    func action4(){
-        action(deathArray4!)
-    }
-    func action5(){
-        action(deathArray5!)
-    }
-    
     func render_action_item(action: NSDictionary, index: Int) {
         
         var title = action["title"]! as String
@@ -73,7 +57,16 @@ class ActionScene: SKScene {
         var item_node_pressed = SKSpriteNode(imageNamed: "action_list_item_bg_\(risk).png")
         
         var base_x = Double(99.5)
-        var base_y = 293-46*Double(index)
+        var base_y = 293.5-46*Double(index)
+        
+        var button_callback = { () -> Void in
+
+            self.runAction(SKAction.sequence([SKAction.runBlock() {
+                let revel = SKTransition.crossFadeWithDuration(0.5)
+                let scene = ActionDetailScene(size: self.size, bot: self.Jenny!,  risk: risk, action: action, actions: self.actions)
+                self.view?.presentScene(scene, transition: revel)
+                }]))
+        }
         
         item_node.xScale = 0.5
         item_node.yScale = 0.5
@@ -86,7 +79,9 @@ class ActionScene: SKScene {
         item_node_pressed.position = CGPoint(x: base_x, y: base_y)
         item_node_pressed.zPosition = 31
         item_node_pressed.anchorPoint = CGPoint(x:0, y:1)
-        let action:ActionButton = ActionButton(defaultButtonImage: item_node, activeButtonImage: item_node_pressed, buttonAction: action1)
+        
+
+        let action:ActionButton = ActionButton(defaultButtonImage: item_node, activeButtonImage: item_node_pressed, buttonAction: button_callback)
         addChild(action)
         
         
@@ -130,14 +125,6 @@ class ActionScene: SKScene {
         addChild(action_list_dialog_bg)
     }
     
-    
-    func action(death: NSArray){
-        runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.crossFadeWithDuration(0.5)
-            let scene = ActionDetailScene(size: self.size, bot: self.Jenny!, deathArray: death)
-            self.view?.presentScene(scene, transition: revel)
-            }]))
-    }
     
     func howRisky(numb: Int) -> String{
         if numb == 1 {return "low"}
