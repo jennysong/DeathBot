@@ -34,7 +34,7 @@ class MoveScene: SKScene {
         backButton_.size.width *= ratio
         backButton_.position = CGPoint(x:self.size.width*(0.057), y:self.size.height*0.88)
         backButton_.zPosition = 10
-        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToPrevious)
+        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToGameScene)
         addChild(goBack)
         
         addLocation("AB", x: self.size.width*(0.275), y: self.size.height*0.73)
