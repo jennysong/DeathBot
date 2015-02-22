@@ -11,6 +11,7 @@ import SpriteKit
 
 class MoveScene: SKScene {
     var bot: Bot?
+    var botDataManager = BotDataManager()
     init(size: CGSize, bot: Bot) {
         super.init(size: size)
         self.bot = bot
@@ -92,6 +93,8 @@ class MoveScene: SKScene {
     }
     
     func GoToGameScene(location: String){
+        botDataManager.addNewBot(self.bot!)
+        botDataManager.save()
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameScene(size: self.size, bot: self.bot!)

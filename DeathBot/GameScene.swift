@@ -248,10 +248,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func randomTime() -> NSTimeInterval {  //1 to 3 sec
         return NSTimeInterval(arc4random()%3+1)
     }
-
+    
+    var notYet3 = true
+    var notYet13 = true
+    var notYet20 = true
+    var notYet55 = true
+    var notYet80 = true
     func updateStatus(){
         checkLife()
-        updateCharacter()
+        if(Jenny.age == 3 && notYet3) {
+            updateCharacter()
+            notYet3 = false
+        } else if(Jenny.age == 13 && notYet13){
+            updateCharacter()
+            notYet13 = false
+        } else if(Jenny.age == 20 && notYet20){
+            updateCharacter()
+            notYet20 = false
+        } else if(Jenny.age == 55 && notYet55){
+            updateCharacter()
+            notYet55 = false
+        } else if(Jenny.age == 80 && notYet80){
+            updateCharacter()
+            notYet80 = false
+        }
         
         happiness_label.text = "\(Jenny.happiness)"
         health_label.text = "\(Jenny.health)"
