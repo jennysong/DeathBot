@@ -133,7 +133,10 @@ class ActionDetailScene: SKScene {
     }
     
     func goto_action_result(){
-        println("goto action result")
-        //todo
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.crossFadeWithDuration(0.5)
+            let scene = ActionSuccessScene(size: self.size, bot: self.Jenny!)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
     }
 }
