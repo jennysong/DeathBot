@@ -25,7 +25,7 @@ class BotNode: SKNode {
     }
     
     init(bot: Bot){
-        bodyNode = SKSpriteNode(imageNamed:"\(bot.gender)-\(bot.status).png")
+        bodyNode = SKSpriteNode(imageNamed:"\(bot.gender.lowercaseString)-\(bot.status).png")
         size = bodyNode.size
         super.init()
         
