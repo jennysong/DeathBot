@@ -160,7 +160,7 @@ class ActionDetailScene: SKScene {
         else {
             runAction(SKAction.sequence([SKAction.runBlock() {
                 let revel = SKTransition.crossFadeWithDuration(0.5)
-                let scene = GameOverScene(size: self.size, bot: self.Jenny!)
+                let scene = GameOverScene(size: self.size, bot: self.Jenny!, message: "You took a risk and the risk took you..")
                 self.view?.presentScene(scene, transition: revel)
                 }]))
         }
