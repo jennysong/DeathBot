@@ -77,7 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         
-        //happiness_label.text = "Happiness: \(Jenny.happiness)"
+        happiness_label.text = "\(Jenny.happiness)"
         happiness_label.fontSize = 20
         happiness_label.fontColor = SKColor.whiteColor()
         happiness_label.position = CGPoint(x:0.935 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
@@ -95,7 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(happyButton)
         
         
-        //health_label.text = "Health: \(Jenny.health)"
+        health_label.text = "\(Jenny.health)"
         health_label.fontSize = 20
         health_label.fontColor = SKColor.whiteColor()
         health_label.position = CGPoint(x:0.82 * Double(self.frame.width), y: 0.9 * Double(self.frame.height))
@@ -112,7 +112,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let healthButton:ActionButton = ActionButton(defaultButtonImage: health_button, activeButtonImage: health_button_, buttonAction: getActionList)
         addChild(healthButton)
         
-        //age_label.text = "age: \(Jenny.age)"
+        age_label.text = "\(Jenny.age)"
         age_label.fontSize = 20
         age_label.fontColor = SKColor.whiteColor()
         age_label.position = CGPoint(x:0.705 * Double(self.frame.width), y: 0.90 * Double(self.frame.height))

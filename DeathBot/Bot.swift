@@ -47,8 +47,8 @@ class Bot : NSObject, NSCoding{
         age = 0
         self.gender = gender
         self.location = location
-        happiness = Int(arc4random()) % 50 + 50
-        health = Int(arc4random()) % 50 + 50
+        happiness = 50
+        health = 50
         smoker = 0
         drinker = 0
         status = "toddler"
