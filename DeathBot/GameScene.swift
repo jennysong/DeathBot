@@ -191,8 +191,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBeginContact(contact: SKPhysicsContact) {
         
-        var firstBody: SKPhysicsBody
-        var secondBody: SKPhysicsBody
+        var firstBody: SKPhysicsBody?
+        var secondBody: SKPhysicsBody?
         if contact.bodyA.categoryBitMask < contact.bodyB.categoryBitMask {
             firstBody = contact.bodyA
             secondBody = contact.bodyB
@@ -202,9 +202,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         // 2
-        if ((firstBody.categoryBitMask & PhysicsCategory.Character != 0) &&
-            (secondBody.categoryBitMask & PhysicsCategory.Food != 0)) {
-                gotfood(firstBody.node! as SKNode, food: secondBody.node as FoodNode)
+        if ((firstBody!.categoryBitMask & PhysicsCategory.Character != 0) &&
+            (secondBody!.categoryBitMask & PhysicsCategory.Food != 0)) {
+                gotfood(firstBody!.node! as SKNode, food: secondBody!.node as FoodNode)
         }
         
     }
