@@ -20,7 +20,6 @@ class Game: SKScene {
     override init(size: CGSize) {
         bot = botDataManager.get()
         super.init(size: size)
-        println("Hi =\(bot.age) \(bot.gender),\(bot.location)")
         let ratio = 1/self.size.height*195
         
         var background = SKSpriteNode(imageNamed: "landingBG")
