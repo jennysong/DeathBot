@@ -86,10 +86,10 @@ class Bot : NSObject, NSCoding{
                 self.happiness += 5
                 self.health -= 10
             case "cherry":
-                self.happiness += 5
+                self.happiness += 0
                 self.health += 50
             case "banana":
-                self.happiness += 5
+                self.happiness += 0
                 self.health += 50
             case "fish":
                 self.happiness += 5
@@ -98,13 +98,13 @@ class Bot : NSObject, NSCoding{
                 self.happiness += 5
                 self.health += 50
             case "milk":
-                self.happiness += 5
+                self.happiness -= 10
                 self.health += 50
             case "chicken":
                 self.happiness += 5
                 self.health += 50
             case "pepper":
-                self.happiness -= 5
+                self.happiness -= 15
                 self.health += 50
             case "grape":
                 self.happiness += 5
@@ -113,7 +113,7 @@ class Bot : NSObject, NSCoding{
                 self.happiness += 5
                 self.health += 50
             case "carrot":
-                self.happiness -= 5
+                self.happiness -= 10
                 self.health += 50
             case "softdrink":
                 self.happiness += 5
