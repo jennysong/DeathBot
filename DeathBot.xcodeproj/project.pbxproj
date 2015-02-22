@@ -87,6 +87,8 @@
 		BAC4C39B1A9A29A000E7CA04 /* action_confirm_low.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4C3981A9A29A000E7CA04 /* action_confirm_low.png */; };
 		BAC4C39C1A9A29A000E7CA04 /* action_confirm_medium.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4C3991A9A29A000E7CA04 /* action_confirm_medium.png */; };
 		BAC4C39E1A9A307B00E7CA04 /* action_age_reward.png in Resources */ = {isa = PBXBuildFile; fileRef = BAC4C39D1A9A307B00E7CA04 /* action_age_reward.png */; };
+		F32A131D1A9A4A51004C6EBC /* about_bg_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = F32A131C1A9A4A51004C6EBC /* about_bg_1024.png */; };
+		F32A131F1A9A4D27004C6EBC /* NaturalDeathGameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32A131E1A9A4D27004C6EBC /* NaturalDeathGameOverScene.swift */; };
 		F32B2B4D1A96148000C6FE3E /* MoveScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B2B4C1A96148000C6FE3E /* MoveScene.swift */; };
 		F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0041A94F1A7009A4743 /* maleBot.png */; };
 		F34BD0091A94F45E009A4743 /* LocationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD0081A94F45E009A4743 /* LocationScene.swift */; };
@@ -245,6 +247,8 @@
 		BAC4C3981A9A29A000E7CA04 /* action_confirm_low.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_confirm_low.png; sourceTree = "<group>"; };
 		BAC4C3991A9A29A000E7CA04 /* action_confirm_medium.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_confirm_medium.png; sourceTree = "<group>"; };
 		BAC4C39D1A9A307B00E7CA04 /* action_age_reward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_age_reward.png; sourceTree = "<group>"; };
+		F32A131C1A9A4A51004C6EBC /* about_bg_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = about_bg_1024.png; sourceTree = "<group>"; };
+		F32A131E1A9A4D27004C6EBC /* NaturalDeathGameOverScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaturalDeathGameOverScene.swift; sourceTree = "<group>"; };
 		F32B2B4C1A96148000C6FE3E /* MoveScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveScene.swift; sourceTree = "<group>"; };
 		F34BD0041A94F1A7009A4743 /* maleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleBot.png; sourceTree = "<group>"; };
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
@@ -403,6 +407,7 @@
 				BA75A7431A9A22FA008F03C1 /* ActionDatailScene.swift */,
 				BA875E1D1A9A597500A6DD2D /* ActionSuccessScene.swift */,
 				F39166BF1A95E1E800BEFC90 /* GameOverScene.swift */,
+				F32A131E1A9A4D27004C6EBC /* NaturalDeathGameOverScene.swift */,
 				F370C8B91A94D5A0007E4498 /* GameSceneHowTo.swift */,
 				F370C88F1A94C0A3007E4498 /* GameViewController.swift */,
 				F370C8B51A94D304007E4498 /* Game.swift */,
@@ -691,6 +696,7 @@
 				BA875E3C1A9A5D9600A6DD2D /* dead_egg.png in Resources */,
 				BA875E2C1A9A5BFB00A6DD2D /* reward_title.png in Resources */,
 				BA875E351A9A5C4300A6DD2D /* gameover_home_button.png in Resources */,
+				F32A131D1A9A4A51004C6EBC /* about_bg_1024.png in Resources */,
 				BA9C64011A992EAD0037C425 /* background.png in Resources */,
 				BA9C63AB1A9846970037C425 /* character.png in Resources */,
 				F381224F1A9636A500A10777 /* gender_bg.png in Resources */,
@@ -819,6 +825,7 @@
 				F370C8B61A94D304007E4498 /* Game.swift in Sources */,
 				50DD81861A9A5895007CEB20 /* RESTClient.swift in Sources */,
 				F370C8901A94C0A3007E4498 /* GameViewController.swift in Sources */,
+				F32A131F1A9A4D27004C6EBC /* NaturalDeathGameOverScene.swift in Sources */,
 				BA9C63CB1A98D76E0037C425 /* FoodNode.swift in Sources */,
 				F39166C01A95E1E800BEFC90 /* GameOverScene.swift in Sources */,
 				F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */,

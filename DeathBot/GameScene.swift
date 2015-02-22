@@ -13,13 +13,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var Jenny = Bot(gender: "Female", location: "BC")
     var character = BotNode()
     var happiness_button = SKSpriteNode(imageNamed: "happiness_button")
-    var happiness_button_ = SKSpriteNode(imageNamed: "happiness_button_")
+    var happiness_button_ = SKSpriteNode(imageNamed: "happiness_button")
     var happiness_label = SKLabelNode(fontNamed:"Avenir-Black")
     var health_button = SKSpriteNode(imageNamed: "health_button")
-    var health_button_ = SKSpriteNode(imageNamed: "health_button_")
+    var health_button_ = SKSpriteNode(imageNamed: "health_button")
     var health_label = SKLabelNode(fontNamed:"Avenir-Black")
     var age_button = SKSpriteNode(imageNamed: "age_button")
-    var age_button_ = SKSpriteNode(imageNamed: "age_button_")
+    var age_button_ = SKSpriteNode(imageNamed: "age_button")
     var age_label = SKLabelNode(fontNamed:"Avenir-Black")
     var back_button = SKSpriteNode(imageNamed: "back_button.png")
     var action_button = SKSpriteNode(imageNamed: "action_button.png")
@@ -180,7 +180,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func gotfood(character:SKNode, food:FoodNode) {
         var (deathRate,action) = self.Jenny.take(food.pickedFood)
         if dieOrNot(deathRate) {
-            gameOver()
+            gameOverByNaturalDeath()
         }
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
@@ -319,14 +319,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func get_happiness_info() {
         //TODO
+        UIAlertView(title: "Happiness", message: "When happiness is 0, Humpty Dumpty is dead from depression.", delegate: nil, cancelButtonTitle: "OK").show()
+        self.happiness_button.hidden = true
+        self.happiness_button_.hidden = false
     }
     
     func get_health_info() {
         //TODO
+        UIAlertView(title: "Health", message: "When heart is 0, Humpty Dumpty is dead from bad health.", delegate: nil, cancelButtonTitle: "OK").show()
+        SKAction.sequence([SKAction.waitForDuration(NSTimeInterval(1)), SKAction.runBlock(){
+            self.health_button.hidden = true
+            self.health_button_.hidden = false
+            }])
     }
     
     func get_age_info() {
         //TODO
+        UIAlertView(title: "Age", message: "This icon represents age of Humpty Dumpty.", delegate: nil, cancelButtonTitle: "OK").show()
+        SKAction.sequence([SKAction.waitForDuration(NSTimeInterval(1)), SKAction.runBlock(){
+            self.age_button.hidden = false
+            self.age_button_.hidden = true
+            }])
     }
     
     func dieOrNot(rate: Double) -> Bool {
@@ -345,6 +358,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameOverScene(size: self.size,bot:self.Jenny)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
+    
+    func gameOverByNaturalDeath() {
+        Jenny.dead = true
+        botDataManager.addNewBot(Jenny)
+        botDataManager.save()
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = NaturalDeathGameOverScene(size: self.size,bot:self.Jenny)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }

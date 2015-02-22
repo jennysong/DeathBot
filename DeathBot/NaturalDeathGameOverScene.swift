@@ -1,15 +1,15 @@
 //
-//  GameOverScene.swift
+//  NaturalDeathGameOverScene.swift
 //  DeathBot
 //
-//  Created by Younsuk Oh on 2/19/15.
+//  Created by Younsuk Oh on 2/22/15.
 //  Copyright (c) 2015 SOJUniverse. All rights reserved.
 //
 
 import Foundation
 import SpriteKit
-
-class GameOverScene: SKScene {
+//
+class NaturalDeathGameOverScene: SKScene {
     var bot: Bot
     init(size: CGSize,bot: Bot) {
         self.bot = bot
@@ -54,7 +54,7 @@ class GameOverScene: SKScene {
         deadEgg.alpha = 0
         gameoverTitle.alpha = 0
         goBack.alpha = 0
-
+        
         let fadeInImages = SKAction.fadeInWithDuration(1)
         
         runAction(SKAction.sequence([SKAction.runBlock{
@@ -63,9 +63,9 @@ class GameOverScene: SKScene {
             UIAlertView(title: "Reason of Death", message: "The death rate is 80%.\n", delegate: nil, cancelButtonTitle: "OK").show()
             goBack.runAction(fadeInImages)
             },SKAction.waitForDuration(1.5),SKAction.runBlock{
-            gameOverBG.runAction(fadeInImages)
-            deadEgg.runAction(fadeInImages)}, SKAction.waitForDuration(1.2), SKAction.runBlock{
-                gameoverTitle.runAction(fadeInImages)}]))
+                gameOverBG.runAction(fadeInImages)
+                deadEgg.runAction(fadeInImages)}, SKAction.waitForDuration(1.2), SKAction.runBlock{
+                    gameoverTitle.runAction(fadeInImages)}]))
     }
     
     required init?(coder aDecoder: NSCoder) {

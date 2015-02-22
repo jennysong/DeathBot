@@ -17,7 +17,7 @@ class GameSceneHowTo: SKScene {
         let ratio = 1/self.size.height*195
         
         
-        var infoBackground = SKSpriteNode(imageNamed: "infoBackground")
+        var infoBackground = SKSpriteNode(imageNamed: "about_bg_1024.png")
         infoBackground.size.height = self.size.height
         infoBackground.size.width = self.size.width
         infoBackground.anchorPoint = CGPoint(x:0, y:0)
@@ -25,17 +25,14 @@ class GameSceneHowTo: SKScene {
         addChild(infoBackground)
         
         
-        var backButton = SKSpriteNode(imageNamed: "backButton")
-        backButton.size.height *= ratio
-        backButton.size.width *= ratio
-        backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        var backButton = SKSpriteNode(imageNamed: "landing_back_button.png")
+        backButton.setScale(0.5)
+        backButton.position = CGPoint(x:self.size.width*(0.057), y:self.size.height*0.88)
         backButton.zPosition = 10
-        var backButton_ = SKSpriteNode(imageNamed: "backButton_")
-        backButton_.size.height *= ratio
-        backButton_.size.width *= ratio
-        backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        var backButton_ = SKSpriteNode(imageNamed: "landing_back_button__360.png")
+        backButton_.setScale(0.5)
+        backButton_.position = CGPoint(x:self.size.width*(0.057), y:self.size.height*0.88)
         backButton_.zPosition = 10
-        println("here is back button")
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
         addChild(goBack)
         
