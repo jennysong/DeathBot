@@ -178,7 +178,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func gotfood(character:SKNode, food:FoodNode) {
-        self.Jenny.take(food.pickedFood)
+        var (deathRate,action) = self.Jenny.take(food.pickedFood)
+        if dieOrNot(deathRate) {
+            gameOver()
+        }
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
         food.removeFromParent()
@@ -241,6 +244,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    
 
     func randomTime() -> NSTimeInterval {  //1 to 3 sec
         return NSTimeInterval(arc4random()%3+1)
@@ -300,11 +304,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func checkLife() {
         if (Jenny.health <= 0 || Jenny.happiness <= 0 || Jenny.age >= 100) {
-            runAction(SKAction.sequence([SKAction.runBlock() {
-                let revel = SKTransition.flipHorizontalWithDuration(0.5)
-                let scene = GameOverScene(size: self.size,bot:self.Jenny)
-                self.view?.presentScene(scene, transition: revel)
-                }]))
+            gameOver()
         }
         else if (Jenny.health >= 100) {
             println("Grow")
@@ -327,7 +327,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         //TODO
     }
     
+    func dieOrNot(rate: Double) -> Bool {
+        var randomRate = Double(arc4random()%101) / 100
+        println("rate = \(rate), random = \(randomRate)")
+        if rate > randomRate {
+            return true
+        }
+        return false
+    }
     
+    func gameOver() {
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = GameOverScene(size: self.size,bot:self.Jenny)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
     
     func goBackToStart() {
         runAction(SKAction.sequence([SKAction.runBlock() {

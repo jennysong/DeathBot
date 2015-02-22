@@ -75,7 +75,7 @@ class Bot : NSObject, NSCoding{
     }
     
     
-    func take(food: String){
+    func take(food: String) -> (Double, String){
 
         switch food {
             case "burger":
@@ -144,28 +144,25 @@ class Bot : NSObject, NSCoding{
                 break
         }
         if self.happiness>=100 {self.happiness = 100}
+        return calculateDeathRate("take")
     }
-    
-    
-    func doAction(action: String){
-        //do action.
-        var result = calculateDeathRate(action)
-        println("\(self.gender) \(self.age) year olds, Bot is \(action)ing, DeathRate = \(result)")
-        //TO DO
-    }
-    
-    private func calculateDeathRate(action: String) -> Double{
+    private func calculateDeathRate(action: String) -> (Double,String){
         var result: Double = 0.0
         
         result += getActionDeathRate(action) * ACTIONDEATHPORTION
         result += DeathRateByAge(age: self.age).rate() * AGEDEATHPORTION
         result += DeathRateByGender(gender: self.gender).rate() * GENDERDEATHPORTION
         result += DeathRateByProvince(province: self.location).rate() * LOCATIONDEATHPORTION
-        return result
+        return (result,action)
     }
     
     private func getActionDeathRate(action: String)->Double{
-        return 0.0
+        switch action {
+            case "take":
+                return 0.1
+        default:
+                return 0.0
+        }
     }
 }
 
