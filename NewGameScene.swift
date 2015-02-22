@@ -54,7 +54,7 @@ class NewGameScene: SKScene {
         var backButton_ = SKSpriteNode(imageNamed: "landing_back_button__360.png")
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
-        backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        backButton_.position = CGPoint(x:self.size.width*(0.057), y:self.size.height*0.78)
         backButton_.zPosition = 10
         
         let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
@@ -73,7 +73,7 @@ class NewGameScene: SKScene {
     }
     func goBackToStart(){
         runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let revel = SKTransition.fadeWithColor(SKColor.blackColor(), duration: NSTimeInterval(1.3))
             let scene = Game(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
@@ -82,7 +82,7 @@ class NewGameScene: SKScene {
     func pickedMaleGoToLocationSence(){
         self.gender = "Male"
         runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let revel = SKTransition.fadeWithColor(SKColor.blackColor(), duration: NSTimeInterval(1.3))
             let scene = LocationScene(size: self.size, gender: self.gender!)
             self.view?.presentScene(scene, transition: revel)
             }]))
@@ -90,7 +90,7 @@ class NewGameScene: SKScene {
     func pickedFemaleGoToLocationSence(){
         self.gender = "Female"
         runAction(SKAction.sequence([SKAction.runBlock() {
-            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let revel = SKTransition.fadeWithColor(SKColor.blackColor(), duration: NSTimeInterval(1.3))
             let scene = LocationScene(size: self.size, gender: self.gender!)
             self.view?.presentScene(scene, transition: revel)
             }]))
