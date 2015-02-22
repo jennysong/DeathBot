@@ -11,8 +11,10 @@ import SpriteKit
 
 class GameOverScene: SKScene {
     var bot: Bot
+    var title: String
     var dyingMessage: String = ""
-    init(size: CGSize,bot: Bot, message: String) {
+    init(size: CGSize,bot: Bot, title: String = "Reason of Death", message: String) {
+        self.title = title
         self.bot = bot
         super.init(size: size)
         dyingMessage = message
@@ -62,7 +64,7 @@ class GameOverScene: SKScene {
         runAction(SKAction.sequence([SKAction.runBlock{
             var currentLocation = self.getLocationName(bot.location)
             var DRBP = DeathRateByProvince(province: bot.location).rate() * 100
-            UIAlertView(title: "Reason of Death", message: self.dyingMessage, delegate: nil, cancelButtonTitle: "OK").show()
+            UIAlertView(title: self.title, message: self.dyingMessage, delegate: nil, cancelButtonTitle: "OK").show()
             },SKAction.waitForDuration(1.5),SKAction.runBlock{
             gameOverBG.runAction(fadeInImages)
             deadEgg.runAction(fadeInImages)}, SKAction.waitForDuration(1.2), SKAction.runBlock{

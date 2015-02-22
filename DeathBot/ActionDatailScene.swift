@@ -158,9 +158,11 @@ class ActionDetailScene: SKScene {
                 }]))
         }
         else {
+            let deaths = self.action["deaths"] as Array<NSDictionary>
+            let death = deaths[Int(arc4random_uniform(UInt32(deaths.count)))] as NSDictionary
             runAction(SKAction.sequence([SKAction.runBlock() {
                 let revel = SKTransition.crossFadeWithDuration(0.5)
-                let scene = GameOverScene(size: self.size, bot: self.Jenny!, message: "You took a risk and the risk took you..")
+                let scene = GameOverScene(size: self.size, bot: self.Jenny!, title: death["causal"] as String, message: death["description"] as String)
                 self.view?.presentScene(scene, transition: revel)
                 }]))
         }
