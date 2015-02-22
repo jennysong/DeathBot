@@ -184,6 +184,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             self.dyingMessage = "You have been food poisoned!!"
             gameOver()
         }
+        if Jenny.age < 20 {
+            nonAdultEatable(food)
+        }
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
         food.removeFromParent()
@@ -434,6 +437,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func nonAdultEatable(food: FoodNode){
         switch food.pickedFood {
             case "cigarette","alcohol","drug":
+                self.dyingMessage = "You were too young and made the wrong choice :'("
                 gameOver()
         default:
             break
