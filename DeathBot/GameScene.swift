@@ -180,7 +180,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func gotfood(character:SKNode, food:FoodNode) {
         var (deathRate,action) = self.Jenny.take(food.pickedFood)
         if dieOrNot(deathRate) {
-            gameOver()
+            gameOverByNaturalDeath()
         }
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
@@ -358,6 +358,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameOverScene(size: self.size,bot:self.Jenny)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
+    }
+    
+    func gameOverByNaturalDeath() {
+        Jenny.dead = true
+        botDataManager.addNewBot(Jenny)
+        botDataManager.save()
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = NaturalDeathGameOverScene(size: self.size,bot:self.Jenny)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }

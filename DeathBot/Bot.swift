@@ -163,7 +163,7 @@ class Bot : NSObject, NSCoding{
     private func getActionDeathRate(action: String)->Double{
         switch action {
             case "take":
-                return 0.01
+                return 0.005
         default:
                 return 0.0
         }
