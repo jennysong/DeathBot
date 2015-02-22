@@ -35,8 +35,8 @@ class Game: SKScene {
         buttonNewGame.position = CGPoint(x:0.37 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
         buttonNewGame.zPosition = 10
         var buttonNewGame_ = SKSpriteNode(imageNamed: "start_button_")
-        buttonNewGame.yScale = 0.5
-        buttonNewGame.xScale = 0.5
+        buttonNewGame_.yScale = 0.5
+        buttonNewGame_.xScale = 0.5
         buttonNewGame_.position = CGPoint(x:0.37 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
         buttonNewGame_.zPosition = 10
         

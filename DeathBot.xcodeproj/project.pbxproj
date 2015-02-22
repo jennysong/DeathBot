@@ -370,6 +370,7 @@
 		F370C8BB1A94D6D8007E4498 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				F38122471A96368600A10777 /* gender */,
 				BAAFFF9A1A999CCB009AEF78 /* continue_button_.png */,
 				BAAFFF9B1A999CCB009AEF78 /* continue_button.png */,
 				BAAFFF9C1A999CCB009AEF78 /* copyright_label.png */,
