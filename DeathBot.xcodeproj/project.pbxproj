@@ -46,6 +46,7 @@
 		BA875E341A9A5C4300A6DD2D /* gameover_home_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA875E2F1A9A5C4300A6DD2D /* gameover_home_button_.png */; };
 		BA875E351A9A5C4300A6DD2D /* gameover_home_button.png in Resources */ = {isa = PBXBuildFile; fileRef = BA875E301A9A5C4300A6DD2D /* gameover_home_button.png */; };
 		BA875E361A9A5C4300A6DD2D /* gameover_title.png in Resources */ = {isa = PBXBuildFile; fileRef = BA875E311A9A5C4300A6DD2D /* gameover_title.png */; };
+		BA875E421A9A7FA300A6DD2D /* humptydumpty.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = BA875E411A9A7FA300A6DD2D /* humptydumpty.mp3 */; };
 		BA9C63AB1A9846970037C425 /* character.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63AA1A9846970037C425 /* character.png */; };
 		BA9C63CB1A98D76E0037C425 /* FoodNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9C63CA1A98D76E0037C425 /* FoodNode.swift */; };
 		BA9C63E11A9904BE0037C425 /* alcohol.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C63CD1A9904BE0037C425 /* alcohol.png */; };
@@ -203,6 +204,7 @@
 		BA875E2F1A9A5C4300A6DD2D /* gameover_home_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_home_button_.png; sourceTree = "<group>"; };
 		BA875E301A9A5C4300A6DD2D /* gameover_home_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_home_button.png; sourceTree = "<group>"; };
 		BA875E311A9A5C4300A6DD2D /* gameover_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gameover_title.png; sourceTree = "<group>"; };
+		BA875E411A9A7FA300A6DD2D /* humptydumpty.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = humptydumpty.mp3; sourceTree = "<group>"; };
 		BA9C63A71A982B1F0037C425 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		BA9C63AA1A9846970037C425 /* character.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = character.png; sourceTree = "<group>"; };
 		BA9C63CA1A98D76E0037C425 /* FoodNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodNode.swift; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 		BA9C63F51A9912890037C425 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				BA875E411A9A7FA300A6DD2D /* humptydumpty.mp3 */,
 				BA9C63F61A9912890037C425 /* bite.mp3 */,
 			);
 			path = sounds;
@@ -742,6 +745,7 @@
 				F38122511A9636A500A10777 /* male_button.png in Resources */,
 				F3BCA75B1A99B0B600F8C7A9 /* MB.png in Resources */,
 				BA9C63F41A9904BE0037C425 /* softdrink.png in Resources */,
+				BA875E421A9A7FA300A6DD2D /* humptydumpty.mp3 in Resources */,
 				F3BCA75A1A99B0B600F8C7A9 /* BC.png in Resources */,
 				BA9C64071A99359C0037C425 /* move_button_.png in Resources */,
 				BA875E331A9A5C4300A6DD2D /* gameover_bg.png in Resources */,
