@@ -24,34 +24,34 @@ class NewGameScene: SKScene {
         newGameBG.zPosition = 1
         addChild(newGameBG)
         */
-        var maleBot = SKSpriteNode(imageNamed: "maleBot")
-        maleBot.size.height *= ratio
-        maleBot.size.width *= ratio
+        var maleBot = SKSpriteNode(imageNamed: "male.png")
+        maleBot.xScale = 0.4
+        maleBot.yScale = 0.4
         maleBot.position = CGPoint(x:self.size.width*(0.25), y:self.size.height*0.5)
         maleBot.zPosition = 10
-        var maleBot_ = SKSpriteNode(imageNamed: "maleBot")
-        maleBot_.size.height *= ratio
-        maleBot_.size.width *= ratio
+        var maleBot_ = SKSpriteNode(imageNamed: "male_.png")
+        maleBot_.xScale = 0.4
+        maleBot_.yScale = 0.4
         maleBot_.position = CGPoint(x:self.size.width*(0.25), y:self.size.height*0.5)
         maleBot_.zPosition = 10
 
-        var femaleBot = SKSpriteNode(imageNamed: "femaleBot")
-        femaleBot.size.height *= ratio
-        femaleBot.size.width *= ratio
+        var femaleBot = SKSpriteNode(imageNamed: "female.png")
+        femaleBot.xScale = 0.4
+        femaleBot.yScale = 0.4
         femaleBot.position = CGPoint(x:self.size.width*(0.75), y:self.size.height*0.5)
         femaleBot.zPosition = 10
-        var femaleBot_ = SKSpriteNode(imageNamed: "femaleBot")
-        femaleBot_.size.height *= ratio
-        femaleBot_.size.width *= ratio
+        var femaleBot_ = SKSpriteNode(imageNamed: "female_.png")
+        femaleBot_.xScale = 0.4
+        femaleBot_.yScale = 0.4
         femaleBot_.position = CGPoint(x:self.size.width*(0.75), y:self.size.height*0.5)
         femaleBot_.zPosition = 10
     
-        var backButton = SKSpriteNode(imageNamed: "backButton")
+        var backButton = SKSpriteNode(imageNamed: "back_button")
         backButton.size.height *= ratio
         backButton.size.width *= ratio
         backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
         backButton.zPosition = 10
-        var backButton_ = SKSpriteNode(imageNamed: "backButton_")
+        var backButton_ = SKSpriteNode(imageNamed: "back_button_")
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
         backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)

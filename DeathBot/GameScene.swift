@@ -12,9 +12,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var Jenny = Bot(gender: "Female", location: "BC")
     var character = BotNode()
-    var happiness_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
-    var health_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
-    var age_label = SKLabelNode(fontNamed:"AvenirNext-Bold")
+    var happiness_label = SKLabelNode(fontNamed:"AvenirNext")
+    var health_label = SKLabelNode(fontNamed:"AvenirNext")
+    var age_label = SKLabelNode(fontNamed:"AvenirNext")
     var back_button = SKSpriteNode(imageNamed: "back_button.png")
     var action_button = SKSpriteNode(imageNamed: "action_button.png")
     var move_button = SKSpriteNode(imageNamed: "move_button.png")
@@ -36,6 +36,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     init(size: CGSize,bot: Bot) {
         super.init(size: size)
         Jenny = bot
+        character = BotNode(bot: bot)
         didMoveToView()
     }
 
@@ -44,6 +45,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func didMoveToView() {
+        println("\(Jenny.gender) \(Jenny.location)")
+        
         var GameSceneBG = SKSpriteNode(imageNamed: "background.png")
         GameSceneBG.size.height = self.size.height
         GameSceneBG.size.width = self.size.width
@@ -241,7 +244,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func goBackToStart() {
         println("go home")
-        // go home.
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = Game(size: self.size)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
     }
     
     func getActionList() {
@@ -251,6 +258,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func getMoveList() {
         println("get moveList")
-        //get moveList
+        runAction(SKAction.sequence([SKAction.runBlock() {
+            let revel = SKTransition.flipHorizontalWithDuration(0.5)
+            let scene = LocationScene(size: self.size, gender: self.Jenny.gender)
+            self.view?.presentScene(scene, transition: revel)
+            }]))
     }
 }
