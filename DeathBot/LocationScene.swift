@@ -36,7 +36,7 @@ class LocationScene: SKScene {
         backButton_.size.width *= ratio
         backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.95)
         backButton_.zPosition = 10
-        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToStart)
+        let goBack:ActionButton = ActionButton(defaultButtonImage: backButton, activeButtonImage: backButton_, buttonAction: goBackToPrevious)
         addChild(goBack)
         
         addLocation("ON", x: self.size.width*(0.14), y: self.size.height*0.2)
@@ -60,10 +60,10 @@ class LocationScene: SKScene {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    func goBackToStart(){
+    func goBackToPrevious(){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = Game(size: self.size)
+            let scene = NewGameScene(size: self.size)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
