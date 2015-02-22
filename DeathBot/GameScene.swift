@@ -162,7 +162,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         
         runAction(SKAction.repeatActionForever(
-            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(randomTime())])
+            SKAction.sequence([SKAction.runBlock(addFood), SKAction.waitForDuration(NSTimeInterval(1.5))])
             ))
     }
     
@@ -213,9 +213,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }*/
     
     func addFood() {
+        runAction(SKAction.sequence([SKAction.waitForDuration(randomTime()),SKAction.runBlock() {
         var food = FoodNode()
         var a = Double(pow(food.width/2,2.0) + pow(food.height/2,2.0))
-        var b = Double(pow(character.size.width/2.0,2.0) + pow(character.size.height/2,2.0))
+        var b = Double(pow(self.character.size.width/2.0,2.0) + pow(self.character.size.height/2,2.0))
         var distLimit = a+b
         var positionX: Double = 0.0
         var positionY: Double = 0.0
@@ -225,7 +226,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             var randomY = Double(arc4random()%100) / 100
             positionX = (Double(self.frame.width) - Double(food.width)) * randomX + Double(food.width/2)
             positionY = (Double(self.frame.height) - Double(food.height)) * randomY + Double(food.height/2)
-            distance = pow(positionX - Double(character.position.x),2.0) + pow(positionY - Double(character.position.y),2.0)
+            distance = pow(positionX - Double(self.character.position.x),2.0) + pow(positionY - Double(self.character.position.y),2.0)
         } while distance + 1 < distLimit
         
         food.position = CGPoint(x:positionX, y:positionY)
@@ -238,10 +239,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         food.physicsBody?.collisionBitMask = PhysicsCategory.None
         food.physicsBody?.affectedByGravity = false
 
-        addChild(food)
+        self.addChild(food)
         dispatch_after(food.delayTime, dispatch_get_main_queue()) {
             food.removeFromParent()
         }
+        }]))
     }
     
     
