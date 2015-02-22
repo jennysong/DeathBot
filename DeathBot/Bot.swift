@@ -152,8 +152,8 @@ class Bot : NSObject, NSCoding{
     }
     private func calculateDeathRate(action: String) -> (Double,String){
         var result: Double = 0.0
-        
-        result += getActionDeathRate(action) * ACTIONDEATHPORTION
+        var health: Double = ((100.0 - (Double(self.health))) / 100.0)
+        result += getActionDeathRate(action) * ACTIONDEATHPORTION * health
         result += DeathRateByAge(age: self.age).rate() * AGEDEATHPORTION
         result += DeathRateByGender(gender: self.gender).rate() * GENDERDEATHPORTION
         result += DeathRateByProvince(province: self.location).rate() * LOCATIONDEATHPORTION
