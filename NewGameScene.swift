@@ -16,42 +16,42 @@ class NewGameScene: SKScene {
         
         let ratio = 1/self.size.height*195
         
-        /*
-        var newGameBG = SKSpriteNode(imageNamed: "newGameBG")
+        
+        var newGameBG = SKSpriteNode(imageNamed: "gender_bg.png")
         newGameBG.size.height = self.size.height
         newGameBG.size.width = self.size.width
         newGameBG.anchorPoint = CGPoint(x:0, y:0)
         newGameBG.zPosition = 1
         addChild(newGameBG)
-        */
-        var maleBot = SKSpriteNode(imageNamed: "male.png")
-        maleBot.xScale = 0.4
-        maleBot.yScale = 0.4
-        maleBot.position = CGPoint(x:self.size.width*(0.25), y:self.size.height*0.5)
+
+        var maleBot = SKSpriteNode(imageNamed: "male_button.png")
+        maleBot.xScale = 0.5
+        maleBot.yScale = 0.5
+        maleBot.position = CGPoint(x:self.size.width*(0.3), y:self.size.height*0.5)
         maleBot.zPosition = 10
-        var maleBot_ = SKSpriteNode(imageNamed: "male_.png")
-        maleBot_.xScale = 0.4
-        maleBot_.yScale = 0.4
-        maleBot_.position = CGPoint(x:self.size.width*(0.25), y:self.size.height*0.5)
+        var maleBot_ = SKSpriteNode(imageNamed: "male_button_.png")
+        maleBot_.xScale = 0.5
+        maleBot_.yScale = 0.5
+        maleBot_.position = CGPoint(x:self.size.width*(0.3), y:self.size.height*0.5)
         maleBot_.zPosition = 10
 
-        var femaleBot = SKSpriteNode(imageNamed: "female.png")
-        femaleBot.xScale = 0.4
-        femaleBot.yScale = 0.4
-        femaleBot.position = CGPoint(x:self.size.width*(0.75), y:self.size.height*0.5)
+        var femaleBot = SKSpriteNode(imageNamed: "female_button.png")
+        femaleBot.xScale = 0.5
+        femaleBot.yScale = 0.5
+        femaleBot.position = CGPoint(x:self.size.width*(0.70), y:self.size.height*0.5)
         femaleBot.zPosition = 10
-        var femaleBot_ = SKSpriteNode(imageNamed: "female_.png")
-        femaleBot_.xScale = 0.4
-        femaleBot_.yScale = 0.4
-        femaleBot_.position = CGPoint(x:self.size.width*(0.75), y:self.size.height*0.5)
+        var femaleBot_ = SKSpriteNode(imageNamed: "female_button_.png")
+        femaleBot_.xScale = 0.5
+        femaleBot_.yScale = 0.5
+        femaleBot_.position = CGPoint(x:self.size.width*(0.70), y:self.size.height*0.5)
         femaleBot_.zPosition = 10
     
-        var backButton = SKSpriteNode(imageNamed: "back_button")
+        var backButton = SKSpriteNode(imageNamed: "landing_back_button.png")
         backButton.size.height *= ratio
         backButton.size.width *= ratio
-        backButton.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
+        backButton.position = CGPoint(x:self.size.width*(0.057), y:self.size.height*0.78)
         backButton.zPosition = 10
-        var backButton_ = SKSpriteNode(imageNamed: "back_button_")
+        var backButton_ = SKSpriteNode(imageNamed: "landing_back_button__360.png")
         backButton_.size.height *= ratio
         backButton_.size.width *= ratio
         backButton_.position = CGPoint(x:self.size.width*(0.90), y:self.size.height*0.9)
@@ -81,7 +81,6 @@ class NewGameScene: SKScene {
     
     func pickedMaleGoToLocationSence(){
         self.gender = "Male"
-        println("\(self.gender!) is seleted")
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = LocationScene(size: self.size, gender: self.gender!)
@@ -90,7 +89,6 @@ class NewGameScene: SKScene {
     }
     func pickedFemaleGoToLocationSence(){
         self.gender = "Female"
-        println("\(self.gender!) is seleted")
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = LocationScene(size: self.size, gender: self.gender!)
