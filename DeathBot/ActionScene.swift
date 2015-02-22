@@ -14,23 +14,64 @@ class ActionScene: SKScene {
     var Jenny: Bot?
     var botDataManager = BotDataManager()
 
+    var deathArray1: NSArray?
+    var deathArray2: NSArray?
+    var deathArray3: NSArray?
+    var deathArray4: NSArray?
+    var deathArray5: NSArray?
+    
+    
     init(size: CGSize, bot: Bot, actions: Array<AnyObject>? = nil) {
         super.init(size: size)
         Jenny = bot
+        println(actions![0])
+        var actiontitle1 = actions![0]["title"]! as String
+        deathArray1 = actions![0]["deaths"]! as NSArray
+        var actionrisk1 = howRisky(deathArray1!.count)
         
-        println(actions)
+        var actiontitle2 = actions![1]["title"]! as String
+        deathArray2 = actions![1]["deaths"]! as NSArray
+        var actionrisk2 = howRisky(deathArray2!.count)
+
+        var actiontitle3 = actions![2]["title"]! as String
+        deathArray3 = actions![2]["deaths"]! as NSArray
+        var actionrisk3 = howRisky(deathArray3!.count)
         
+        var actiontitle4 = actions![3]["title"]! as String
+        deathArray4 = actions![3]["deaths"]! as NSArray
+        var actionrisk4 = howRisky(deathArray4!.count)
         
-        var actiontitle1 = "Go Camping"
-        var actionrisk1 = "high"
-        var actiontitle2 = "Go on a date"
-        var actionrisk2 = "low"
-        var actiontitle3 = "Go Fishing"
-        var actionrisk3 = "medium"
-        var actiontitle4 = "Go to a museum"
-        var actionrisk4 = "high"
-        var actiontitle5 = "Get a Girlfriend"
-        var actionrisk5 = "low"
+        var actiontitle5 = actions![4]["title"]! as String
+        deathArray5 = actions![4]["deaths"]! as NSArray
+        var actionrisk5 = howRisky(deathArray5!.count)
+        
+    
+        /*
+        var randNum1:Int!
+        var randNum2:Int!
+        var randNum3:Int!
+        var randNum4:Int!
+        var randNum5:Int!
+
+        
+        if actionList.count >= 5 {
+            randNum1 = Int(arc4random()) % actionList.count
+            var actionOne: AnyObject = actionList[randNum1]
+            actionList.removeAtIndex(randNum1)
+            randNum2 = Int(arc4random()) % actionList.count
+            var actionTwo: AnyObject = actionList[randNum2]
+            actionList.removeAtIndex(randNum2)
+            randNum3 = Int(arc4random()) % actionList.count
+            var actionThree: AnyObject = actionList[randNum3]
+            actionList.removeAtIndex(randNum3)
+            randNum4 = Int(arc4random()) % actionList.count
+            var actionFour: AnyObject = actionList[randNum4]
+            actionList.removeAtIndex(randNum4)
+            randNum5 = Int(arc4random()) % actionList.count
+            var actionFive: AnyObject = actionList[randNum5]
+        }*/
+        
+
         
         var darkBG = SKSpriteNode(imageNamed: "action_modal_bg2.png")
         darkBG.size.height = self.size.height
@@ -190,31 +231,35 @@ class ActionScene: SKScene {
     }
     
     func action1(){
-        action(1)
+        action(deathArray1!)
     }
     func action2(){
-        action(2)
+        action(deathArray2!)
     }
     func action3(){
-        action(3)
+        action(deathArray3!)
     }
     func action4(){
-        action(4)
+        action(deathArray4!)
     }
     func action5(){
-        action(5)
+        action(deathArray5!)
     }
     
     
-    func action(numb: Int){
-        println("action \(numb)!")
+    func action(death: NSArray){
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.crossFadeWithDuration(0.5)
-            let scene = ActionDetailScene(size: self.size, bot: self.Jenny!, action: numb)
+            let scene = ActionDetailScene(size: self.size, bot: self.Jenny!, deathArray: death)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
     
+    func howRisky(numb: Int) -> String{
+        if numb == 1 {return "low"}
+        else if numb == 2 {return "medium"}
+        else {return "high"}
+    }
     
 }
 
