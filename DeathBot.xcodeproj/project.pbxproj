@@ -55,6 +55,7 @@
 		BA9C64051A99359C0037C425 /* action_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C64021A99359C0037C425 /* action_button_.png */; };
 		BA9C64061A99359C0037C425 /* back_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C64031A99359C0037C425 /* back_button_.png */; };
 		BA9C64071A99359C0037C425 /* move_button_.png in Resources */ = {isa = PBXBuildFile; fileRef = BA9C64041A99359C0037C425 /* move_button_.png */; };
+		F32B2B4D1A96148000C6FE3E /* MoveScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B2B4C1A96148000C6FE3E /* MoveScene.swift */; };
 		F34BD0051A94F1A7009A4743 /* maleBot.png in Resources */ = {isa = PBXBuildFile; fileRef = F34BD0041A94F1A7009A4743 /* maleBot.png */; };
 		F34BD0091A94F45E009A4743 /* LocationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD0081A94F45E009A4743 /* LocationScene.swift */; };
 		F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */ = {isa = PBXBuildFile; fileRef = F34BD00A1A950548009A4743 /* DeathRateByProvince.swift */; };
@@ -152,6 +153,7 @@
 		BA9C64021A99359C0037C425 /* action_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = action_button_.png; sourceTree = "<group>"; };
 		BA9C64031A99359C0037C425 /* back_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_.png; sourceTree = "<group>"; };
 		BA9C64041A99359C0037C425 /* move_button_.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = move_button_.png; sourceTree = "<group>"; };
+		F32B2B4C1A96148000C6FE3E /* MoveScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveScene.swift; sourceTree = "<group>"; };
 		F34BD0041A94F1A7009A4743 /* maleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleBot.png; sourceTree = "<group>"; };
 		F34BD0061A94F1F1009A4743 /* femaleBot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = femaleBot.png; sourceTree = "<group>"; };
 		F34BD0081A94F45E009A4743 /* LocationScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationScene.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				F39166C11A95E80100BEFC90 /* Button */,
 				F370C8891A94C0A3007E4498 /* AppDelegate.swift */,
 				F34BD0081A94F45E009A4743 /* LocationScene.swift */,
+				F32B2B4C1A96148000C6FE3E /* MoveScene.swift */,
 				F38668561A94EC2E00C1FF1D /* NewGameScene.swift */,
 				F370C88D1A94C0A3007E4498 /* GameScene.swift */,
 				F39166BF1A95E1E800BEFC90 /* GameOverScene.swift */,
@@ -574,6 +577,7 @@
 				BA9C63CB1A98D76E0037C425 /* FoodNode.swift in Sources */,
 				F39166C01A95E1E800BEFC90 /* GameOverScene.swift in Sources */,
 				F38668571A94EC2E00C1FF1D /* NewGameScene.swift in Sources */,
+				F32B2B4D1A96148000C6FE3E /* MoveScene.swift in Sources */,
 				F34BD00B1A950548009A4743 /* DeathRateByProvince.swift in Sources */,
 				F37295B41A958EA80062CCD7 /* BotDataManager.swift in Sources */,
 				F393B8241A95525600EE3241 /* DeathRateByGender.swift in Sources */,

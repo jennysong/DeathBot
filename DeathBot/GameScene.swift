@@ -193,7 +193,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             positionX = (Double(self.frame.width) - Double(food.width)) * randomX + Double(food.width/2)
             positionY = (Double(self.frame.height) - Double(food.height)) * randomY + Double(food.height/2)
             distance = pow(positionX - Double(character.position.x),2.0) + pow(positionY - Double(character.position.y),2.0)
-        } while distance < distLimit
+        } while distance + 1 < distLimit
         
         food.position = CGPoint(x:positionX, y:positionY)
         food.zPosition = 2
@@ -262,7 +262,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         println("get moveList")
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
-            let scene = LocationScene(size: self.size, gender: self.Jenny.gender)
+            let scene = MoveScene(size: self.size, bot: self.Jenny)
             self.view?.presentScene(scene, transition: revel)
             }]))
     }
