@@ -225,7 +225,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     
     func checkLife() {
-        if (Jenny.health <= 0 || Jenny.happiness <= 0) {
+        if (Jenny.health <= 0 || Jenny.happiness <= 0 || Jenny.age >= 100) {
             println("DIE")
             character.removeFromParent()
         }
