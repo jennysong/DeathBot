@@ -185,8 +185,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         updateStatus()
         runAction(SKAction.playSoundFileNamed("bite.mp3", waitForCompletion: false))
         food.removeFromParent()
-        
-
     }
     
     func didBeginContact(contact: SKPhysicsContact) {
@@ -420,5 +418,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             let scene = MoveScene(size: self.size, bot: self.Jenny)
             self.view?.presentScene(scene, transition: revel)
             }]))
+    }
+    
+    func nonAdultEatable(food: FoodNode){
+        switch food.pickedFood {
+            case "cigarette","alcohol","drug":
+                gameOver()
+        default:
+            break
+        }
     }
 }
