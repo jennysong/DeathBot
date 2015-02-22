@@ -302,7 +302,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if (Jenny.health <= 0 || Jenny.happiness <= 0 || Jenny.age >= 100) {
             runAction(SKAction.sequence([SKAction.runBlock() {
                 let revel = SKTransition.flipHorizontalWithDuration(0.5)
-                let scene = GameOverScene(size: self.size)
+                let scene = GameOverScene(size: self.size,bot:self.Jenny)
                 self.view?.presentScene(scene, transition: revel)
                 }]))
         }
