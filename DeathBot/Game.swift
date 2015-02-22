@@ -16,7 +16,8 @@ import AVFoundation
 class Game: SKScene {
     var botDataManager = BotDataManager()
     var bot:Bot
-    
+    var buttonContinue = SKSpriteNode(imageNamed: "continue_button")
+    var buttonContinue_ = SKSpriteNode(imageNamed: "continue_button_")
     override init(size: CGSize) {
         bot = botDataManager.get()
         super.init(size: size)
@@ -39,12 +40,12 @@ class Game: SKScene {
         buttonNewGame_.position = CGPoint(x:0.37 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
         buttonNewGame_.zPosition = 10
         
-        var buttonContinue = SKSpriteNode(imageNamed: "continue_button")
+        
         buttonContinue.yScale = 0.5
         buttonContinue.xScale = 0.5
         buttonContinue.position = CGPoint(x:0.63 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
         buttonContinue.zPosition = 10
-        var buttonContinue_ = SKSpriteNode(imageNamed: "continue_button_")
+        
         buttonContinue_.yScale = 0.5
         buttonContinue_.xScale = 0.5
         buttonContinue_.position = CGPoint(x:0.63 * Double(self.frame.width), y: 0.15 * Double(self.frame.height))
@@ -107,11 +108,18 @@ class Game: SKScene {
             }]))
     }
     func changeSceneToContinueGame(){
+        if self.bot.dead {
+            UIAlertView(title: "Already Dead!!!", message: "Please start new game.", delegate: nil, cancelButtonTitle: "OK").show()
+            buttonContinue_.hidden = true
+            buttonContinue.hidden = false
+            
+        } else {
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameScene(size: self.size,bot: self.bot)
             self.view?.presentScene(scene, transition: revel)
             }]))
+        }
     }
     
     func changeSceneToHowTo(){

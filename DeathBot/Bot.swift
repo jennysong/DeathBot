@@ -16,6 +16,7 @@ class Bot : NSObject, NSCoding{
     var smoker: Int
     var drinker: Int
     var status: String
+    var dead: Bool
     
     func encodeWithCoder(aCoder: NSCoder) {
         //
@@ -27,6 +28,7 @@ class Bot : NSObject, NSCoding{
         aCoder.encodeObject(smoker, forKey: "smoker")
         aCoder.encodeObject(drinker, forKey: "drinker")
         aCoder.encodeObject(status, forKey: "status")
+        aCoder.encodeObject(dead, forKey: "dead")
     }
     required init(coder aDecoder: NSCoder) {
         //
@@ -39,6 +41,7 @@ class Bot : NSObject, NSCoding{
         smoker = aDecoder.decodeObjectForKey("smoker")! as Int
         drinker = aDecoder.decodeObjectForKey("drinker")! as Int
         status = aDecoder.decodeObjectForKey("status")! as String
+        dead = aDecoder.decodeObjectForKey("dead")! as Bool
     }
     
     init(gender: String, location: String) {
@@ -52,6 +55,7 @@ class Bot : NSObject, NSCoding{
         smoker = 0
         drinker = 0
         status = "toddler"
+        dead = false
     }
     
     func grow_age(){

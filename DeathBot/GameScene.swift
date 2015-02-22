@@ -337,6 +337,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func gameOver() {
+        Jenny.dead = true
+        botDataManager.addNewBot(Jenny)
+        botDataManager.save()
         runAction(SKAction.sequence([SKAction.runBlock() {
             let revel = SKTransition.flipHorizontalWithDuration(0.5)
             let scene = GameOverScene(size: self.size,bot:self.Jenny)

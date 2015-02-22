@@ -16,7 +16,7 @@ class BotDataManager {
         // load existing high scores or set up an empty array
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = paths[0] as String
-        let path = documentsDirectory.stringByAppendingPathComponent("Bot.plist")
+        let path = documentsDirectory.stringByAppendingPathComponent("BotD.plist")
         let fileManager = NSFileManager.defaultManager()
         
         // check if file exists
@@ -41,7 +41,7 @@ class BotDataManager {
         let saveData = NSKeyedArchiver.archivedDataWithRootObject(self.bots);
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray;
         let documentsDirectory = paths.objectAtIndex(0) as NSString;
-        let path = documentsDirectory.stringByAppendingPathComponent("Bot.plist");
+        let path = documentsDirectory.stringByAppendingPathComponent("BotD.plist");
         saveData.writeToFile(path, atomically: true);
         
     }
